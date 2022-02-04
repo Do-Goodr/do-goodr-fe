@@ -1,11 +1,14 @@
 import React from 'react';
+import Header from './Header';
+import Form from './Form';
 import '../Styles/App.css';
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>We ARE FUCKING AWESOME!!!!!</h1>
-    </div>
+    <main className="App">
+      <Header />
+      <Form />
+    </main>
   );
 }
 
