@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './Header'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +19,7 @@ function App() {
         >
           Learn React
         </a>
+        <Header name={30}/>
       </header>
     </div>
   );
