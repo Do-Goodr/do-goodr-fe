@@ -3,8 +3,22 @@ import '../Styles/Form.css';
 
 const Form = () => {
   return (
-    <div className="Form">
-    </div>
+    <form className="Form">
+      <input
+        type="text"
+        name="zipCode"
+        value=""
+      />
+      <select
+        name="mileage"
+        placeholder="Within Miles">
+        <option hidden>Within Miles</option>
+        <option>0 - 5</option>
+        <option>6 - 10</option>
+        <option>11 - 20</option>
+        <option>21 - 50</option>
+      </select>
+    </form>
   );
 }
 
