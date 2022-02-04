@@ -10,7 +10,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:16
 
     working_directory: ~/repo
 
@@ -25,6 +25,8 @@ jobs:
             - v1-dependencies-
 
       - run: npm ci
+
+      
 
       - save_cache:
           paths:
