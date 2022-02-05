@@ -3,7 +3,6 @@
 version: 2.1
 orbs:
   circleci-cli: circleci/circleci-cli@0.1.9
-  cypress: cypress-io/cypress@1
 
 
 # 
@@ -29,7 +28,7 @@ jobs:
       - run: npm ci
 
       - run: sudo apt-get update
-      - run: sudo apt install libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev
+      - run: sudo apt install libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev libasound2
 
       - save_cache:
           paths:
@@ -43,11 +42,8 @@ jobs:
       - run: npm run manual:tests
       - run: npm run docs
 
-#workflows:
-#  orb_tests:
-#    jobs:
-#    - build
 workflows:
-  build:
+  orb_tests:
     jobs:
-      - cypress/run
+    - build
+
