@@ -26,7 +26,8 @@ jobs:
 
       - run: npm ci
 
-      
+      - run: sudo apt-get update
+      - run: sudo apt-get install libxtst6 libgconf-2-4 libnss3 libasound2
 
       - save_cache:
           paths:
@@ -36,7 +37,6 @@ jobs:
       # we need to install CircleCI CLI tool
       # to run the "manual" tests
       - circleci-cli/install
-      - apt install libnss
       - run: npm run test
       - run: npm run manual:tests
       - run: npm run docs
