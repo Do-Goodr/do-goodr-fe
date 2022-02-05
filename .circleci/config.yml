@@ -39,7 +39,7 @@ jobs:
       # to run the "manual" tests
       - circleci-cli/install
       - run: npm run test
-      - run: npm run manual:tests
+      
       - run: npm run docs
 
 workflows:
