@@ -1,0 +1,13 @@
+{
+    "type": "event",
+    "data": [
+        {
+            "organization_id": 1,
+            "name": "Blood & Plasma Drive",
+            "category": "Healthcare",
+            "address": "5200 Wadsworth Blvd, Arvada CO 80001",
+            "description": "Give us all your blood",
+            "vols_required": 50
+        }
+    ]
+}
