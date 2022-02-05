@@ -43,7 +43,11 @@ jobs:
 
 
 workflows:
+
   orb_tests:
     jobs:
     - build
+    filters:
+      branches:
+        only: beta
 
