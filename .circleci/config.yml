@@ -40,7 +40,7 @@ jobs:
       - circleci-cli/install
       - run: npm run test
       
-      - run: npm run docs
+
 
 workflows:
   orb_tests:
