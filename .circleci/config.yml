@@ -27,7 +27,7 @@ jobs:
       - run: npm ci
 
       - run: sudo apt-get update
-      - run: sudo apt-get install libxtst6 libgconf-2-4 libnss3 libasound2
+      - run: sudo apt-get install libxtst6 libgconf-2-4 libnss3 libasound2 libatk-1.0.so.0
 
       - save_cache:
           paths:
