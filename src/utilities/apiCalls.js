@@ -11,6 +11,16 @@ const apiCalls = {
             .catch(err => err)
     },
 
+    postEvent: (event) => {
+        return fetch('https://do-goodr-be.herokuapp.com/api/v1/events', {
+            method: 'POST',
+            body: JSON.stringify(event),
+            headers: {
+            'Content-Type': 'application/json',
+            }
+        })
+    }
+
 }
 
 export default apiCalls
