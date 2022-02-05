@@ -3,6 +3,8 @@
 version: 2.1
 orbs:
   circleci-cli: circleci/circleci-cli@0.1.9
+  cypress: cypress-io/cypress@1
+
 
 # 
 # Define a job to be invoked later in a workflow.
@@ -41,7 +43,11 @@ jobs:
       - run: npm run manual:tests
       - run: npm run docs
 
+#workflows:
+#  orb_tests:
+#    jobs:
+#    - build
 workflows:
-  orb_tests:
+  build:
     jobs:
-    - build
+      - cypress/run
