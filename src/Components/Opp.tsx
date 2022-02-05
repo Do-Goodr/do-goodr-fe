@@ -3,7 +3,7 @@ import '../Styles/Opp.css';
 
 const Opp = () => {
   return (
-    <div className="Opp">
+    <div className="opportunity" data-cy='opportunity'>
     </div>
   );
 }
