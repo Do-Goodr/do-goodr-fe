@@ -3,9 +3,9 @@ import '../Styles/EventContainer.css';
 
 const EventContainer = () => {
   return (
-    <div className="EventContainer">
+    <div className="events-container" data-cy='events-container'>
     </div>
-  );
+  )
 }
 
 export default EventContainer;
