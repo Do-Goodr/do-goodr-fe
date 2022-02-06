@@ -20,7 +20,11 @@ interface OppProps {
 const Opp = ({ event }: OppProps ) => {
   return (
     <div className="opportunity" data-cy='opportunity'>
-      <p>{event.address}</p>
+      <h2>{event.name}</h2>
+      <p>Address: {event.address}</p>
+      <p>Date: {event.start_time}</p>
+      <p>Volunteers Needed: {event.vols_required}</p>
+      <p>{event.description}</p>
     </div>
   );
 }
