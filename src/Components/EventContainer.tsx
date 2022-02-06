@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom'
 import '../Styles/EventContainer.css';
 import apiCalls from '../utilities/apiCalls';
 import Opp from './Opp'; 
@@ -7,7 +8,9 @@ import Opp from './Opp';
 const EventContainer = () => {
 
   const [events, setEvents] = useState([])
+  const zip = useParams().zipcode
   console.log(events)
+  console.log(zip)
   
   useEffect(() => {
     apiCalls.loadAllEvents()

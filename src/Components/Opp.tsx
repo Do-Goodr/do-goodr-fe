@@ -14,7 +14,7 @@ interface Event {
 
 interface OppProps {
   key: number
-  event: Event
+  event: Event  
 }
 
 const Opp = ({ event }: OppProps ) => {
