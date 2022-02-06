@@ -8,6 +8,7 @@ const Form = () => {
         type="text"
         name="zipCode"
         value=""
+        // onChange=
       />
       <select
         name="mileage"
@@ -18,6 +19,7 @@ const Form = () => {
         <option>11 - 20</option>
         <option>21 - 50</option>
       </select>
+        <button data-cy='show-events-btn'>Show me Opportunities</button>
     </form>
   );
 }
