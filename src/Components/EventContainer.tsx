@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../Styles/EventContainer.css';
 import apiCalls from '../utilities/apiCalls';
+import Opp from './Opp'; 
+
 
 const EventContainer = () => {
 
@@ -12,8 +14,18 @@ const EventContainer = () => {
     .then(data => setEvents(data.data))
   }, [])
   
+  const eventCards = events && events.map((event, index) => {
+    return (
+      <Opp
+        key={index} 
+        event={event}
+      />
+    )
+  })
+
   return (
     <div className="events-container" data-cy='events-container'>
+      {eventCards}
     </div>
   )
 }
