@@ -10,7 +10,6 @@ const EventContainer = () => {
   const [events, setEvents] = useState([])
   const zip = useParams().zipcode
   console.log(events)
-  console.log(zip)
   
   useEffect(() => {
     apiCalls.loadAllEvents()
