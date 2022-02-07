@@ -1,0 +1,22 @@
+import React, { useState, useEffect, createContext } from 'react'
+import apiCalls from '../utilities/apiCalls';
+
+const EventContext = createContext()
+
+const EventProvider = props => {
+  const [events, setEvents] = useState([])
+  
+  useEffect(() => {
+    apiCalls.loadAllEvents()
+    .then(data => setEvents(data.data))
+  }, [])
+
+  return (
+    <EventContext.Provider value={{ events }}>
+      {props.children}
+    </EventContext.Provider>
+  )
+  
+}
+
+export { EventContext, EventProvider }
