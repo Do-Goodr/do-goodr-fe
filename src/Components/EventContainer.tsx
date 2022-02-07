@@ -3,17 +3,8 @@ import { useParams } from 'react-router-dom'
 import '../Styles/EventContainer.css';
 import apiCalls from '../utilities/apiCalls';
 import Opp from './Opp'; 
+import { Event } from '../utilities/Types';
 
-interface Event {
-  address: string
-  category: string
-  description: string
-  duration: number
-  name: string
-  organization_id: number
-  start_time: string
-  vols_required: number
-}  
 
 const EventContainer = () => {
 

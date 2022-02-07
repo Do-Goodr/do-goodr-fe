@@ -1,16 +1,8 @@
 import React from 'react';
 import '../Styles/Opp.css';
+import { Event } from '../utilities/Types';
 
-interface Event {
-  address: string
-  category: string
-  description: string
-  duration: number
-  name: string
-  organization_id: number
-  start_time: string
-  vols_required: number
-}  
+
 
 interface OppProps {
   key: number
