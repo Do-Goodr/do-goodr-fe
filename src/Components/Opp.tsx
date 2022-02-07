@@ -1,13 +1,7 @@
 import React from 'react';
 import '../Styles/Opp.css';
-import { Event } from '../utilities/Types';
+import { Event, OppProps } from '../utilities/Types';
 
-
-
-interface OppProps {
-  key: number
-  event: Event  
-}
 
 const Opp = ({ event }: OppProps ) => {
   return (

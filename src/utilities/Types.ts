@@ -15,8 +15,9 @@ export interface EventContainerProps {
 
 
 export interface OppProps {
-    
-}
+    key: number
+    event: Event  
+  }
 
 
 export interface Event {
