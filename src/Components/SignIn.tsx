@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styles/SignIn.css';
-import CreateEvent from './CreateEvent';
+import CreateEventForm from './CreateEventForm';
 
 const SignIn = () => {
   return (
@@ -15,7 +15,7 @@ const SignIn = () => {
             <option>Food Bank</option>
         </select>
       </form>
-        <CreateEvent  date={''} category={''} start_time={''} end_time={''} volunteers_needed={''} description={''}/>
+        <CreateEventForm  date={''} category={''} start_time={''} end_time={''} volunteers_needed={''} description={''}/>
     </div>
   )
 }

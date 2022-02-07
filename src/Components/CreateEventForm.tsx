@@ -11,7 +11,7 @@ interface CreateEventProps {
   volunteers_needed: string
   description: string
 }
-const CreateEvent: React.FC<CreateEventProps> = ({}) => {
+const CreateEventForm: React.FC<CreateEventProps> = ({}) => {
 
 const [category, setCategory] = useState<CreateEventProps["category"]>()
 const [date, setDate] = useState<CreateEventProps["date"]>()
@@ -65,4 +65,4 @@ const submitEvent = () => {
   );
 }
 
-export default CreateEvent;
+export default CreateEventForm;

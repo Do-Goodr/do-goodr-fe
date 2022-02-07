@@ -8,7 +8,7 @@ const Form = () => {
         type="text"
         name="zipCode"
         value=""
-        // onChange=
+        onChange={()}
       />
       <select
         name="mileage"
