@@ -37,6 +37,7 @@ const EventContainer = () => {
 
   return (
     <div>
+      <h3>Filter by category</h3>
       <select
         name="category"
         placeholder="Choose Category"
