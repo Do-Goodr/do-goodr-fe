@@ -64,7 +64,7 @@ const submitEvent = (e:any) => {
       <label>Volunteers Needed:
         <input  type='number' min={1} max={100} onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
       </label>
-      <textarea onChange={(e) => setDescription(e.target.value)}>Description:</textarea>
+      <textarea placeholder='Description...' onChange={(e) => setDescription(e.target.value)}></textarea>
       <button onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
     </form>
   );
