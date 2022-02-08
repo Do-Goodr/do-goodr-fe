@@ -36,7 +36,7 @@ const EventContainer = () => {
   }
 
   return (
-    <div className="events-container" data-cy='events-container'>
+    <div>
       <select
         name="category"
         placeholder="Choose Category"
@@ -52,7 +52,9 @@ const EventContainer = () => {
         <option>Healthcare</option>
         <option>Other</option>
       </select>
-      {displayedEventCards()}
+      <div className="events-container" data-cy='events-container'>
+        {displayedEventCards()}
+      </div>
     </div>
   )
 }
