@@ -12,13 +12,13 @@ interface CreateEventProps {
   vols_required: number
   description: string
 }
-const CreateEventForm: React.FC = ({}) => {
+const CreateEventForm: React.FC = () => {
 
 const [category, setCategory] = useState<CreateEventProps["category"]>()
 const [date, setDate] = useState<CreateEventProps["date"]>()
 const [startTime, setStartTime] = useState<CreateEventProps["start_time"]>()
 const [endTime, setEndTime] = useState<CreateEventProps["end_time"]>()
-const [volunteers, setVolunteers] = useState<CreateEventProps["vols_required"] | 0>(0)
+const [volunteers, setVolunteers] = useState<CreateEventProps["vols_required"] | 0 | null>(null)
 const [description, setDescription] = useState<CreateEventProps['description']>()
 
 const submitEvent = (e:any) => {
