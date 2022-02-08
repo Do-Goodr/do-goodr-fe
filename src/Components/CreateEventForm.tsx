@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import '../Styles/CreateEvent.css';
 import apiCalls from '../utilities/apiCalls';
 
-interface CreateEventProps {
+interface CreatedEvent {
   id: number
-  
   date: string
   category: string
   start_time: string
@@ -12,14 +11,17 @@ interface CreateEventProps {
   vols_required: number
   description: string
 }
+
+
+
 const CreateEventForm: React.FC = () => {
 
-const [category, setCategory] = useState<CreateEventProps["category"]>()
-const [date, setDate] = useState<CreateEventProps["date"]>()
-const [startTime, setStartTime] = useState<CreateEventProps["start_time"]>()
-const [endTime, setEndTime] = useState<CreateEventProps["end_time"]>()
-const [volunteers, setVolunteers] = useState<CreateEventProps["vols_required"] | 0 | null>(null)
-const [description, setDescription] = useState<CreateEventProps['description']>()
+const [category, setCategory] = useState<CreatedEvent["category"]>()
+const [date, setDate] = useState<CreatedEvent["date"]>()
+const [startTime, setStartTime] = useState<CreatedEvent["start_time"]>()
+const [endTime, setEndTime] = useState<CreatedEvent["end_time"]>()
+const [volunteers, setVolunteers] = useState<CreatedEvent["vols_required"] | 0 | null>(null)
+const [description, setDescription] = useState<CreatedEvent['description']>()
 
 const submitEvent = (e:any) => {
   e.preventDefault(e)
@@ -35,6 +37,14 @@ const submitEvent = (e:any) => {
     description: description
   }
   apiCalls.postEvent(newEvent)
+}
+
+const SubmitButton = () => {
+  if (date && startTime && endTime && category && volunteers && description) {
+    return <button onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
+  } else {
+    return <button disabled={true} onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
+  }
 }
 
   return (
@@ -65,7 +75,7 @@ const submitEvent = (e:any) => {
         <input  type='number' min={1} max={100} onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
       </label>
       <textarea placeholder='Description...' onChange={(e) => setDescription(e.target.value)}></textarea>
-      <button onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
+      <SubmitButton />
     </form>
   );
 }
