@@ -12,7 +12,8 @@ const apiCalls = {
     },
 
     postEvent: (event) => {
-        return fetch('https://do-goodr-be.herokuapp.com/api/v1/events', {
+        console.log('test', event)
+        return fetch(`https://do-goodr-be.herokuapp.com/api/v1/events?category=${event.category}&organization_id=${event.organization_id}&name=${event.name}&address=${event.address}&start_time=${event.date} ${event.start_time}&end_time=${event.date} ${event.end_time}&vols_required=${event.vols_required}&description=${event.description}`, {
             method: 'POST',
             body: JSON.stringify(event),
             headers: {

@@ -3,31 +3,35 @@ import '../Styles/CreateEvent.css';
 import apiCalls from '../utilities/apiCalls';
 
 interface CreateEventProps {
-
+  id: number
+  
   date: string
   category: string
   start_time: string
   end_time: string
-  volunteers_needed: string
+  vols_required: number
   description: string
 }
-const CreateEventForm: React.FC<CreateEventProps> = ({}) => {
+const CreateEventForm: React.FC = ({}) => {
 
 const [category, setCategory] = useState<CreateEventProps["category"]>()
 const [date, setDate] = useState<CreateEventProps["date"]>()
 const [startTime, setStartTime] = useState<CreateEventProps["start_time"]>()
 const [endTime, setEndTime] = useState<CreateEventProps["end_time"]>()
-const [volunteers, setVolunteers] = useState<CreateEventProps["volunteers_needed"]>()
+const [volunteers, setVolunteers] = useState<CreateEventProps["vols_required"] | 0>(0)
 const [description, setDescription] = useState<CreateEventProps['description']>()
 
-const submitEvent = () => {
+const submitEvent = (e:any) => {
+  e.preventDefault(e)
   const newEvent = {
-    id: 1,
+    organization_id: 1,
+    name: 'American Red Cross',
+    address: '123 Sesame St',
     date: date,
     start_time: startTime,
     end_time: endTime,
     category: category,
-    volunteers_needed: volunteers,
+    vols_required: volunteers,
     description: description
   }
   apiCalls.postEvent(newEvent)
@@ -57,10 +61,10 @@ const submitEvent = () => {
           <option >Health Care</option>
         </datalist>
       <label>Volunteers Needed:
-        <input type='number' min='1' max='100' onChange={(e) => setVolunteers(e.target.value)}/>
+        <input  type='number' min={1} max={100} onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
       </label>
       <textarea onChange={(e) => setDescription(e.target.value)}>Description:</textarea>
-      <button onClick={(e) => submitEvent()}>Submit Opportunity</button>
+      <button onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
     </form>
   );
 }

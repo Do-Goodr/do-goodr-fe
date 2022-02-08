@@ -15,7 +15,7 @@ const SignIn = () => {
             <option>Food Bank</option>
         </select>
       </form>
-        <CreateEventForm  date={''} category={''} start_time={''} end_time={''} volunteers_needed={''} description={''}/>
+        <CreateEventForm  />
     </div>
   )
 }
