@@ -52,13 +52,14 @@ const submitEvent = (e:any) => {
       <input list='category' onChange={(e) => setCategory(e.target.value)}/>
         <datalist id='category'>
           <option hidden>Choose Category</option>
-          <option >Animals</option>
+          <option >Animal Care</option>
           <option >Campaigning</option>
-          <option >Children</option>
-          <option >Elderly</option>
+          <option >Youth Mentorship</option>
+          <option >Nursing Home</option>
           <option >Food Service</option>
-          <option >Grounds Clean Up</option>
-          <option >Health Care</option>
+          <option >Grounds Cleanup</option>
+          <option >Healthcare</option>
+          <option >Community Development</option>
         </datalist>
       <label>Volunteers Needed:
         <input  type='number' min={1} max={100} onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
