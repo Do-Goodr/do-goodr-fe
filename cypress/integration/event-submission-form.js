@@ -87,28 +87,51 @@ describe('Event Submission Form DOM',() => {
       })
     
     it('should allow a user to update the start time', () => {
-       
+        cy.get('[data-cy=set-start-time]')
+        .type('10:45')
+        .should('have.value', '10:45')
       })
 
     it('should allow a user to update the end time', () => {
-       
+        cy.get('[data-cy=set-end-time]')
+        .type('13:30')
+        .should('have.value', '13:30')
       })
 
     it('should allow a user to update the category', () => {
-       
+        cy.get('[data-cy=set-category]')
+        .type('Healthcare')
+        .should('have.value', 'Healthcare')
       })
 
     it('should allow a user to update the amount of volunteers needed', () => {
-       
+        cy.get('[data-cy=set-volunteer-num]') 
+        .type('4')
+        .should('have.value', '4')
       })
 
     it('should allow a user to write a description', () => {
-       
+        cy.get('[data-cy=set-description]')
+        .type('Community Blood Drive in New Orleans Uptown')
+        .should('have.value', 'Community Blood Drive in New Orleans Uptown')
       })
 
 
-    it('should allow a user to update the end time input', () => {
-       
+    it('should allow the user to click the submission button after all input fields are changed', () => {
+        cy.get('[data-cy=set-date]')
+        .type('2022-03-11')
+        .get('[data-cy=set-start-time]')
+        .type('10:45')
+        .get('[data-cy=set-end-time]')
+        .type('13:30')
+        .get('[data-cy=set-category]')
+        .type('Healthcare')
+        .get('[data-cy=set-volunteer-num]') 
+        .type('4')
+        .get('[data-cy=set-description]')
+        .type('Community Blood Drive in New Orleans Uptown')
+        .get('[data-cy=enabled-submit-button]')
+        .should('be.enabled')
       })
 
  })
