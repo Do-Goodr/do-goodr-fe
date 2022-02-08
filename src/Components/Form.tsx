@@ -14,10 +14,10 @@ const Form = () => {
         name="mileage"
         placeholder="Within Miles">
         <option hidden>Within Miles</option>
-        <option>0 - 5</option>
-        <option>6 - 10</option>
-        <option>11 - 20</option>
-        <option>21 - 50</option>
+        <option>5</option>
+        <option>10</option>
+        <option>20</option>
+        <option>50</option>
       </select>
         <button data-cy='show-events-btn'>Show me Opportunities</button>
     </form>
