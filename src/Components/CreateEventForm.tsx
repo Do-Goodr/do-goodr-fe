@@ -41,27 +41,26 @@ const submitEvent = (e:any) => {
 
 const SubmitButton = () => {
   if (date && startTime && endTime && category && volunteers && description) {
-    return <button onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
+    return <button data-cy='enabled-submit-button' onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
   } else {
-    return <button disabled={true} onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
+    return <button disabled={true} data-cy='disabled-submit-button' onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
   }
 }
 
   return (
-    <form className='create-event' data-cy='create-event'>
+    <form className='create-event' data-cy='create-event-form'>
       <h2>Create New Volunteering Event</h2>
       <label>Date:
-        <input type='date' onChange={(e) => setDate(e.target.value)}/>
+        <input type='date' data-cy='set-date' onChange={(e) => setDate(e.target.value)}/>
       </label>
       <label>Start Time:
-        <input type='time' onChange={(e) => setStartTime(e.target.value)}/>
+        <input type='time' data-cy='set-start-time' onChange={(e) => setStartTime(e.target.value)}/>
       </label>
       <label>End Time:
-        <input type='time' onChange={(e) => setEndTime(e.target.value)}/>
+        <input type='time' data-cy='set-end-time' onChange={(e) => setEndTime(e.target.value)}/>
       </label>
-      <input list='category' onChange={(e) => setCategory(e.target.value)}/>
+      <input list='category' data-cy='set-category' placeholder='Choose Category' onChange={(e) => setCategory(e.target.value)}/>
         <datalist id='category'>
-          <option hidden>Choose Category</option>
           <option >Animal Care</option>
           <option >Campaigning</option>
           <option >Youth Mentorship</option>
@@ -72,9 +71,9 @@ const SubmitButton = () => {
           <option >Community Development</option>
         </datalist>
       <label>Volunteers Needed:
-        <input  type='number' min={1} max={100} onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
+        <input type='number' min={1} max={100} data-cy='set-volunteer-num' onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
       </label>
-      <textarea placeholder='Description...' onChange={(e) => setDescription(e.target.value)}></textarea>
+      <textarea placeholder='Description...' data-cy='set-description' onChange={(e) => setDescription(e.target.value)}></textarea>
       <SubmitButton />
     </form>
   );
