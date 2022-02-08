@@ -8,7 +8,7 @@ import { Event } from '../utilities/Types';
 
 const EventContainer = () => {
 
-  const [events, setEvents] = useState<Event[]>([])
+  const [events, setEvents] = useState<Event[] | []>([])
   const zip = useParams().zipcode
   console.log(events)
   
