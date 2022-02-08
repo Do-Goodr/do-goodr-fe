@@ -7,7 +7,6 @@ const EventProvider = props => {
   const [events, setEvents] = useState([])
   const [filteredEvents, setFilteredEvents] = useState([])
   const [category, setCategory] = useState('')
-  const [zipCode, setZipCode] = useState()
 
   const filterByCategory = (selectedCategory) => {
       const filteredEventsByCategory = events.filter(event => event.category === selectedCategory)
