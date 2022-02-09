@@ -6,12 +6,14 @@ import { Event, OppProps } from '../utilities/Types';
 const Opp = ({ event }: OppProps ) => {
   return (
     <div className="opportunity" data-cy='opportunity'>
-      <h2>{event.name}</h2>
-      <p>Category: {event.category}</p>
-      <p>Event Address: {event.address}</p>
-      <p>Date: {event.start_time}</p>
-      <p>Volunteers Needed: {event.vols_required}</p>
-      <p>{event.description}</p>
+      <h2 className='event-name' data-cy='event-name'>{event.name}</h2>
+      <p data-cy='event-phone'>Phone: 555-555-5555</p>
+      <p data-cy='event-category'>Category: {event.category}</p>
+      <p data-cy='event-address'>Event Address: {event.address}</p>
+      <p data-cy='event-date'>Date: {event.date}</p>
+      <p data-cy='event-time'>Time: {event.start_time} - {event.end_time}</p>
+      <p data-cy='event-volunteers'>Volunteers Needed: {event.vols_required}</p>
+      <p data-cy='event-description'>Description: {event.description}</p>
     </div>
   );
 }
