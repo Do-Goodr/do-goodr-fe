@@ -26,6 +26,7 @@ export interface Event {
   description: string
   name: string
   organization_id: number
+  date: string
   start_time: string
   end_time: string
   vols_required: number
