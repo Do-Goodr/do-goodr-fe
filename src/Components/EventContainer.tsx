@@ -3,11 +3,12 @@ import { useParams } from 'react-router-dom'
 import '../Styles/EventContainer.css';
 import apiCalls from '../utilities/apiCalls';
 import Opp from './Opp'; 
+import { Event } from '../utilities/Types';
 
 
 const EventContainer = () => {
 
-  const [events, setEvents] = useState([])
+  const [events, setEvents] = useState<Event[] | []>([])
   const zip = useParams().zipcode
   console.log(events)
   
