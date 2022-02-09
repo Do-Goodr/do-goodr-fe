@@ -13,7 +13,7 @@ const Header = () => {
           <li>events</li>
         </ul>
       </nav>
-      <SignIn />
+      
     </header>
   );
 }
