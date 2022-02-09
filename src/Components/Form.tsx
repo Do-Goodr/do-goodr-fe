@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Styles/Form.css';
 
 const Form = () => {
+
+  interface FormProps  {
+    zipCode: number
+  }
+
+  // const [zipCode, setZipCode] = useState<FormProps>()
   return (
     <form className="Form">
       <input
-        type="text"
+        type='number'
         name="zipCode"
-        value=""
-        // onChange=
+        // onChange={(e) => setZipCode(e.target.value)}
       />
       <select
         name="mileage"
