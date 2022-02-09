@@ -10,11 +10,9 @@ const Header = () => {
 
   return (
     <header className="header">
-      <nav className='.nav-bar'>
-        
-          <Link to='/' className='nav-link' onClick={() => setEvents([])}>home</Link>
-          {/* <Link>events</Link> */}
-        
+      <nav className="nav-bar">
+        <Link to='/' className='nav-link' onClick={() => setEvents([])}>home</Link>
+        <Link to='/signin' className='nav-link'>signin</Link>
       </nav>
       <div className='title-slogan'>
         <h1 className='title'>Do Goodr</h1>

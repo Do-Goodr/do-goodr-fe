@@ -18,6 +18,7 @@ const App = () => {
           <Route path="/" element={<ZipCodeForm />} />
           <Route path="results/:zipcode/:mileage" element={<EventContainer />} />
           <Route path='/newevent' element={<CreateEventForm />} />
+          <Route path='/signin' element={<SignIn />} />
         </Routes>
         
       </main>
