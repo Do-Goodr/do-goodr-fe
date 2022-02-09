@@ -4,7 +4,7 @@ import Header from './Header';
 import Form from './Form';
 import '../Styles/App.css';
 import EventContainer from './EventContainer';
-import CreateEvent from './CreateEvent';
+import CreateEventForm from './CreateEventForm';
 import SignIn from './SignIn';
 import { EventProvider } from '../Context/EventContext';
 

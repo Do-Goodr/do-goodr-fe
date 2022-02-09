@@ -4,10 +4,12 @@ import '../Styles/EventContainer.css';
 import apiCalls from '../utilities/apiCalls';
 import Opp from './Opp'; 
 import { EventContext } from '../Context/EventContext';
+import { Event } from '../utilities/Types';
+
 
 
 const EventContainer = () => {
-
+  
   const { events, category, filteredEvents, filterByCategory } = useContext(EventContext)
   const zip = useParams().zipcode
   
