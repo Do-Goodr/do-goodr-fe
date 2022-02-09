@@ -10,8 +10,14 @@ import { Event } from '../utilities/Types';
 
 const EventContainer = () => {
   
-  const { events, category, filteredEvents, filterByCategory } = useContext(EventContext)
+  const { events, category, filteredEvents, filterByCategory, setEvents } = useContext(EventContext)
   const zip = useParams().zipcode
+  const miles = useParams().mileage
+
+  useEffect(() => {
+    apiCalls.loadEventsByZipCode(zip, miles)
+    .then(data => setEvents(data.data))
+  }, [])
   
   const eventCards = events && events.map((event: any, index: any) => {
     return (
