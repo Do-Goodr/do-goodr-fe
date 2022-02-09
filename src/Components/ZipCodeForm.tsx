@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import '../Styles/ZipCodeForm.css';
-import apiCalls from '../utilities/apiCalls';
 import { ZipCodeSearch } from '../utilities/Types';
+import { useNavigate } from 'react-router'
 
 
 const ZipCodeForm = () => {
 
   const [zipCode, setZipCode] = useState<ZipCodeSearch['zipCode'] | 0 | null>(null)
   const [mileage, setMileage] = useState<ZipCodeSearch['mileage'] | 0 | null>(null)
+  let navigate = useNavigate()
 
   const getOpportunities = (e:React.MouseEvent) => {
     e.preventDefault()
-    const test = apiCalls.loadEventsByZipCode(zipCode, mileage)
-    console.log('test', test)
+    navigate(`/results/${zipCode}/${mileage}`)
   }
 
   return (
