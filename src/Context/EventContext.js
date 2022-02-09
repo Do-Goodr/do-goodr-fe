@@ -9,9 +9,9 @@ const EventProvider = props => {
   const [category, setCategory] = useState('')
 
   const filterByCategory = (selectedCategory) => {
-      const filteredEventsByCategory = events.filter(event => event.category === selectedCategory)
-      setFilteredEvents(filteredEventsByCategory)
-      setCategory(selectedCategory)
+    const filteredEventsByCategory = events.filter(event => event.category === selectedCategory)
+    setFilteredEvents(filteredEventsByCategory)
+    setCategory(selectedCategory)
   }
   
   useEffect(() => {
