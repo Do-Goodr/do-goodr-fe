@@ -1,30 +1,39 @@
 import React, { useState } from 'react';
 import '../Styles/Form.css';
+import apiCalls from '../utilities/apiCalls';
+import { ZipCodeSearch } from '../utilities/Types';
+
 
 const Form = () => {
 
-  interface FormProps  {
-    zipCode: number
+  const [zipCode, setZipCode] = useState<ZipCodeSearch['zipCode'] | 0 | null>(null)
+  const [mileage, setMileage] = useState<ZipCodeSearch['mileage'] | 0 | null>(null)
+
+  const getOpportunities = (e:React.MouseEvent) => {
+    e.preventDefault()
+    const test = apiCalls.loadEventsByZipCode(zipCode, mileage)
+    console.log('test', test)
   }
 
-  // const [zipCode, setZipCode] = useState<FormProps>()
   return (
     <form className="Form">
       <input
         type='number'
         name="zipCode"
-        // onChange={(e) => setZipCode(e.target.value)}
+        onChange={(e) => setZipCode(parseInt(e.target.value))}
       />
       <select
         name="mileage"
-        placeholder="Within Miles">
+        placeholder="Within Miles"
+        onChange={(e) => setMileage(parseInt(e.target.value))}>
+        
         <option hidden>Within Miles</option>
         <option>5</option>
         <option>10</option>
         <option>20</option>
         <option>50</option>
       </select>
-        <button data-cy='show-events-btn'>Show me Opportunities</button>
+        <button data-cy='show-events-btn' onClick={(e) => getOpportunities(e)}>Show me Opportunities</button>
     </form>
   );
 }
