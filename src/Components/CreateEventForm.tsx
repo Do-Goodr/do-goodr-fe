@@ -22,7 +22,7 @@ const submitEvent = (e:React.MouseEvent) => {
   const newEvent = {
     organization_id: 1,
     name: 'American Red Cross',
-    address: '123 Sesame St',
+    address: '123 Sesame St New Orleans, LA 70115',
     date: date,
     start_time: startTime,
     end_time: endTime,
