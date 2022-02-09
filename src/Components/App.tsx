@@ -16,7 +16,7 @@ const App = () => {
       <main className="App">
         <Routes>
           <Route path="/" element={<ZipCodeForm />} />
-          <Route path="/:zipcode" element={<EventContainer />} />
+          <Route path="results/:zipcode/:mileage" element={<EventContainer />} />
           <Route path='/newevent' element={<CreateEventForm />} />
         </Routes>
         
