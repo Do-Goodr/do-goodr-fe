@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
 import '../Styles/CreateEvent.css';
 import apiCalls from '../utilities/apiCalls';
+import { CreatedEvent } from '../utilities/Types';
 
-interface CreatedEvent {
-  id: number
-  date: string
-  category: string
-  start_time: string
-  end_time: string
-  vols_required: number
-  description: string
-}
+
 
 
 

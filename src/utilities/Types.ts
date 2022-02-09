@@ -30,3 +30,17 @@ export interface Event {
   start_time: string
   vols_required: number
 }  
+
+export interface ZipCodeSearch  {
+  zipCode: number
+}
+
+export interface CreatedEvent {
+  id: number
+  date: string
+  category: string
+  start_time: string
+  end_time: string
+  vols_required: number
+  description: string
+}
