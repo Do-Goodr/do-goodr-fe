@@ -13,14 +13,9 @@ const EventProvider = props => {
     setFilteredEvents(filteredEventsByCategory)
     setCategory(selectedCategory)
   }
-  
-  useEffect(() => {
-    apiCalls.loadAllEvents()
-    .then(data => setEvents(data.data))
-  }, [])
 
   return (
-    <EventContext.Provider value={{ events, filteredEvents, category, filterByCategory }}>
+    <EventContext.Provider value={{ events, filteredEvents, category, filterByCategory, setEvents }}>
       {props.children}  
     </EventContext.Provider>
   )
