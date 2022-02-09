@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import '../Styles/Form.css';
+import '../Styles/ZipCodeForm.css';
 import apiCalls from '../utilities/apiCalls';
 import { ZipCodeSearch } from '../utilities/Types';
 
 
-const Form = () => {
+const ZipCodeForm = () => {
 
   const [zipCode, setZipCode] = useState<ZipCodeSearch['zipCode'] | 0 | null>(null)
   const [mileage, setMileage] = useState<ZipCodeSearch['mileage'] | 0 | null>(null)
@@ -16,7 +16,7 @@ const Form = () => {
   }
 
   return (
-    <form className="Form">
+    <form className="zip-code-form">
       <input
         type='number'
         name="zipCode"
@@ -38,4 +38,4 @@ const Form = () => {
   );
 }
 
-export default Form;
+export default ZipCodeForm;

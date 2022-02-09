@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './Header';
-import Form from './Form';
+import ZipCodeForm from './ZipCodeForm';
 import '../Styles/App.css';
 import EventContainer from './EventContainer';
 import CreateEventForm from './CreateEventForm';
@@ -15,7 +15,7 @@ const App = () => {
       <Header />
       <main className="App">
         <Routes>
-          <Route path="/" element={<Form />} />
+          <Route path="/" element={<ZipCodeForm />} />
           <Route path="/:zipcode" element={<EventContainer />} />
           <Route path='/newevent' element={<CreateEventForm />} />
         </Routes>
