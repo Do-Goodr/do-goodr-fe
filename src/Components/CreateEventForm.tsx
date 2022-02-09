@@ -56,12 +56,12 @@ const SubmitButton = () => {
         <datalist id='category'>
           <option >Animal Care</option>
           <option >Campaigning</option>
-          <option >Youth Mentorship</option>
-          <option >Nursing Home</option>
+          <option >Community Development</option>
           <option >Food Service</option>
           <option >Grounds Cleanup</option>
           <option >Healthcare</option>
-          <option >Community Development</option>
+          <option >Nursing Home</option>
+          <option >Youth Mentorship</option>
         </datalist>
       <label>Volunteers Needed:
         <input type='number' min={1} max={100} data-cy='set-volunteer-num' onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
