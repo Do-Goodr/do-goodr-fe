@@ -39,29 +39,30 @@ const EventContainer = () => {
 
   const displayedEventCards = () => {
     return !filteredEvents.length && category ? 'Sorry, no events available with that category selection!'
-         : filteredEvents.length ? filteredEventCards
-         : eventCards
+        : filteredEvents.length ? filteredEventCards
+        : eventCards
   }
 
   return (
-    <div>
-      <h3>Filter by category</h3>
+    <div data-cy='events-container'>
+      <h3 data-cy='filter-title'>Filter by Category</h3>
       <select
         name="category"
+        data-cy='choose-category'
         placeholder="Choose Category"
         onChange={e => filterByCategory(e.target.value)}>
         <option hidden>Choose Category</option>
-        <option>Nursing Home</option>
-        <option>Grounds Cleanup</option>
-        <option>Animal Care</option>
-        <option>Campaigning</option>
-        <option>Food Service</option>
-        <option>Youth Mentorship</option>
-        <option>Community Development</option>
-        <option>Healthcare</option>
-        <option>Other</option>
+        <option value='animal-care'>Animal Care</option>
+        <option value='campaigning'>Campaigning</option>
+        <option value='community-development'>Community Development</option>
+        <option value='food-service'>Food Service</option>
+        <option value='grounds-cleanup'>Grounds Cleanup</option>
+        <option value='healthcare'>Healthcare</option>
+        <option value='nursing-home'>Nursing Home</option>
+        <option value='youth-mentorship'>Youth Mentorship</option>
+        <option value=''>Other</option>
       </select>
-      <div className="events-container" data-cy='events-container'>
+      <div className="events-container" >
         {displayedEventCards()}
       </div>
     </div>
