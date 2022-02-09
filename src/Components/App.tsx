@@ -12,10 +12,12 @@ const App = () => {
 
   return (
     <EventProvider>
+      <Header />
       <main className="App">
         <Routes>
-          <Route path="/" element={<> <Header /> <Form /> </>} />
+          <Route path="/" element={ <Form /> } />
           <Route path="/:zipcode" element={<EventContainer />} />
+          <Route path='/newevent' element={<CreateEventForm />} />
         </Routes>
         <SignIn />
       </main>
