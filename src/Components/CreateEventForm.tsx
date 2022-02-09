@@ -16,8 +16,8 @@ const [endTime, setEndTime] = useState<CreatedEvent["end_time"]>()
 const [volunteers, setVolunteers] = useState<CreatedEvent["vols_required"] | 0 | null>(null)
 const [description, setDescription] = useState<CreatedEvent['description']>()
 
-const submitEvent = (e:any) => {
-  e.preventDefault(e)
+const submitEvent = (e:React.MouseEvent) => {
+  e.preventDefault()
   const newEvent = {
     organization_id: 1,
     name: 'American Red Cross',
