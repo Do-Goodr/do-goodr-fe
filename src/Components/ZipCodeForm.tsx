@@ -17,23 +17,27 @@ const ZipCodeForm = () => {
 
   return (
     <form className="zip-code-form">
-      <input
-        type='number'
-        name="zipCode"
-        onChange={(e) => setZipCode(parseInt(e.target.value))}
-      />
-      <select
-        name="mileage"
-        placeholder="Within Miles"
-        onChange={(e) => setMileage(parseInt(e.target.value))}>
-        
-        <option hidden>Within Miles</option>
-        <option>5</option>
-        <option>10</option>
-        <option>20</option>
-        <option>50</option>
-      </select>
-        <button data-cy='show-events-btn' onClick={(e) => getOpportunities(e)}>Show me Opportunities</button>
+        <h3 className='search-opp-title'>Search Volunteering Opportunities</h3>
+      <div className='zip-miles'>
+          <input
+            placeholder='Enter Zip Code'
+            name="zipCode"
+            className='zip-input'
+            onChange={(e) => setZipCode(parseInt(e.target.value))}
+          />
+          <select
+            name="mileage"
+            placeholder="Within Miles"
+            className='mileage-input'
+            onChange={(e) => setMileage(parseInt(e.target.value))}>  
+            <option hidden>Within Miles</option>
+            <option>5</option>
+            <option>10</option>
+            <option>20</option>
+            <option>50</option>
+          </select>
+      </div>
+        <button data-cy='show-events-btn' onClick={(e) => getOpportunities(e)}>Show Opportunities</button>
     </form>
   );
 }
