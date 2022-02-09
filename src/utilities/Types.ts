@@ -33,6 +33,7 @@ export interface Event {
 
 export interface ZipCodeSearch  {
   zipCode: number
+  mileage: number
 }
 
 export interface CreatedEvent {
