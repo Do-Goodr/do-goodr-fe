@@ -40,7 +40,6 @@ const SubmitButton = () => {
   return (
     <form className='create-event' data-cy='create-event-form'>
       <h2>Create New Volunteering Event</h2>
-      <SignIn />
       <label>Date:
         <input type='date' data-cy='set-date' onChange={(e) => setDate(e.target.value)}/>
       </label>
