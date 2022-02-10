@@ -2,28 +2,30 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom'
 import '../Styles/EventContainer.css';
 import apiCalls from '../utilities/apiCalls';
-import Opp from './Opp'; 
+import Opp from './Opp';
 import { EventContext } from '../Context/EventContext';
 import { Event } from '../utilities/Types';
 
 
 
 const EventContainer = () => {
-  
+
   const { events, category, org, filteredEvents, filterByCategory, setEvents } = useContext(EventContext)
   const zip = useParams().zipcode
   const miles = useParams().mileage
-  console.log(events)
+  console.log('eventcontainer', events)
+  console.log(zip)
+  console.log(miles)
 
   useEffect(() => {
     apiCalls.loadEventsByZipCode(zip, miles)
-    .then(data => setEvents(data.data))
+      .then(data => setEvents(data.data))
   }, [])
-  
+
   const eventCards = events && events.map((event: any, index: any) => {
     return (
       <Opp
-        key={index} 
+        key={index}
         event={event}
       />
     )
@@ -32,7 +34,7 @@ const EventContainer = () => {
   const filteredEventCards = filteredEvents && filteredEvents.map((event: any, index: any) => {
     return (
       <Opp
-        key={index} 
+        key={index}
         event={event}
       />
     )
@@ -41,13 +43,13 @@ const EventContainer = () => {
   const displayedEventCards = () => {
     if (!org) {
       return !filteredEvents.length && category ? 'Sorry, no events available with that category selection!'
-           : filteredEvents.length ? filteredEventCards
-           : eventCards
-            } else {
-              return eventCards.filter((event: any) => {
-                return event.name === org 
+        : filteredEvents.length ? filteredEventCards
+          : eventCards
+    } else {
+      return eventCards.filter((event: any) => {
+        return event.name === org
       })
-    }  
+    }
   }
 
   return (

@@ -6,7 +6,7 @@ import EventContainer from './EventContainer';
 const SignIn = () => {
 
   const { events, setOrg, org } = useContext(EventContext)
-  console.log(events)
+  console.log('signin: ', events)
 
   return (
     <div>
