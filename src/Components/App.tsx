@@ -21,7 +21,6 @@ const App = () => {
           <Route path='/newevent' element={<CreateEventForm />} />
           <Route path='/signin' element={<SignIn />} />
         </Routes>
-        
       </main>
     </EventProvider>
   );
