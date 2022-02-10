@@ -1,0 +1,54 @@
+.header {
+    font-family: 'Coming Soon';
+    color: #1864AB
+}
+
+.title-slogan,
+.nav-bar,
+.nav-link {
+    display: flex;
+}
+
+.nav-link {
+    color: #1864AB;
+    justify-content: flex-end;
+    margin-right: 64px;
+    margin-top: 24px;
+    text-decoration: none;
+}
+
+.title-slogan {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title,
+.slogan {
+    margin-bottom: 0;
+}
+
+.title {
+    font-size: 80px;
+    margin-top: 16px;
+}
+
+.slogan {
+    font-size: 24px;
+    margin-top: 8px;
+}
+
+.add-opp-btn {
+    background-color: #1864AB;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    display: flex;
+    font-family: inherit;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 8px auto 0;
+    padding: 8px;
+    text-decoration: none;
+    width: 320px;
+}
