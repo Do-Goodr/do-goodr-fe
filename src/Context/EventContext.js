@@ -5,8 +5,10 @@ const EventContext = createContext()
 
 const EventProvider = props => {
   const [events, setEvents] = useState([])
+  const [searchedEvents, setSearchedEvents] = useState([])
   const [filteredEvents, setFilteredEvents] = useState([])
   const [category, setCategory] = useState('')
+  const [org, setOrg] = useState('')
 
   const filterByCategory = (selectedCategory) => {
     const filteredEventsByCategory = events.filter(event => event.category === selectedCategory)
@@ -15,7 +17,7 @@ const EventProvider = props => {
   }
 
   return (
-    <EventContext.Provider value={{ events, filteredEvents, category, filterByCategory, setEvents }}>
+    <EventContext.Provider value={{ events, searchedEvents, filteredEvents, category, org, filterByCategory, setEvents, setOrg, setSearchedEvents }}>
       {props.children}  
     </EventContext.Provider>
   )
