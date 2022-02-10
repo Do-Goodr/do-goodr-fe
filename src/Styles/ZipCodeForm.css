@@ -1,0 +1,25 @@
+.zip-code-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-opp-title {
+    text-align: center;
+}
+
+.zip-miles {
+    display: flex;
+    height: 36px;
+    width: 160px;
+    justify-content: center;
+}
+
+.zip-input,
+.mileage-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

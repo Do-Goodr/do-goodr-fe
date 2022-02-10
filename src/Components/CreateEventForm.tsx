@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 import '../Styles/CreateEvent.css';
 import apiCalls from '../utilities/apiCalls';
+import { CreatedEvent } from '../utilities/Types';
+import SignIn from './SignIn';
 
-interface CreatedEvent {
-  id: number
-  date: string
-  category: string
-  start_time: string
-  end_time: string
-  vols_required: number
-  description: string
-}
+
 
 
 
@@ -23,12 +17,12 @@ const [endTime, setEndTime] = useState<CreatedEvent["end_time"]>()
 const [volunteers, setVolunteers] = useState<CreatedEvent["vols_required"] | 0 | null>(null)
 const [description, setDescription] = useState<CreatedEvent['description']>()
 
-const submitEvent = (e:any) => {
-  e.preventDefault(e)
+const submitEvent = (e:React.MouseEvent) => {
+  e.preventDefault()
   const newEvent = {
     organization_id: 1,
     name: 'American Red Cross',
-    address: '123 Sesame St',
+    address: '123 Sesame St New Orleans, LA 70115',
     date: date,
     start_time: startTime,
     end_time: endTime,
@@ -50,6 +44,7 @@ const SubmitButton = () => {
   return (
     <form className='create-event' data-cy='create-event-form'>
       <h2>Create New Volunteering Event</h2>
+      <SignIn />
       <label>Date:
         <input type='date' data-cy='set-date' onChange={(e) => setDate(e.target.value)}/>
       </label>
@@ -61,14 +56,15 @@ const SubmitButton = () => {
       </label>
       <input list='category' data-cy='set-category' placeholder='Choose Category' onChange={(e) => setCategory(e.target.value)}/>
         <datalist id='category'>
-          <option >Animal Care</option>
-          <option >Campaigning</option>
-          <option >Youth Mentorship</option>
-          <option >Nursing Home</option>
-          <option >Food Service</option>
-          <option >Grounds Cleanup</option>
-          <option >Healthcare</option>
-          <option >Community Development</option>
+          <option value='animal-care'>Animal Care</option>
+          <option value='campaigning'>Campaigning</option>
+          <option value='community-development'>Community Development</option>
+          <option value='food-service'>Food Service</option>
+          <option value='grounds-cleanup'>Grounds Cleanup</option>
+          <option value='healthcare'>Healthcare</option>
+          <option value='nursing-home'>Nursing Home</option>
+          <option value='youth-mentorship'>Youth Mentorship</option>
+          <option value='other'>Other</option>
         </datalist>
       <label>Volunteers Needed:
         <input type='number' min={1} max={100} data-cy='set-volunteer-num' onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
