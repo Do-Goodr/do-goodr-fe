@@ -8,19 +8,19 @@ import { Event } from '../utilities/Types';
 
 
 
-const EventContainer = () => {
+const EventContainer: React.FC<{events:[]}> = ({ events }) => {
 
-  const { events, category, org, filteredEvents, filterByCategory, setEvents } = useContext(EventContext)
-  const zip = useParams().zipcode
-  const miles = useParams().mileage
-  console.log('eventcontainer', events)
-  console.log(zip)
-  console.log(miles)
+  const { category, org, filteredEvents, filterByCategory, setEvents } = useContext(EventContext)
+  // const zip = useParams().zipcode
+  // const miles = useParams().mileage
+  // console.log('eventcontainer', events)
+  // console.log(zip)
+  // console.log(miles)
 
-  useEffect(() => {
-    apiCalls.loadEventsByZipCode(zip, miles)
-      .then(data => setEvents(data.data))
-  }, [])
+  // useEffect(() => {
+  //   apiCalls.loadEventsByZipCode(zip, miles)
+  //     .then(data => setEvents(data.data))
+  // }, [])
 
   const eventCards = events && events.map((event: any, index: any) => {
     return (

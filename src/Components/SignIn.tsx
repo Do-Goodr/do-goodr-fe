@@ -1,12 +1,18 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import '../Styles/SignIn.css';
+import apiCalls from '../utilities/apiCalls';
 import { EventContext } from '../Context/EventContext';
 import EventContainer from './EventContainer';
 
 const SignIn = () => {
 
-  const { events, setOrg, org } = useContext(EventContext)
+  const { events, setOrg, setEvents, org } = useContext(EventContext)
   console.log('signin: ', events)
+
+  useEffect(() => {
+    apiCalls.loadAllEvents()
+      .then(data => setEvents(data.data))
+  }, [])
 
   return (
     <div>
@@ -24,7 +30,7 @@ const SignIn = () => {
       </form>
       <p>Don't see your organization? Create it below!</p>
       <button className='add-org-btn'>create org</button>
-      <EventContainer />
+      <EventContainer events={events}/>
     </div>
   )
 }
