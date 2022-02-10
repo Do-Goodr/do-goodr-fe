@@ -1,6 +1,6 @@
 describe('Event Submission Form DOM',() => {
     beforeEach(() => {
-      cy.visit('http://localhost:5000/');
+      cy.visit('http://localhost:5000/newevent');
     })
   
     it('should contain the h2: Create New Volunteering Event', () => {
@@ -28,38 +28,41 @@ describe('Event Submission Form DOM',() => {
     it('should have 8 category options in the category drop down', () => {
         cy.get('[data-cy=set-category]')
           .get('#category option')
-          .should('have.length', 8)
+          .should('have.length', 9)
 
         cy.get('#category option').eq(0)
-            .should('have.value', 'Animal Care')
+          .should('have.value', 'animal-care')
 
         cy.get('#category option').eq(1)
-            .should('have.value', 'Campaigning')
+          .should('have.value', 'campaigning')
 
         cy.get('#category option').eq(2)
-            .should('have.value', 'Youth Mentorship')
+          .should('have.value', 'community-development')
 
         cy.get('#category option').eq(3)
-            .should('have.value', 'Nursing Home')
-        
+          .should('have.value', 'food-service')
+            
         cy.get('#category option').eq(4)
-            .should('have.value', 'Food Service')
-
+          .should('have.value', 'grounds-cleanup')
+            
         cy.get('#category option').eq(5)
-            .should('have.value', 'Grounds Cleanup')
-
+          .should('have.value', 'healthcare')
+            
         cy.get('#category option').eq(6)
-            .should('have.value', 'Healthcare')
+          .should('have.value', 'nursing-home')
 
         cy.get('#category option').eq(7)
-            .should('have.value', 'Community Development')
+          .should('have.value', 'youth-mentorship')
+        
+        cy.get('#category option').eq(8)
+          .should('have.value', 'other')
     })
 
     it('should have an input for selecting the amount of volunteers needed for an event', () => {
         cy.get('[data-cy=set-volunteer-num]')    
     })
 
-     it('should have an input for creating the description for an event', () => {
+    it('should have an input for creating the description for an event', () => {
         cy.get('[data-cy=set-description]')
         .should('have.attr', 'placeholder', 'Description...')
     })
@@ -72,7 +75,7 @@ describe('Event Submission Form DOM',() => {
 
   describe('Event Submission Form Actions',() => {
     beforeEach(() => {
-      cy.visit('http://localhost:5000/');
+      cy.visit('http://localhost:5000/newevent');
     })
 
     it('should not allow the user to click the submit button if the input fields are not completed', () => {

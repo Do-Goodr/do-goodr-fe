@@ -2,12 +2,16 @@
     "type": "event",
     "data": [
         {
+            "distance": 0.64,
             "organization_id": 1,
-            "name": "Blood & Plasma Drive",
-            "category": "Healthcare",
-            "address": "5200 Wadsworth Blvd, Arvada CO 80001",
-            "description": "Give us all your blood",
-            "vols_required": 50
+            "name": "Blood Drive",
+            "category": "Animal Care",
+            "address": "5280 Wadsworth Blvd, Arvada CO",
+            "description": "Good blood",
+            "vols_required": 1,
+            "date": "12/31/2022",
+            "start_time": "01:00 PM",
+            "end_time": "02:00 PM"
         }
     ]
 }
