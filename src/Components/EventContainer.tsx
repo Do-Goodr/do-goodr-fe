@@ -10,9 +10,10 @@ import { Event } from '../utilities/Types';
 
 const EventContainer = () => {
   
-  const { events, category, filteredEvents, filterByCategory, setEvents } = useContext(EventContext)
+  const { events, category, org, filteredEvents, filterByCategory, setEvents } = useContext(EventContext)
   const zip = useParams().zipcode
   const miles = useParams().mileage
+  console.log(events)
 
   useEffect(() => {
     apiCalls.loadEventsByZipCode(zip, miles)
@@ -38,9 +39,15 @@ const EventContainer = () => {
   })
 
   const displayedEventCards = () => {
-    return !filteredEvents.length && category ? 'Sorry, no events available with that category selection!'
-         : filteredEvents.length ? filteredEventCards
-         : eventCards
+    if (!org) {
+      return !filteredEvents.length && category ? 'Sorry, no events available with that category selection!'
+           : filteredEvents.length ? filteredEventCards
+           : eventCards
+            } else {
+              return eventCards.filter((event: any) => {
+                return event.name === org 
+      })
+    }  
   }
 
   return (

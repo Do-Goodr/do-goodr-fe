@@ -4,10 +4,6 @@ import apiCalls from '../utilities/apiCalls';
 import { CreatedEvent } from '../utilities/Types';
 import SignIn from './SignIn';
 
-
-
-
-
 const CreateEventForm: React.FC = () => {
 
 const [category, setCategory] = useState<CreatedEvent["category"]>()
