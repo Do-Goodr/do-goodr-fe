@@ -8,6 +8,7 @@ import CreateEventForm from './CreateEventForm';
 import SignIn from './SignIn';
 import { EventProvider } from '../Context/EventContext';
 import SearchResults from './SearchResults';
+import OrgCreationForm from './OrgCreationForm';
 
 const App = () => {
 
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="results/:zipcode/:mileage" element={<SearchResults />} />
           <Route path='/newevent' element={<CreateEventForm />} />
           <Route path='/signin' element={<SignIn />} />
+          <Route path='neworganization' element={<OrgCreationForm />}/>
         </Routes>
       </main>
     </EventProvider>

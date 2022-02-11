@@ -12,7 +12,6 @@ const [startTime, setStartTime] = useState<CreatedEvent["start_time"]>()
 const [endTime, setEndTime] = useState<CreatedEvent["end_time"]>()
 const [volunteers, setVolunteers] = useState<CreatedEvent["vols_required"] | 0 | null>(null)
 const [description, setDescription] = useState<CreatedEvent['description']>()
-console.log(category)
 
 const submitEvent = (e:React.MouseEvent) => {
   e.preventDefault()
