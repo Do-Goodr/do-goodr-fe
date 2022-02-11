@@ -33,7 +33,18 @@ const apiCalls = {
             'Content-Type': 'application/json',
             }
         })
-    }
+    },
+
+    deleteEvent: (id) => {
+        return fetch(`https://do-goodr-be.herokuapp.com/api/v1/events/${id}`, {
+            method: 'DELETE'})
+            .then(res => {
+                if(!res.ok) {
+                  throw new Error(`${res.status} ${res.statusText}`);
+                }
+                return res.json();
+              });
+        }
 
 }
 
