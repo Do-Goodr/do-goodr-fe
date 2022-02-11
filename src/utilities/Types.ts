@@ -52,4 +52,5 @@ export interface CreateOrgDetails {
   address: string
   phone: string
   email: string
+  confirmation: string
 }

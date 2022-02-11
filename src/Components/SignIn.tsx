@@ -32,7 +32,7 @@ const SignIn = () => {
         </select>
       </form>
       <p>Don't see your organization? Create it below!</p>
-      <button className='add-org-btn' onClick={() => navigate('/neworganization')}>create org</button>
+      <button className='add-org-btn' data-cy='add-org-btn' onClick={() => navigate('/neworganization')}>create org</button>
       <EventContainer events={events}/>
     </div>
   )
