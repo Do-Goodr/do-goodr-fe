@@ -15,6 +15,7 @@ const Opp = ({ event }: OppProps ) => {
       <p data-cy='event-time'>Time: {event.start_time} - {event.end_time}</p>
       <p data-cy='event-volunteers'>Volunteers Needed: {event.vols_required}</p>
       <p data-cy='event-description'>Description: {event.description}</p>
+      <button onClick = {() => apiCalls.deleteEvent(event.id)}>🗑</button>
     </div>
   );
 }
