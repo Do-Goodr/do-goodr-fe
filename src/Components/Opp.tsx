@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../Styles/Opp.css';
 import { Event, OppProps } from '../utilities/Types';
 import apiCalls from '../utilities/apiCalls';
+import { EventContext } from '../Context/EventContext';
 
 
 const Opp = ({ event }: OppProps ) => {
+
+  const { events, setEvents } = useContext(EventContext)
+
+
+  const handleDeletion = (id: any) => {
+    let updatedEvents = events.filter((event: { id: any; }) => event.id !== id)
+    setEvents(updatedEvents)
+    apiCalls.deleteEvent(id)
+  }
+
   return (
     <div className="opportunity" data-cy='opportunity'>
       <h2 className='event-name' data-cy='event-name'>{event.name}</h2>
@@ -15,7 +26,7 @@ const Opp = ({ event }: OppProps ) => {
       <p data-cy='event-time'>Time: {event.start_time} - {event.end_time}</p>
       <p data-cy='event-volunteers'>Volunteers Needed: {event.vols_required}</p>
       <p data-cy='event-description'>Description: {event.description}</p>
-      <button onClick = {() => apiCalls.deleteEvent(event.id)}>🗑</button>
+      <button onClick = {() => handleDeletion(event.id)}>🗑</button>
     </div>
   );
 }
