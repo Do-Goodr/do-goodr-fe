@@ -1,17 +1,29 @@
 import React, { useState } from 'react';
 import { CreateOrgDetails } from '../utilities/Types';
 import  formatPhoneNumber  from '../utilities/formatPhoneNumber'
+import apiCalls from '../utilities/apiCalls';
 
 const OrgCreationForm: React.FC<{}> = () => {
 
     const [name, setName] = useState<CreateOrgDetails['name']>()
     const [address, setAddress] = useState<CreateOrgDetails['address']>()
-    const [phone, setPhone] = useState<CreateOrgDetails['phone']>()
+    const [phone, setPhone] = useState<CreateOrgDetails['phone']>('')
     const [email, setEmail] = useState<CreateOrgDetails['email']>()
 
     const handleInput = (phone:string) => {
         const formattedNumber = formatPhoneNumber(phone)
         setPhone(formattedNumber)
+    }
+
+    const signUp = (e:React.MouseEvent) => {
+        e.preventDefault()
+        const newOrg = {
+            name: name,
+            address: address,
+            phone: phone,
+            email: email
+        }
+        apiCalls.postNewOrg(newOrg)
     }
 
     return (
@@ -28,6 +40,7 @@ const OrgCreationForm: React.FC<{}> = () => {
             <label>Email
                 <input type='text' onChange={(e) => setEmail(e.target.value)}/>
             </label>
+            <button onClick={(e) => signUp(e)}>Sign Up!</button>
         </form>
     )
 
