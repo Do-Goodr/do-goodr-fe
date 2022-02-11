@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Styles/Opp.css';
 import { Event, OppProps } from '../utilities/Types';
+import apiCalls from '../utilities/apiCalls';
 
 
 const Opp = ({ event }: OppProps ) => {
