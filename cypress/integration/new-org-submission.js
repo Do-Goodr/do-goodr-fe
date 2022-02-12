@@ -1,6 +1,6 @@
 describe('Event Submission Form DOM',() => {
     beforeEach(() => {
-        cy.visit('http://localhost:5000/newevent');
+        cy.visit('http://localhost:5000/newevent')
     })
 
     it('should be able to take a user to a new org sing up form and allow the user to create a new organization in the application', () => {
