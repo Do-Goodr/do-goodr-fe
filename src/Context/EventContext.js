@@ -6,7 +6,7 @@ const EventContext = createContext()
 const EventProvider = props => {
   const [events, setEvents] = useState([])
   const [category, setCategory] = useState('Any')
-  const [org, setOrg] = useState('')
+  const [org, setOrg] = useState(null)
 
 
   return (
