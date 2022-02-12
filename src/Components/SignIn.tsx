@@ -30,7 +30,7 @@ const SignIn = () => {
       </form>
       <p>Don't see your organization? Create it below!</p>
       <button className='add-org-btn'>create org</button>
-      <EventContainer events={events}/>
+      {org && <EventContainer events={events} />}
     </div>
   )
 }
