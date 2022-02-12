@@ -9,10 +9,16 @@ const SignIn = () => {
   const { events, setOrg, setEvents, org } = useContext(EventContext)
   console.log('signin: ', events)
 
-  useEffect(() => {
-    apiCalls.loadAllEvents()
-      .then(data => setEvents(data.data))
-  }, [])
+  // useEffect(() => {
+  //   apiCalls.loadAllEvents()
+  //     .then(data => setEvents(data.data))
+  // }, [])
+
+  const handleOrgChange = (id: any) => {
+    setOrg(id)
+    apiCalls.loadEventsByOrg(id)
+    .then(data => setEvents(data.data))
+  }
 
   return (
     <div>
@@ -21,10 +27,10 @@ const SignIn = () => {
         <select
           name="organization"
           placeholder="Choose Organization"
-          onChange={(e) => setOrg(e.target.value)}>
+          onChange={(e) => handleOrgChange(e.target.value)}>
             <option hidden>Choose Organization</option>
-            <option>American Red Cross</option>
-            <option>Farts McGee</option>
+            <option>1</option>
+            <option>2</option>
             <option>Food Bank</option>
         </select>
       </form>
