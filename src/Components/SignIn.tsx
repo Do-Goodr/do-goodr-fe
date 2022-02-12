@@ -12,28 +12,31 @@ const SignIn = () => {
   const { events, setOrg, setEvents, org } = useContext(EventContext)
   console.log('signin: ', events)
 
-  useEffect(() => {
-    apiCalls.loadAllEvents()
-      .then(data => setEvents(data.data))
-  }, [])
+
+  const handleOrgChange = (id: any) => {
+    setOrg(id)
+    apiCalls.loadEventsByOrg(id)
+    .then(data => setEvents(data.data))
+  }
 
   return (
     <div>
       <p>View Your Organizations Events</p>
-      <form className="SignIn">
+      <form data-cy='organization-form' className="SignIn">
         <select
           name="organization"
           placeholder="Choose Organization"
-          onChange={(e) => setOrg(e.target.value)}>
+          data-cy='choose-organization'
+          onChange={(e) => handleOrgChange(parseInt(e.target.value))}>
             <option hidden>Choose Organization</option>
-            <option>American Red Cross</option>
-            <option>Farts McGee</option>
-            <option>Food Bank</option>
+            <option>1</option>
+            <option>2</option>
+            <option>4</option>
         </select>
       </form>
       <p>Don't see your organization? Create it below!</p>
       <button className='add-org-btn' data-cy='add-org-btn' onClick={() => navigate('/neworganization')}>create org</button>
-      <EventContainer events={events}/>
+      {org && <EventContainer events={events} />}
     </div>
   )
 }

@@ -31,31 +31,31 @@ describe('Event Submission Form DOM',() => {
           .should('have.length', 9)
 
         cy.get('#category option').eq(0)
-          .should('have.value', 'animal-care')
+          .should('have.value', 'Animal Care')
 
         cy.get('#category option').eq(1)
-          .should('have.value', 'campaigning')
+          .should('have.value', 'Campaigning')
 
         cy.get('#category option').eq(2)
-          .should('have.value', 'community-development')
+          .should('have.value', 'Community Development')
 
         cy.get('#category option').eq(3)
-          .should('have.value', 'food-service')
+          .should('have.value', 'Food Service')
             
         cy.get('#category option').eq(4)
-          .should('have.value', 'grounds-cleanup')
+          .should('have.value', 'Grounds Cleanup')
             
         cy.get('#category option').eq(5)
-          .should('have.value', 'healthcare')
+          .should('have.value', 'Healthcare')
             
         cy.get('#category option').eq(6)
-          .should('have.value', 'nursing-home')
+          .should('have.value', 'Nursing Home')
 
         cy.get('#category option').eq(7)
-          .should('have.value', 'youth-mentorship')
+          .should('have.value', 'Youth Mentorship')
         
         cy.get('#category option').eq(8)
-          .should('have.value', 'other')
+          .should('have.value', 'Other')
     })
 
     it('should have an input for selecting the amount of volunteers needed for an event', () => {
