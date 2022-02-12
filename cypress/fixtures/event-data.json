@@ -16,18 +16,32 @@
             "end_time": "02:00 PM"
         },
         {
-            "id": 1,
-            "distance": 2.80,
-            "organization_id": 1,
-            "organization_name": "American Red Cross",
-            "name": "Blood Drive",
-            "category": "Healthcare",
-            "address": "5280 Wadsworth Blvd, Arvada CO 80002",
-            "description": "The need for blood is universal, but access to blood for all those who need it is not. Blood shortages are particularly acute in developing countries. To ensure that everyone who needs safe blood has access to it, all countries need voluntary, unpaid donors who give blood regularly.  Please join us for this blood drive and make an impact!",
-            "vols_required": 10,
-            "date": "10/15/2022",
-            "start_time": "01:00 PM",
-            "end_time": "02:00 PM"
+            "id": 2,
+            "distance": 5.90,
+            "organization_id": 2,
+            "organization_name": "Denver Animal Shelter",
+            "name": "Adoption Event",
+            "category": "Animal Care",
+            "address": "1241 W Bayaud Ave, Denver CO 80223",
+            "description": "Participating in pet adoption events is a perfect way to connect with a shelter animal — and for them to find their forever home. Typically, these animal adoption events draw attention to pets in need. And, to sweeten the deal, some shelters will offer certain promotions to encourage more adoptions during these events.",
+            "vols_required": 5,
+            "date": "6/15/2022",
+            "start_time": "05:00 PM",
+            "end_time": "07:00 PM"
+        },
+        {
+            "id": 3,
+            "distance": 1.90,
+            "organization_id": 3,
+            "organization_name": "Denver Animal Shelter",
+            "name": "Adoption Event",
+            "category": "Animal Care",
+            "address": "1241 W Bayaud Ave, Denver CO 80223",
+            "description": "Participating in pet adoption events is a perfect way to connect with a shelter animal — and for them to find their forever home. Typically, these animal adoption events draw attention to pets in need. And, to sweeten the deal, some shelters will offer certain promotions to encourage more adoptions during these events.",
+            "vols_required": 5,
+            "date": "6/15/2022",
+            "start_time": "05:00 PM",
+            "end_time": "07:00 PM"
         }
     ]
 }
