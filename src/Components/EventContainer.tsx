@@ -45,22 +45,25 @@ const EventContainer: React.FC<{events:[]}> = ({ events }) => {
   return (
     <div data-cy='events-container'>
       <h3 data-cy='filter-title'>Filter by Category</h3>
-      <select
-        name="category"
+      <input
+        list="category"
         data-cy='choose-category'
         placeholder="Choose Category"
-        onChange={e => filterByCategory(e.target.value)}>
-        <option hidden>Choose Category</option>
-        <option value='animal-care'>Animal Care</option>
-        <option value='campaigning'>Campaigning</option>
-        <option value='community-development'>Community Development</option>
-        <option value='food-service'>Food Service</option>
-        <option value='grounds-cleanup'>Grounds Cleanup</option>
-        <option value='healthcare'>Healthcare</option>
-        <option value='nursing-home'>Nursing Home</option>
-        <option value='youth-mentorship'>Youth Mentorship</option>
-        <option value=''>Other</option>
-      </select>
+        onChange={e => filterByCategory(e.target.value)}/>
+        <datalist id='category'>
+          <option value='Animal Care'></option>
+          <option value='Campaigning'></option>
+          <option value='Community Development'></option>
+          <option value='Food Service'></option>
+          <option value='Grounds Cleanup'></option>
+          <option value='Healthcare'></option>
+          <option value='Nursing Home'></option>
+          <option value='Youth Mentorship'></option>
+          <option value='Other'></option>
+        </datalist>
+
+        
+      
       <div className="events-container" >
         {displayedEventCards()}
       </div>
