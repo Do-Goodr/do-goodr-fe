@@ -9,10 +9,6 @@ const SignIn = () => {
   const { events, setOrg, setEvents, org } = useContext(EventContext)
   console.log('signin: ', events)
 
-  // useEffect(() => {
-  //   apiCalls.loadAllEvents()
-  //     .then(data => setEvents(data.data))
-  // }, [])
 
   const handleOrgChange = (id: any) => {
     setOrg(id)
