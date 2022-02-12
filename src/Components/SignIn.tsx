@@ -23,7 +23,7 @@ const SignIn = () => {
         <select
           name="organization"
           placeholder="Choose Organization"
-          onChange={(e) => handleOrgChange(e.target.value)}>
+          onChange={(e) => handleOrgChange(parseInt(e.target.value))}>
             <option hidden>Choose Organization</option>
             <option>1</option>
             <option>2</option>
