@@ -25,7 +25,7 @@ const apiCalls = {
     },
 
     loadEventsByOrg: (orgID) => {
-        return fetch(`https://do-goodr-be.herokuapp.com/api/v1/organizations?id=${orgID}/events`)
+        return fetch(`https://do-goodr-be.herokuapp.com/api/v1/organizations/${orgID}/events`)
         .then(res => {
 
             if (res.ok) {
