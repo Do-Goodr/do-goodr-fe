@@ -51,15 +51,15 @@ const SubmitButton = () => {
       </label>
       <input list='category' data-cy='set-category' placeholder='Choose Category' onChange={(e) => setCategory(e.target.value)}/>
         <datalist id='category'>
-          <option value='animal-care'>Animal Care</option>
-          <option value='campaigning'>Campaigning</option>
-          <option value='community-development'>Community Development</option>
-          <option value='food-service'>Food Service</option>
-          <option value='grounds-cleanup'>Grounds Cleanup</option>
-          <option value='healthcare'>Healthcare</option>
-          <option value='nursing-home'>Nursing Home</option>
-          <option value='youth-mentorship'>Youth Mentorship</option>
-          <option value='other'>Other</option>
+          <option value='Animal Care'></option>
+          <option value='Campaigning'></option>
+          <option value='Community Development'></option>
+          <option value='Food Service'></option>
+          <option value='Grounds Cleanup'></option>
+          <option value='Healthcare'></option>
+          <option value='Nursing Home'></option>
+          <option value='Youth Mentorship'></option>
+          <option value='Other'></option>
         </datalist>
       <label>Volunteers Needed:
         <input type='number' min={1} max={100} data-cy='set-volunteer-num' onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
