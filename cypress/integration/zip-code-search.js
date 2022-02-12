@@ -1,10 +1,12 @@
 describe('events page',() => {
     beforeEach(() => {
-        cy.visit('http://localhost:5000/')
-
-        cy.intercept('GET', `https://do-goodr-be.herokuapp.com/api/v1/search?zip=80001&distance=5`, {
-            fixture: 'event-data.json'
-        })  
+        cy.fixture('./event-data.json').then((allEvents) => {
+            cy.intercept('GET', 'https://do-goodr-be.herokuapp.com/api/v1/search?zip=80202&distance=10', {
+                statusCode: 201,
+                body: allEvents
+            })
+            cy.visit('http://localhost:5000');
+        })
     })
 
     it('should contain a header', () => {
@@ -12,15 +14,14 @@ describe('events page',() => {
         .contains('Do Goodr');
     })
 
-    it('should be able to take in a user zipcode and a mileage preference and return only events matching those parameters', () => {
+    it.only('should be able to take in a user zipcode and a mileage preference', () => {
     
-        cy.get('[data-cy=zip-input]').type(80001)
-        cy.get('[data-cy=mileage-input]').select('5')
+        cy.get('[data-cy=zip-input]').type('80202')
+        cy.get('[data-cy="mileage-input"]').eq(0).select('10')
         cy.get('[data-cy=show-events-btn]').click()        
         cy.get('[data-cy=events-container]')
             .should('have.length', 1)
     
-            
         cy.get('[data-cy=opportunity]')
             .get('[data-cy=event-name]').contains('Blood Drive')
             .get('[data-cy=event-phone]').contains('555-555-5555')
