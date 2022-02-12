@@ -12,7 +12,7 @@ const SearchResults = () => {
 
   const { setCategory, category, org } = useContext(EventContext)
   const [events, setEvents] = useState([])
-  const [filteredEvents, setFilteredEvents] = useState([])
+  const [filteredEvents, setFilteredEvents] = useState<any>(events)
   const zip = useParams().zipcode
   const miles = useParams().mileage
 
@@ -23,12 +23,18 @@ const SearchResults = () => {
   useEffect(() => {
     apiCalls.loadEventsByZipCode(zip, miles)
       .then(data => setEvents(data.data))
+      .then(events => setFilteredEvents(events))
   }, [])
 
   const filterByCategory = (selectedCategory: any) => {
-    const filteredEventsByCategory = events.filter((event: { category: any; }) => event.category === selectedCategory)
-    setCategory(selectedCategory)
-    setFilteredEvents(filteredEventsByCategory)
+    if (selectedCategory === 'Any') {
+      setFilteredEvents(events) 
+    } else {
+      const filteredEventsByCategory = events.filter((event: { category: any; }) => event.category === selectedCategory)
+      setCategory(selectedCategory)
+      setFilteredEvents(filteredEventsByCategory)
+    }
+
   }
 
   return (
@@ -39,7 +45,7 @@ const SearchResults = () => {
         name="category"
         data-cy='choose-category'
         placeholder="Choose Category"
-        onChange={e => filterByCategory(e.target.value)}>
+        onChange={(e) => filterByCategory(e.target.value)}>
         <option hidden>Choose Category</option>
         <option>Any</option>
         <option>Animal Care</option>
@@ -52,7 +58,7 @@ const SearchResults = () => {
         <option>Youth Mentorship</option>
         <option value=''>Other</option>
       </select>
-      <EventContainer events={events} />
+      {!filteredEvents ? <EventContainer events={events} /> : <EventContainer events={filteredEvents} />}
     </div>
   )
 
