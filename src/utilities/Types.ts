@@ -10,7 +10,8 @@ export interface SignInProps {
 
 
 export interface EventContainerProps {
-    
+    events: Event[]
+    filteredEvents?: Event[]
 }
 
 
