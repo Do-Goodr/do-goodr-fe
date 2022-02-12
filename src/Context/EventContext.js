@@ -7,7 +7,7 @@ const EventProvider = props => {
   const [events, setEvents] = useState([])
   // const [searchedEvents, setSearchedEvents] = useState([])
   // const [filteredEvents, setFilteredEvents] = useState([])
-  const [category, setCategory] = useState('')
+  const [category, setCategory] = useState('Any')
   const [org, setOrg] = useState('')
 
   // const filterByCategory = (selectedCategory) => {
