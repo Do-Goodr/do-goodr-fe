@@ -14,7 +14,7 @@ describe('events page',() => {
         .contains('Do Goodr');
     })
 
-    it.only('should be able to take in a user zipcode and a mileage preference', () => {
+    it('should be able to take in a user zipcode and a mileage preference', () => {
     
         cy.get('[data-cy=zip-input]').type('80202')
         cy.get('[data-cy="mileage-input"]').eq(0).select('10')
@@ -22,37 +22,31 @@ describe('events page',() => {
         cy.get('[data-cy=events-container]')
             .should('have.length', 1)
     
-        cy.get('[data-cy=opportunity]')
-            .get('[data-cy=event-name]').contains('Blood Drive')
-            .get('[data-cy=event-phone]').contains('555-555-5555')
-            .get('[data-cy=event-category]').contains('Animal Care')
-            .get('[data-cy=event-date]').contains('12/31/2022')
-            .get('[data-cy=event-time]').contains('01:00 PM - 02:00 PM')
-            .get('[data-cy=event-volunteers]').contains(1)
-            .get('[data-cy=event-description]').contains('Good blood')
-            
-        cy.get('[data-cy=filter-title]')
-            .contains('Filter by Category')
-        cy.get('[data-cy=choose-category]')
-            .contains('Choose Category')
-        cy.get('[data-cy=choose-category]')
-        .select('Animal Care')
-        .invoke('val')
-            .should('eq', 'Animal Care')
-
-        // cy.get('[data-cy=events-container]')
-        //     .should('have.length', 1).contains('Sorry, no events available with that category selection!')    
-        })
-        
-    it('should not show the delete button on any cards if no org is signed in to', () => {
-        cy.get('[data-cy=zip-input]').type(80001)
-        cy.get('[data-cy=mileage-input]').select('5')
-        cy.get('[data-cy=show-events-btn]').click()        
-        cy.get('[data-cy=events-container]')
-            .should('have.length', 1)
-        
-        .get('[data-cy=opportunity]')
-        .get('[data-cy=delete-event-button]')
-        .should('not.exist')
+        cy.get('.events-container > :nth-child(1)')
+            .contains('Blood Drive')
+        cy.get('.events-container > :nth-child(1)')
+            .contains('555-555-5555')
+        cy.get('.events-container > :nth-child(1)')
+            .contains('Healthcare')
+        cy.get('.events-container > :nth-child(1)') 
+            .contains('10/15/2022')
+        cy.get('.events-container > :nth-child(1)')
+            .contains('01:00 PM - 02:00 PM')
     })
+        
+    // it('should allow users to filter by category', () => {
+    //     cy.get('[data-cy=filter-title]')
+    //         .contains('Filter by Category')
+    //     cy.get('[data-cy=choose-category]')
+    //         .should('exist')
+    //     cy.get('[data-cy=choose-category]')
+    //         .select('Animal Care')
+    //         .invoke('val')
+    //         .should('eq', 'animal-care')
+
+    //     cy.get('[data-cy=events-container]')
+    //         .should('have.length', 1).contains('Sorry, no events available with that category selection!')    
+
+    // })
+>>>>>>> 9b236f8 (Comment out filter by category tests until Colgans code has been merged with this branch)
 })
