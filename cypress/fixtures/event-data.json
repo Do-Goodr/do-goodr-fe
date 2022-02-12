@@ -33,15 +33,29 @@
             "id": 3,
             "distance": 1.90,
             "organization_id": 3,
-            "organization_name": "Denver Animal Shelter",
-            "name": "Adoption Event",
-            "category": "Animal Care",
-            "address": "1241 W Bayaud Ave, Denver CO 80223",
-            "description": "Participating in pet adoption events is a perfect way to connect with a shelter animal — and for them to find their forever home. Typically, these animal adoption events draw attention to pets in need. And, to sweeten the deal, some shelters will offer certain promotions to encourage more adoptions during these events.",
-            "vols_required": 5,
-            "date": "6/15/2022",
-            "start_time": "05:00 PM",
-            "end_time": "07:00 PM"
+            "organization_name": "United Way",
+            "name": "Food Drive",
+            "category": "Food Service",
+            "address": "711 Park Ave W, Denver CO 80205",
+            "description": "One of the toughest challenges we’re fighting in America is hunger. One in six children doesn’t know when their next meal will be. Kids who don’t get enough to eat begin life with a serious disadvantage. Hungry children are more likely to be hospitalized and face higher risks of health problems like anemia and asthma. As they grow up, youth struggling to get enough food are more likely to have problems in school and other social situations. United Way is fighting this problem, community by community.",
+            "vols_required": 25,
+            "date": "7/30/2022",
+            "start_time": "10:00 AM",
+            "end_time": "12:00 PM"
+        },
+        {
+            "id": 3,
+            "distance": 1.90,
+            "organization_id": 3,
+            "organization_name": "United Way",
+            "name": "Food Drive",
+            "category": "Food Service",
+            "address": "711 Park Ave W, Denver CO 80205",
+            "description": "One of the toughest challenges we’re fighting in America is hunger. One in six children doesn’t know when their next meal will be. Kids who don’t get enough to eat begin life with a serious disadvantage. Hungry children are more likely to be hospitalized and face higher risks of health problems like anemia and asthma. As they grow up, youth struggling to get enough food are more likely to have problems in school and other social situations. United Way is fighting this problem, community by community.",
+            "vols_required": 25,
+            "date": "7/30/2022",
+            "start_time": "10:00 AM",
+            "end_time": "12:00 PM"
         }
     ]
 }
