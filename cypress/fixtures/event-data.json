@@ -44,18 +44,32 @@
             "end_time": "12:00 PM"
         },
         {
-            "id": 3,
-            "distance": 1.90,
-            "organization_id": 3,
-            "organization_name": "United Way",
-            "name": "Food Drive",
-            "category": "Food Service",
-            "address": "711 Park Ave W, Denver CO 80205",
-            "description": "One of the toughest challenges we’re fighting in America is hunger. One in six children doesn’t know when their next meal will be. Kids who don’t get enough to eat begin life with a serious disadvantage. Hungry children are more likely to be hospitalized and face higher risks of health problems like anemia and asthma. As they grow up, youth struggling to get enough food are more likely to have problems in school and other social situations. United Way is fighting this problem, community by community.",
-            "vols_required": 25,
-            "date": "7/30/2022",
+            "id": 4,
+            "distance": 10.80,
+            "organization_id": 4,
+            "organization_name": "Habitat for Humanity",
+            "name": "Build a Home",
+            "category": "Community Development",
+            "address": "3245 Eliot St, Denver CO 80211",
+            "description": "Construction volunteers make a tangible difference with each and every day they help build and repair homes. No construction experience is necessary. Many first-time volunteers have never picked up a hammer!",
+            "vols_required": 50,
+            "date": "9/1/2022",
             "start_time": "10:00 AM",
-            "end_time": "12:00 PM"
+            "end_time": "10:00 PM"
+        },
+        {
+            "id": 5,
+            "distance": 12.80,
+            "organization_id": 2,
+            "organization_name": "Denver Animal Shelter",
+            "name": "Play with Puppies",
+            "category": "Animal Care",
+            "address": "1241 W Bayaud Ave, Denver CO 80223",
+            "description": "Join us for a fun day of playing with puppies!",
+            "vols_required": 500,
+            "date": "3/1/2022",
+            "start_time": "12:00 PM",
+            "end_time": "12:00 AM"
         }
     ]
 }
