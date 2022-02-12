@@ -10,8 +10,6 @@ import { Event } from '../utilities/Types';
 
 const EventContainer: React.FC<{events: any[]}> = ({ events }) => {
 
-  const { category, org, filterByCategory, setEvents } = useContext(EventContext)
-
   const eventCards = events && events.map((event: any, index: any) => {
     return (
       <Opp
@@ -20,38 +18,6 @@ const EventContainer: React.FC<{events: any[]}> = ({ events }) => {
       />
     )
   })
-
-  // const filteredEventCards = filteredEvents && filteredEvents.map((event: any, index: any) => {
-  //   return (
-  //     <Opp
-  //       key={index}
-  //       event={event}
-  //     />
-  //   )
-  // })
-
-  // const displayedEventCards = () => {
-  //   if (!org) {
-  //     return !filteredEvents.length && category ? 'Sorry, no events available with that category selection!'
-  //       : filteredEvents.length ? filteredEventCards
-  //         : eventCards
-  //   } else {
-  //     return eventCards.filter((event: any) => {
-  //       return event['organization_id'] === org
-  //     })
-  //   }
-  // }
-
-  // const displayedEventCards = () => {
-  //   if (category) {
-  //     return filteredEventCards
-  //   } else {
-  //     return eventCards
-  //   }
-  // }
-
-
-  // eventCards is an array of JSX elements - not sure we can call filter on an array of JSX elements? ^^^^
 
   return (
     <div data-cy='events-container'>
