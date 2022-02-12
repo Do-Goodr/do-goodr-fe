@@ -41,17 +41,18 @@ const SearchResults = () => {
         placeholder="Choose Category"
         onChange={e => filterByCategory(e.target.value)}>
         <option hidden>Choose Category</option>
-        <option value='animal-care'>Animal Care</option>
-        <option value='campaigning'>Campaigning</option>
-        <option value='community-development'>Community Development</option>
-        <option value='food-service'>Food Service</option>
-        <option value='grounds-cleanup'>Grounds Cleanup</option>
-        <option value='healthcare'>Healthcare</option>
-        <option value='nursing-home'>Nursing Home</option>
-        <option value='youth-mentorship'>Youth Mentorship</option>
+        <option>Any</option>
+        <option>Animal Care</option>
+        <option>Campaigning</option>
+        <option>Community Development</option>
+        <option>Food Service</option>
+        <option>Grounds Cleanup</option>
+        <option>Healthcare</option>
+        <option>Nursing Home</option>
+        <option>Youth Mentorship</option>
         <option value=''>Other</option>
       </select>
-      <EventContainer events={filteredEvents} />
+      <EventContainer events={events} />
     </div>
   )
 
