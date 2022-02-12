@@ -3,8 +3,11 @@ import '../Styles/SignIn.css';
 import apiCalls from '../utilities/apiCalls';
 import { EventContext } from '../Context/EventContext';
 import EventContainer from './EventContainer';
+import { useNavigate } from 'react-router'
 
 const SignIn = () => {
+
+  const navigate = useNavigate()
 
   const { events, setOrg, setEvents, org } = useContext(EventContext)
   console.log('signin: ', events)
@@ -32,7 +35,7 @@ const SignIn = () => {
         </select>
       </form>
       <p>Don't see your organization? Create it below!</p>
-      <button className='add-org-btn' data-cy='add-org-btn'>create org</button>
+      <button className='add-org-btn' data-cy='add-org-btn' onClick={() => navigate('/neworganization')}>create org</button>
       {org && <EventContainer events={events} />}
     </div>
   )

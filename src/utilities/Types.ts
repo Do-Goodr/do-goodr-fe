@@ -48,3 +48,11 @@ export interface CreatedEvent {
   vols_required: number
   description: string
 }
+
+export interface CreateOrgDetails {
+  name: string
+  address: string
+  phone: string
+  email: string
+  confirmation: string
+}
