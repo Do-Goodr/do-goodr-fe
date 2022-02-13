@@ -18,8 +18,8 @@ const SignIn = () => {
   })
 
   const orgNames = allOrgs.map((org: { name: string, id: number }) => {
-    return(
-      <option value={org.id}>{org.name}</option>
+    return (
+      <option key={org.id} value={org.id}>{org.name}</option>
     )
   })
 
