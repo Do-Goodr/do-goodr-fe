@@ -8,6 +8,7 @@ const EventProvider = props => {
   const [category, setCategory] = useState('Any')
   const [org, setOrg] = useState(null)
 
+  console.log(events)
 
   return (
     <EventContext.Provider value={{ events,setEvents,category, setCategory, org, setOrg }}>
