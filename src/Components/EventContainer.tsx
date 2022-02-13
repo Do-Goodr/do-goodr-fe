@@ -1,10 +1,6 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { useParams } from 'react-router-dom'
 import '../Styles/EventContainer.css';
-import apiCalls from '../utilities/apiCalls';
 import Opp from './Opp';
-import { EventContext } from '../Context/EventContext';
-import { Event, EventContainerProps } from '../utilities/Types';
+import { EventContainerProps } from '../utilities/Types';
 
 
 
