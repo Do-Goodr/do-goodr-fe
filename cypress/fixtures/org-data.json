@@ -2,6 +2,20 @@
   "type": "event",
   "data": [
     {
+      "id": 1,
+      "phone": "555-555-555",
+      "organization_id": 1,
+      "organization_name": "American Red Cross",
+      "name": "Blood Drive",
+      "category": "Healthcare",
+      "address": "5280 Wadsworth Blvd, Arvada CO 80002",
+      "description": "The need for blood is universal, but access to blood for all those who need it is not. Blood shortages are particularly acute in developing countries. To ensure that everyone who needs safe blood has access to it, all countries need voluntary, unpaid donors who give blood regularly.  Please join us for this blood drive and make an impact!",
+      "vols_required": 10,
+      "date": "10/15/2022",
+      "start_time": "01:00 PM",
+      "end_time": "02:00 PM"
+    },
+    {
       "id": 2,
       "phone": "555-555-555",
       "organization_id": 2,

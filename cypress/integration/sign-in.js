@@ -45,4 +45,16 @@ describe('Sign In Page', () => {
       .get('[data-cy=delete-event-button]')
   })
 
+  it.only('should remove an event from the org listing once the delete button has been clicked', () => {
+    // cy.intercept('DELETE', 'https://do-goodr-be.herokuapp.com/api/v1/events/1', {
+    //     statusCode: 200,
+    //   })
+    cy.get('[data-cy=choose-organization]')
+      .select(2)
+      .wait(2000)
+    cy.get(':nth-child(3) > [data-cy="delete-event-button"]').click()
+    cy.get('.events-container > ')
+      .should('have.length', 2)
+  })
+
 })
