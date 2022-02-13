@@ -11,6 +11,18 @@ const apiCalls = {
             .catch(err => err)
     },
 
+    loadAllOrganizations: () => {
+        return fetch('https://do-goodr-be.herokuapp.com/api/v1/organizations')
+            .then(res => {
+                if (res.ok) {
+                    return res.json()
+                } else {
+                    throw new Error()
+                }
+            })
+            .catch(err => err)
+    },
+
     loadEventsByZipCode: (zip, miles) => {
         return fetch(`https://do-goodr-be.herokuapp.com/api/v1/search?zip=${zip}&distance=${miles}`)
             .then(res => {
@@ -52,10 +64,10 @@ const apiCalls = {
             method: 'DELETE'})
             .then(res => {
                 if(!res.ok) {
-                  throw new Error(`${res.status} ${res.statusText}`);
+                    throw new Error(`${res.status} ${res.statusText}`);
                 }
                 return res.json();
-              });
+            });
         },
 
     postNewOrg: (org) => {
