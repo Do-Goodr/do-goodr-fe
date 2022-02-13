@@ -27,11 +27,19 @@ const OrgCreationForm: React.FC<{}> = () => {
         apiCalls.postNewOrg(newOrg)
             .then(res => {
                 if (res.ok) {
-                    setConfirmation('SUCCESS! You are signed up!')
+                    setConfirmation(`EXCELLENT! ${name} has been signed up successfully!`)
                 } else {
                     setConfirmation('Please check your organization details to make sure all fields are filled in correctly')
                 }
             })
+    }
+
+    const SubmitButton = () => {
+        if (name && address && phone && email && !confirmation) {
+            return <button data-cy='create-org-signup-btn' onClick={(e) => signUp(e)}>Sign Up!</button>
+        } else {
+            return <button disabled={true} data-cy='create-org-signup-btn' onClick={(e) => signUp(e)}>Sign Up!</button>
+        }
     }
 
     return (
@@ -48,8 +56,14 @@ const OrgCreationForm: React.FC<{}> = () => {
             <label>Email
                 <input type='text' data-cy='org-email-input' onChange={(e) => setEmail(e.target.value)}/>
             </label>
-            {!confirmation ? <button data-cy='create-org-signup-btn' onClick={(e) => signUp(e)}>Sign Up!</button> :
-            <p data-cy='successful-signup'>{confirmation}</p>}
+            <SubmitButton />
+            {confirmation && 
+            <div>
+                <p data-cy='successful-signup'>{confirmation}</p>
+                <button>Create Your First Event!</button>
+                <p>OR</p>
+                <button>I'll Do That Later!</button>
+            </div>}
             
         </form>
     )
