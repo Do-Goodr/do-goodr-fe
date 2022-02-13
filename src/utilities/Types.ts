@@ -1,14 +1,3 @@
-
-export interface HeaderProps {
-    
-}
-
-
-export interface SignInProps {
-    
-}
-
-
 export interface EventContainerProps {
     events: Event[]
 }
