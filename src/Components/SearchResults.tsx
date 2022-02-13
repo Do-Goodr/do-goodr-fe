@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useContext } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom'
 import apiCalls from '../utilities/apiCalls';
 import { EventContext } from '../Context/EventContext';
 import { Event } from '../utilities/Types';
 import EventContainer from './EventContainer';
-import { serialize } from 'v8';
+
 
 
 
