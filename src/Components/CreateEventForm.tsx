@@ -16,9 +16,10 @@ const [description, setDescription] = useState<CreatedEvent['description']>()
 const submitEvent = (e:React.MouseEvent) => {
   e.preventDefault()
   const newEvent = {
-    organization_id: 1,
+    organization_id: 4,
     name: 'American Red Cross',
-    address: '123 Sesame St New Orleans, LA 70115',
+    address: '123 Mayfair St Denver CO 80203',
+    phone: '(334)888-8888',
     date: date,
     start_time: startTime,
     end_time: endTime,

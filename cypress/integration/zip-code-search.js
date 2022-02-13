@@ -35,13 +35,23 @@ describe('events page',() => {
         cy.get('[data-cy=choose-category]')
             .contains('Choose Category')
         cy.get('[data-cy=choose-category]')
-            .select('animal-care')
-            .invoke('val')
-            .should('eq', 'animal-care')
+        .select('Animal Care')
+        .invoke('val')
+            .should('eq', 'Animal Care')
 
-        cy.get('[data-cy=events-container]')
-            .should('have.length', 1).contains('Sorry, no events available with that category selection!')    
+        // cy.get('[data-cy=events-container]')
+        //     .should('have.length', 1).contains('Sorry, no events available with that category selection!')    
         })
         
-
+    it('should not show the delete button on any cards if no org is signed in to', () => {
+        cy.get('[data-cy=zip-input]').type(80001)
+        cy.get('[data-cy=mileage-input]').select('5')
+        cy.get('[data-cy=show-events-btn]').click()        
+        cy.get('[data-cy=events-container]')
+            .should('have.length', 1)
+        
+        .get('[data-cy=opportunity]')
+        .get('[data-cy=delete-event-button]')
+        .should('not.exist')
+    })
 })
