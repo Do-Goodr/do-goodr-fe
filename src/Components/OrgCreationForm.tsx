@@ -3,7 +3,7 @@ import { CreateOrgDetails } from '../utilities/Types';
 import  formatPhoneNumber  from '../utilities/formatPhoneNumber'
 import apiCalls from '../utilities/apiCalls';
 
-const OrgCreationForm: React.FC<{}> = () => {
+const OrgCreationForm = () => {
 
     const [name, setName] = useState<CreateOrgDetails['name']>()
     const [address, setAddress] = useState<CreateOrgDetails['address']>()
