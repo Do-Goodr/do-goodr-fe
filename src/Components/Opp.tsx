@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import '../Styles/Opp.css';
-import { Event, OppProps } from '../utilities/Types';
+import { OppProps } from '../utilities/Types';
 import apiCalls from '../utilities/apiCalls';
 import { EventContext } from '../Context/EventContext';
 
