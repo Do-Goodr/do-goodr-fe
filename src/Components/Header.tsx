@@ -1,12 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import '../Styles/Header.css';
 import { Link } from 'react-router-dom'
 import { EventContext } from '../Context/EventContext';
 
 const Header = () => {
   const { setEvents } = useContext(EventContext)
-  const [oppbtn, setOppBtn] = useState(false)
-
 
   return (
     <header className="header">
@@ -18,7 +16,6 @@ const Header = () => {
         <h1 className='title'>Do Goodr</h1>
         <h2 className='slogan'>Do more. Do good.</h2>
       </div>
-      <Link to='/newevent' className='add-opp-btn'>Add Volunteer Opp</Link> 
     </header>
   );
 }
