@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CreateOrgDetails } from '../utilities/Types';
 import  formatPhoneNumber  from '../utilities/formatPhoneNumber'
 import apiCalls from '../utilities/apiCalls';
-
+import '../Styles/OrgCreationForm.css'
 
 const OrgCreationForm: React.FC<{}> = () => {
 
