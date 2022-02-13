@@ -4,11 +4,11 @@ import '../Styles/EventContainer.css';
 import apiCalls from '../utilities/apiCalls';
 import Opp from './Opp';
 import { EventContext } from '../Context/EventContext';
-import { Event } from '../utilities/Types';
+import { Event, EventContainerProps } from '../utilities/Types';
 
 
 
-const EventContainer: React.FC<{events: any[]}> = ({ events }) => {
+const EventContainer = ({ events }: EventContainerProps) => {
 
   const eventCards = events && events.map((event: any, index: any) => {
     return (
