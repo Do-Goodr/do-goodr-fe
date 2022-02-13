@@ -32,9 +32,9 @@ const submitEvent = (e:React.MouseEvent) => {
 
 const SubmitButton = () => {
   if (date && startTime && endTime && category && volunteers && description) {
-    return <button data-cy='enabled-submit-button' onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
+    return <button className="submit-btn" data-cy='enabled-submit-button' onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
   } else {
-    return <button disabled={true} data-cy='disabled-submit-button' onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
+    return <button className="submit-btn" disabled={true} data-cy='disabled-submit-button' onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
   }
 }
 
@@ -51,6 +51,7 @@ const SubmitButton = () => {
         <label>End Time:
           <input type='time' data-cy='set-end-time' onChange={(e) => setEndTime(e.target.value)}/>
         </label>
+        <label>Category:
         <input list='category' data-cy='set-category' placeholder='Choose Category' onChange={(e) => setCategory(e.target.value)}/>
           <datalist id='category'>
             <option value='Animal Care'></option>
@@ -63,10 +64,13 @@ const SubmitButton = () => {
             <option value='Youth Mentorship'></option>
             <option value='Other'></option>
           </datalist>
+          </label>
         <label>Volunteers Needed:
           <input type='number' min={1} max={100} data-cy='set-volunteer-num' onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
         </label>
-        <textarea placeholder='Description...' data-cy='set-description' onChange={(e) => setDescription(e.target.value)}></textarea>
+        <label>Event Description:
+          <textarea placeholder='Description...' data-cy='set-description' onChange={(e) => setDescription(e.target.value)}></textarea>
+        </label>
         <SubmitButton />
       </form>
 
