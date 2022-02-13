@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import  { useContext } from 'react';
 import '../Styles/Header.css';
 import { Link } from 'react-router-dom'
 import { EventContext } from '../Context/EventContext';
