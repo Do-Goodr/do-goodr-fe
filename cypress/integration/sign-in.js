@@ -1,9 +1,9 @@
 describe('Sign In Page', () => {
   beforeEach(() => {
-    cy.fixture('./org-data.json').then((allOrgs) => {
+    cy.fixture('./org-event-data.json').then((allOrgsEvents) => {
       cy.intercept('GET', 'https://do-goodr-be.herokuapp.com/api/v1/organizations/2/events', {
         statusCode: 200,
-        body: allOrgs
+        body: allOrgsEvents
       })
       cy.visit('http://localhost:5000/signin');
     })

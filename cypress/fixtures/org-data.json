@@ -1,47 +1,33 @@
 {
-  "type": "event",
+  "type": "organization",
   "data": [
     {
       "id": 1,
-      "phone": "555-555-555",
-      "organization_id": 1,
-      "organization_name": "American Red Cross",
-      "name": "Blood Drive",
-      "category": "Healthcare",
-      "address": "5280 Wadsworth Blvd, Arvada CO 80002",
-      "description": "The need for blood is universal, but access to blood for all those who need it is not. Blood shortages are particularly acute in developing countries. To ensure that everyone who needs safe blood has access to it, all countries need voluntary, unpaid donors who give blood regularly.  Please join us for this blood drive and make an impact!",
-      "vols_required": 10,
-      "date": "10/15/2022",
-      "start_time": "01:00 PM",
-      "end_time": "02:00 PM"
+      "name": "American Red Cross",
+      "location": "5280 Wadsworth Blvd, Arvada CO 80002",
+      "phone": "555-555-5555",
+      "email": "denver@arc.org"
     },
     {
       "id": 2,
-      "phone": "555-555-555",
-      "organization_id": 2,
-      "organization_name": "Denver Animal Shelter",
-      "name": "Adoption Event",
-      "category": "Animal Care",
-      "address": "1241 W Bayaud Ave, Denver CO 80223",
-      "description": "Participating in pet adoption events is a perfect way to connect with a shelter animal — and for them to find their forever home. Typically, these animal adoption events draw attention to pets in need. And, to sweeten the deal, some shelters will offer certain promotions to encourage more adoptions during these events.",
-      "vols_required": 5,
-      "date": "6/15/2022",
-      "start_time": "05:00 PM",
-      "end_time": "07:00 PM"
+      "name": "Denver Animal Shelter",
+      "location": "1241 W Bayaud Ave, Denver CO 80223",
+      "phone": "555-555-5555",
+      "email": "tstaros23@gmail.com"
     },
     {
-      "id": 5,
-      "phone": "555-555-555",
-      "organization_id": 2,
-      "organization_name": "Denver Animal Shelter",
-      "name": "Play with Puppies",
-      "category": "Animal Care",
-      "address": "1241 W Bayaud Ave, Denver CO 80223",
-      "description": "Join us for a fun day of playing with puppies!",
-      "vols_required": 500,
-      "date": "3/1/2022",
-      "start_time": "12:00 PM",
-      "end_time": "12:00 AM"
+      "id": 3,
+      "name": "United Way",
+      "location": "711 Park Ave W, Denver CO 80205",
+      "phone": "(930) 555-5555",
+      "email": "unitedway@fakeemail.com"
+    },
+    {
+      "id": 4,
+      "name": "Habitat for Humanity",
+      "location": "3245 Eliot St, Denver CO 80211",
+      "phone": "(303) 555-5555",
+      "email": "habitatforhumanity@fakeemail.com"
     }
   ]
 }
