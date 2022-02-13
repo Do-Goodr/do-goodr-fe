@@ -2,7 +2,7 @@ describe('events page',() => {
     beforeEach(() => {
         cy.fixture('./event-data.json').then((allEvents) => {
             cy.intercept('GET', 'https://do-goodr-be.herokuapp.com/api/v1/search?zip=80202&distance=10', {
-                statusCode: 201,
+                statusCode: 200,
                 body: allEvents
             })
             cy.visit('http://localhost:5000');

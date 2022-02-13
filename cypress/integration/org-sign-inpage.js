@@ -1,11 +1,13 @@
 describe('org sign in page',() => {
     beforeEach(() => {
-        cy.visit('http://localhost:5000/');
-
-        cy.intercept('GET', `https://do-goodr-be.herokuapp.com/api/v1/events?`, {
-            fixture: 'event-data.json'
+      cy.fixture('./event-data.json').then((allEvents) => {
+        cy.intercept('GET', 'https://do-goodr-be.herokuapp.com/api/v1/events', {
+            statusCode: 200,
+            body: allEvents
         })
+        cy.visit('http://localhost:5000');
         cy.get('[href="/signin"]').click()
+      })
     })
 
     it('should contain a header', () => {
