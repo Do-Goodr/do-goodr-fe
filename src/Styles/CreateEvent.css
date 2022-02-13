@@ -2,6 +2,10 @@
   display: flex;
   justify-content: center;
   align-content: center;
+  background-color: lightgray;
+  width: 40%;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
 .create-event {
@@ -27,4 +31,5 @@ label {
   justify-content: center;
   width: 100%;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
