@@ -1,0 +1,33 @@
+{
+  "type": "event",
+  "data": [
+    {
+      "id": 2,
+      "phone": "555-555-555",
+      "organization_id": 2,
+      "organization_name": "Denver Animal Shelter",
+      "name": "Adoption Event",
+      "category": "Animal Care",
+      "address": "1241 W Bayaud Ave, Denver CO 80223",
+      "description": "Participating in pet adoption events is a perfect way to connect with a shelter animal — and for them to find their forever home. Typically, these animal adoption events draw attention to pets in need. And, to sweeten the deal, some shelters will offer certain promotions to encourage more adoptions during these events.",
+      "vols_required": 5,
+      "date": "6/15/2022",
+      "start_time": "05:00 PM",
+      "end_time": "07:00 PM"
+    },
+    {
+      "id": 5,
+      "phone": "555-555-555",
+      "organization_id": 2,
+      "organization_name": "Denver Animal Shelter",
+      "name": "Play with Puppies",
+      "category": "Animal Care",
+      "address": "1241 W Bayaud Ave, Denver CO 80223",
+      "description": "Join us for a fun day of playing with puppies!",
+      "vols_required": 500,
+      "date": "3/1/2022",
+      "start_time": "12:00 PM",
+      "end_time": "12:00 AM"
+    }
+  ]
+}

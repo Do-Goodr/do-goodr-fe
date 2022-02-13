@@ -48,5 +48,4 @@ describe('events page',() => {
     //         .should('have.length', 1).contains('Sorry, no events available with that category selection!')    
 
     // })
->>>>>>> 9b236f8 (Comment out filter by category tests until Colgans code has been merged with this branch)
 })
