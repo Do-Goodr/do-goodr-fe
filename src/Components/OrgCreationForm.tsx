@@ -3,6 +3,7 @@ import { CreateOrgDetails } from '../utilities/Types';
 import  formatPhoneNumber  from '../utilities/formatPhoneNumber'
 import apiCalls from '../utilities/apiCalls';
 
+
 const OrgCreationForm: React.FC<{}> = () => {
 
     const [name, setName] = useState<CreateOrgDetails['name']>()
@@ -35,23 +36,24 @@ const OrgCreationForm: React.FC<{}> = () => {
     }
 
     return (
-        <form>
-            <label>Organization name
-                <input type='text' data-cy='org-name-input' onChange={(e) => setName(e.target.value)}/>
-            </label>
-            <label>Address
-                <input type='text' data-cy='org-address-input' onChange={(e) => setAddress(e.target.value)}/>
-            </label>
-            <label>Phone Number
-                <input type='text' data-cy='org-phone-input' onChange={(e) => handleInput(e.target.value)} value={phone}/>
-            </label>
-            <label>Email
-                <input type='text' data-cy='org-email-input' onChange={(e) => setEmail(e.target.value)}/>
-            </label>
-            {!confirmation ? <button data-cy='create-org-signup-btn' onClick={(e) => signUp(e)}>Sign Up!</button> :
-            <p data-cy='successful-signup'>{confirmation}</p>}
-            
-        </form>
+        <div className="org-form-container">
+            <form>
+                <label>Organization name
+                    <input type='text' data-cy='org-name-input' onChange={(e) => setName(e.target.value)}/>
+                </label>
+                <label>Address
+                    <input type='text' data-cy='org-address-input' onChange={(e) => setAddress(e.target.value)}/>
+                </label>
+                <label>Phone Number
+                    <input type='text' data-cy='org-phone-input' onChange={(e) => handleInput(e.target.value)} value={phone}/>
+                </label>
+                <label>Email
+                    <input type='text' data-cy='org-email-input' onChange={(e) => setEmail(e.target.value)}/>
+                </label>
+                {!confirmation ? <button data-cy='create-org-signup-btn' onClick={(e) => signUp(e)}>Sign Up!</button> :
+                <p data-cy='successful-signup'>{confirmation}</p>}
+            </form>
+        </div>
     )
 
 }
