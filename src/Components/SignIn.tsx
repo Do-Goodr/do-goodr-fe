@@ -9,9 +9,19 @@ const SignIn = () => {
 
   const navigate = useNavigate()
 
-  const { events, setOrg, setEvents, org } = useContext(EventContext)
-  console.log('signin: ', events)
+  const { events, setOrg, setEvents, org, allOrgs, setAllOrgs } = useContext(EventContext)
+  // console.log('signin: ', events)
 
+  useEffect(() => {
+    apiCalls.loadAllOrganizations()
+      .then(data => setAllOrgs(data.data))
+  })
+
+  const orgNames = allOrgs.map((org: { name: string, id: number }) => {
+    return(
+      <option value={org.id}>{org.name}</option>
+    )
+  })
 
   const handleOrgChange = (id: any) => {
     setOrg(id)
@@ -29,9 +39,7 @@ const SignIn = () => {
           data-cy='choose-organization'
           onChange={(e) => handleOrgChange(parseInt(e.target.value))}>
             <option hidden>Choose Organization</option>
-            <option>1</option>
-            <option>2</option>
-            <option>4</option>
+            {orgNames}
         </select>
       </form>
       <p>Don't see your organization? Create it below!</p>
