@@ -1,0 +1,11 @@
+.event-form-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.create-event {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}

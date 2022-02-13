@@ -39,35 +39,38 @@ const SubmitButton = () => {
 }
 
   return (
-    <form className='create-event' data-cy='create-event-form'>
-      <h2>Create New Volunteering Event</h2>
-      <label>Date:
-        <input type='date' data-cy='set-date' onChange={(e) => setDate(e.target.value)}/>
-      </label>
-      <label>Start Time:
-        <input type='time' data-cy='set-start-time' onChange={(e) => setStartTime(e.target.value)}/>
-      </label>
-      <label>End Time:
-        <input type='time' data-cy='set-end-time' onChange={(e) => setEndTime(e.target.value)}/>
-      </label>
-      <input list='category' data-cy='set-category' placeholder='Choose Category' onChange={(e) => setCategory(e.target.value)}/>
-        <datalist id='category'>
-          <option value='Animal Care'></option>
-          <option value='Campaigning'></option>
-          <option value='Community Development'></option>
-          <option value='Food Service'></option>
-          <option value='Grounds Cleanup'></option>
-          <option value='Healthcare'></option>
-          <option value='Nursing Home'></option>
-          <option value='Youth Mentorship'></option>
-          <option value='Other'></option>
-        </datalist>
-      <label>Volunteers Needed:
-        <input type='number' min={1} max={100} data-cy='set-volunteer-num' onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
-      </label>
-      <textarea placeholder='Description...' data-cy='set-description' onChange={(e) => setDescription(e.target.value)}></textarea>
-      <SubmitButton />
-    </form>
+    <div className="event-form-container">
+      <form className='create-event' data-cy='create-event-form'>
+        <h2>Create New Volunteering Event</h2>
+        <label>Date:
+          <input type='date' data-cy='set-date' onChange={(e) => setDate(e.target.value)}/>
+        </label>
+        <label>Start Time:
+          <input type='time' data-cy='set-start-time' onChange={(e) => setStartTime(e.target.value)}/>
+        </label>
+        <label>End Time:
+          <input type='time' data-cy='set-end-time' onChange={(e) => setEndTime(e.target.value)}/>
+        </label>
+        <input list='category' data-cy='set-category' placeholder='Choose Category' onChange={(e) => setCategory(e.target.value)}/>
+          <datalist id='category'>
+            <option value='Animal Care'></option>
+            <option value='Campaigning'></option>
+            <option value='Community Development'></option>
+            <option value='Food Service'></option>
+            <option value='Grounds Cleanup'></option>
+            <option value='Healthcare'></option>
+            <option value='Nursing Home'></option>
+            <option value='Youth Mentorship'></option>
+            <option value='Other'></option>
+          </datalist>
+        <label>Volunteers Needed:
+          <input type='number' min={1} max={100} data-cy='set-volunteer-num' onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
+        </label>
+        <textarea placeholder='Description...' data-cy='set-description' onChange={(e) => setDescription(e.target.value)}></textarea>
+        <SubmitButton />
+      </form>
+
+    </div>
   );
 }
 
