@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import '../Styles/Header.css';
 import { Link } from 'react-router-dom'
 import { EventContext } from '../Context/EventContext';
 
 const Header = () => {
   const { setEvents } = useContext(EventContext)
+  const [oppbtn, setOppBtn] = useState(false)
 
 
   return (
