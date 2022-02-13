@@ -1,12 +1,12 @@
 import '../Styles/EventContainer.css';
 import Opp from './Opp';
-import { EventContainerProps } from '../utilities/Types';
+import { Event, EventContainerProps } from '../utilities/Types';
 
 
 
 const EventContainer = ({ events }: EventContainerProps) => {
 
-  const eventCards = events && events.map((event: any, index: any) => {
+  const eventCards = events && events.map((event: Event, index: number) => {
     return (
       <Opp
         key={index}
