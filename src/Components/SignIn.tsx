@@ -4,20 +4,20 @@ import apiCalls from '../utilities/apiCalls';
 import { EventContext } from '../Context/EventContext';
 import EventContainer from './EventContainer';
 import { useNavigate } from 'react-router'
+import { OrgDetails } from '../utilities/Types';
 
 const SignIn = () => {
 
   const navigate = useNavigate()
 
   const { events, setOrg, setEvents, org, allOrgs, setAllOrgs } = useContext(EventContext)
-  // console.log('signin: ', events)
 
   useEffect(() => {
     apiCalls.loadAllOrganizations()
       .then(data => setAllOrgs(data.data))
   }, [])
 
-  const orgNames = allOrgs.map((org: { name: string, id: number }) => {
+  const orgNames = allOrgs.map((org: OrgDetails) => {
     return (
       <option key={org.id} value={org.id}>{org.name}</option>
     )
