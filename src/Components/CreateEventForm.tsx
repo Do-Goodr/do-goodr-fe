@@ -39,6 +39,7 @@ const SubmitButton = () => {
 }
 
   return (
+    <div>
     <form className='create-event' data-cy='create-event-form'>
       <h2>Create New Volunteering Event</h2>
       <label>Date:
@@ -66,8 +67,10 @@ const SubmitButton = () => {
         <input type='number' min={1} max={100} data-cy='set-volunteer-num' onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
       </label>
       <textarea placeholder='Description...' data-cy='set-description' onChange={(e) => setDescription(e.target.value)}></textarea>
-      <SubmitButton />
     </form>
+
+      <SubmitButton />
+    </div>
   );
 }
 
