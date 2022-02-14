@@ -3,6 +3,7 @@ import '../Styles/ZipCodeForm.css';
 import { ZipCodeSearch } from '../utilities/Types';
 import { useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
+import mileageCheck from '../utilities/mileageCheck';
 
 
 
@@ -16,6 +17,14 @@ const ZipCodeForm = () => {
     e.preventDefault()
     navigate(`/results/${zipCode}/${mileage}`)
   }
+
+  const SubmitButton = () => {
+    if (zipCode && mileage && zipCode.toString().length === 5 && mileageCheck(mileage)) {
+        return <button data-cy='show-events-btn' className='show-events-btn' onClick={(e) => getOpportunities(e)}>Show Opportunities</button>
+    } else {
+        return <button disabled={true} data-cy='show-events-btn' className='show-events-btn' onClick={(e) => getOpportunities(e)}>Show Opportunities</button>
+    }
+}
 
   return (
     <form className="zip-code-form">
@@ -42,7 +51,7 @@ const ZipCodeForm = () => {
           <option value='50'>50</option>
         </select>
       </div>
-      <button data-cy='show-events-btn' className='show-events-btn' onClick={(e) => getOpportunities(e)}>Show Opportunities</button>
+      <SubmitButton />
     </form>
   );
 }
