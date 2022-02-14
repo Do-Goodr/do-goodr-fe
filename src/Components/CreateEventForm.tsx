@@ -73,7 +73,6 @@ const SubmitButton = () => {
         </label>
         <SubmitButton />
       </form>
-
     </div>
   );
 }
