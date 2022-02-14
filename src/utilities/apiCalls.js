@@ -30,10 +30,10 @@ const apiCalls = {
                 if (res.ok) {
                     return res.json()
                 } else {
-                    throw new Error()
+                    return {error: "Sorry, there has been an error: Zip Code not found!"}
                 }
             })
-            .catch(err => console.log(err))
+            .catch(err => err)
     },
 
     loadEventsByOrg: (orgID) => {
