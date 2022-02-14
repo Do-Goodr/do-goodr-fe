@@ -9,7 +9,7 @@ const SignIn = () => {
 
   const navigate = useNavigate()
 
-  const { events, setOrg, category, setEvents, org, allOrgs, setAllOrgs } = useContext(EventContext)
+  const { events, setCategory, setOrg, category, setEvents, org, allOrgs, setAllOrgs } = useContext(EventContext)
 
   useEffect(() => {
     apiCalls.loadAllOrganizations()
@@ -24,6 +24,7 @@ const SignIn = () => {
 
   const handleOrgChange = (id: any) => {
     setOrg(id)
+    setCategory('Any')
     apiCalls.loadEventsByOrg(id)
     .then(data => setEvents(data.data))
   }

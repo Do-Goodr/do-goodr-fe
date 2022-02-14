@@ -26,10 +26,11 @@ const EventContainer: React.FC<{ events: any[], category: string, org: number }>
       <div className="events-container">
         {events && eventCards}
       </div>
-      <div>
-        {!events.length && category && <p className='error-message'>No events are available for that category!</p>}
-        {!events.length && org && <p className='error-message'>No events are available for this organization!</p>}
-      </div>
+      {!events.length && !org && category === 'Any' ? <h2>...loading...</h2> :
+        <div>
+          {!events.length && category !== 'Any' && <p className='error-message'>No events are available for that category!</p>}
+          {!events.length && org && <p className='error-message'>No events are available for this organization!</p>}
+        </div>}
     </div>
   )
 }
