@@ -15,7 +15,7 @@ const SignIn = () => {
   useEffect(() => {
     apiCalls.loadAllOrganizations()
       .then(data => setAllOrgs(data.data))
-  })
+  }, [])
 
   const orgNames = allOrgs.map((org: { name: string, id: number }) => {
     return (
