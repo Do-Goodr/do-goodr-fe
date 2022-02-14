@@ -10,6 +10,9 @@ import { Event } from '../utilities/Types';
 
 const EventContainer: React.FC<{ events: any[], category: string, org: number }> = ({ events, category, org }) => {
 
+  console.log(org)
+  console.log(category)
+
   const eventCards = events && events.map((event: any, index: any) => {
     return (
       <Opp
