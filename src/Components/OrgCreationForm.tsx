@@ -12,6 +12,7 @@ const OrgCreationForm: React.FC<{}> = () => {
     const [confirmation, setConfirmation] = useState<CreateOrgDetails['confirmation']>()
 
     const handleInput = (phone:string) => {
+        console.log(phone.length - 4)
         const formattedNumber = formatPhoneNumber(phone)
         setPhone(formattedNumber)
     }
@@ -35,7 +36,7 @@ const OrgCreationForm: React.FC<{}> = () => {
     }
 
     const SubmitButton = () => {
-        if (name && address && phone && email && !confirmation) {
+        if (name && address && (phone.length - 4 === 10) && email?.includes('@') && !confirmation) {
             return <button data-cy='create-org-signup-btn' onClick={(e) => signUp(e)}>Sign Up!</button>
         } else {
             return <button disabled={true} data-cy='create-org-signup-btn' onClick={(e) => signUp(e)}>Sign Up!</button>
@@ -62,7 +63,7 @@ const OrgCreationForm: React.FC<{}> = () => {
                 <p data-cy='successful-signup'>{confirmation}</p>
                 <button>Create Your First Event!</button>
                 <p>OR</p>
-                <button>I'll Do That Later!</button>
+                <button>I'll Do That</button>
             </div>}
             
         </form>
