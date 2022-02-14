@@ -6,8 +6,6 @@ import { Event } from '../utilities/Types';
 import EventContainer from './EventContainer';
 import { serialize } from 'v8';
 
-
-
 const SearchResults = () => {
 
   const { setCategory, category, org } = useContext(EventContext)
@@ -16,8 +14,8 @@ const SearchResults = () => {
   const zip = useParams().zipcode
   const miles = useParams().mileage
 
-  console.log(zip)
-  console.log(miles)
+  console.log(events)
+  console.log(filteredEvents)
 
   useEffect(() => {
     apiCalls.loadEventsByZipCode(zip, miles)
@@ -33,7 +31,6 @@ const SearchResults = () => {
       setCategory(selectedCategory)
       setFilteredEvents(filteredEventsByCategory)
     }
-
   }
 
   return (
@@ -57,7 +54,7 @@ const SearchResults = () => {
         <option>Youth Mentorship</option>
         <option value=''>Other</option>
       </select>
-      {!filteredEvents ? <EventContainer events={events} /> : <EventContainer events={filteredEvents} />}
+      {!filteredEvents ? <EventContainer events={events} category={category} /> : <EventContainer events={filteredEvents} category={category} />}
     </div>
   )
 

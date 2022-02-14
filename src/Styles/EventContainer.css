@@ -4,3 +4,9 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
 }
+
+.error-message {
+  display: flex;
+  font-size: larger;
+  font-weight: 500;
+}

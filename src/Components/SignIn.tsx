@@ -9,8 +9,7 @@ const SignIn = () => {
 
   const navigate = useNavigate()
 
-  const { events, setOrg, setEvents, org, allOrgs, setAllOrgs } = useContext(EventContext)
-  // console.log('signin: ', events)
+  const { events, setOrg, category, setEvents, org, allOrgs, setAllOrgs } = useContext(EventContext)
 
   useEffect(() => {
     apiCalls.loadAllOrganizations()
@@ -44,7 +43,7 @@ const SignIn = () => {
       </form>
       <p>Don't see your organization? Create it below!</p>
       <button className='add-org-btn' data-cy='add-org-btn' onClick={() => navigate('/neworganization')}>create org</button>
-      {org && <EventContainer events={events} />}
+      {org && <EventContainer events={events} category={category} />}
     </div>
   )
 }
