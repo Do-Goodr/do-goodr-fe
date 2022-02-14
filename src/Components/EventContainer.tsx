@@ -9,7 +9,6 @@ import { Event } from '../utilities/Types';
 
 
 const EventContainer: React.FC<{events: any[], category: string}> = ({ events, category }) => {
-  console.log(events)
 
   const eventCards = events && events.map((event: any, index: any) => {
     return (

@@ -14,9 +14,6 @@ const SearchResults = () => {
   const zip = useParams().zipcode
   const miles = useParams().mileage
 
-  console.log(events)
-  console.log(filteredEvents)
-
   useEffect(() => {
     apiCalls.loadEventsByZipCode(zip, miles)
       .then(data => setEvents(data.data))
