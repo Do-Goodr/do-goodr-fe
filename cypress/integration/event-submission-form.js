@@ -1,6 +1,12 @@
 describe('Event Submission Form DOM',() => {
     beforeEach(() => {
-      cy.visit('http://localhost:5000/newevent');
+      cy.fixture('./event-data.json').then((allEvents) => {
+        cy.intercept('GET', 'https://do-goodr-be.herokuapp.com/api/v1/events', {
+          statusCode: 200,
+          body: allEvents
+        })
+        cy.visit('http://localhost:5000/newevent');
+      })
     })
   
     it('should contain the h2: Create New Volunteering Event', () => {
@@ -25,7 +31,7 @@ describe('Event Submission Form DOM',() => {
         .should('have.attr', 'placeholder', 'Choose Category')
     })
 
-    it('should have 8 category options in the category drop down', () => {
+    it('should have 9 category options in the category drop down', () => {
         cy.get('[data-cy=set-category]')
           .get('#category option')
           .should('have.length', 9)

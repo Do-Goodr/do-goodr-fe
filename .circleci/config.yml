@@ -3,6 +3,7 @@
 version: 2.1
 orbs:
   circleci-cli: circleci/circleci-cli@0.1.9
+  heroku: circleci/heroku@0.0.10
 
 
 # 
@@ -44,10 +45,17 @@ jobs:
 
 workflows:
 
-  orb_tests:
+  heroku_deploy:
     jobs:
       - build:
           filters:
             branches:
               only: beta
+      - heroku/deploy-via-git:
+          requires:
+            - build
+          filters:
+            branches:
+              only: beta
+
 

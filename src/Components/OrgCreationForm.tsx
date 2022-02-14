@@ -45,7 +45,7 @@ const OrgCreationForm: React.FC<{}> = () => {
     }
 
     return (
-        <section>
+        <section className="org-form-container">
             <form className='create-org-form'>
                 <label>Organization name
                     <input type='text' data-cy='org-name-input' placeholder='Ex: Ocean United' onChange={(e) => setName(e.target.value)}/>
@@ -70,6 +70,7 @@ const OrgCreationForm: React.FC<{}> = () => {
             </form>
             <SubmitButton />
         </section>
+
     )
 
 }

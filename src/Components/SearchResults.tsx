@@ -18,7 +18,6 @@ const SearchResults = () => {
 
   console.log(zip)
   console.log(miles)
-  
 
   useEffect(() => {
     apiCalls.loadEventsByZipCode(zip, miles)
