@@ -2,7 +2,6 @@ import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom'
 import apiCalls from '../utilities/apiCalls';
 import { EventContext } from '../Context/EventContext';
-import { Event } from '../utilities/Types';
 import EventContainer from './EventContainer';
 
 
@@ -10,14 +9,12 @@ import EventContainer from './EventContainer';
 
 const SearchResults = () => {
 
-  const { setCategory, category, org } = useContext(EventContext)
+  const { setCategory } = useContext(EventContext)
   const [events, setEvents] = useState([])
   const [filteredEvents, setFilteredEvents] = useState<any>(events)
   const zip = useParams().zipcode
   const miles = useParams().mileage
 
-  console.log(zip)
-  console.log(miles)
 
   useEffect(() => {
     apiCalls.loadEventsByZipCode(zip, miles)
@@ -25,7 +22,7 @@ const SearchResults = () => {
       .then(events => setFilteredEvents(events))
   }, [])
 
-  const filterByCategory = (selectedCategory: any) => {
+  const filterByCategory = (selectedCategory: string) => {
     if (selectedCategory === 'Any') {
       setFilteredEvents(events) 
     } else {
