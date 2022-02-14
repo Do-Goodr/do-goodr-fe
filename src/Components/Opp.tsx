@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import '../Styles/Opp.css';
 import { Event, OppProps } from '../utilities/Types';
 import apiCalls from '../utilities/apiCalls';
@@ -10,8 +10,8 @@ const Opp = ({ event }: OppProps ) => {
   const { events, setEvents, org } = useContext(EventContext)
 
 
-  const handleDeletion = (id: any) => {
-    let updatedEvents = events.filter((event: { id: any; }) => event.id !== id)
+  const handleDeletion = (id: number) => {
+    let updatedEvents = events.filter((event: Event) => event.id !== id)
     setEvents(updatedEvents)
     apiCalls.deleteEvent(id)
   }

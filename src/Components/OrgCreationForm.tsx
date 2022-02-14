@@ -4,7 +4,7 @@ import  formatPhoneNumber  from '../utilities/formatPhoneNumber'
 import apiCalls from '../utilities/apiCalls';
 import '../Styles/OrgCreationForm.css'
 
-const OrgCreationForm: React.FC<{}> = () => {
+const OrgCreationForm = () => {
 
     const [name, setName] = useState<CreateOrgDetails['name']>()
     const [address, setAddress] = useState<CreateOrgDetails['address']>()

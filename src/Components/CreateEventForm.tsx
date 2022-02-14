@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import '../Styles/CreateEvent.css';
 import apiCalls from '../utilities/apiCalls';
 import { CreatedEvent } from '../utilities/Types';
-import SignIn from './SignIn';
 
-const CreateEventForm: React.FC = () => {
+
+const CreateEventForm = () => {
 
 const [category, setCategory] = useState<CreatedEvent["category"]>()
 const [date, setDate] = useState<CreatedEvent["date"]>()
