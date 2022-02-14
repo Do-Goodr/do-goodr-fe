@@ -6,7 +6,6 @@ import { EventContext } from '../Context/EventContext';
 const Header = () => {
   const { setEvents } = useContext(EventContext)
 
-
   return (
     <header className="header">
       <nav className="nav-bar">
@@ -17,7 +16,6 @@ const Header = () => {
         <h1 className='title'>Do Goodr</h1>
         <h2 className='slogan'>Do more. Do good.</h2>
       </div>
-      <Link to='/newevent' className='add-opp-btn'>Add Volunteer Opp</Link> 
     </header>
   );
 }
