@@ -11,6 +11,8 @@ const ZipCodeForm = () => {
 
   const [zipCode, setZipCode] = useState<ZipCodeSearch['zipCode'] | 0 | null>(null)
   const [mileage, setMileage] = useState<ZipCodeSearch['mileage'] | 0 | null>(null)
+ 
+
   let navigate = useNavigate()
 
   const getOpportunities = (e: React.MouseEvent) => {
