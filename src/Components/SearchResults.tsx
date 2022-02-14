@@ -49,9 +49,9 @@ const SearchResults = () => {
         <option>Healthcare</option>
         <option>Nursing Home</option>
         <option>Youth Mentorship</option>
-        <option value=''>Other</option>
+        <option>Other</option>
       </select>
-      {!filteredEvents ? <EventContainer events={events} category={category} /> : <EventContainer events={filteredEvents} category={category} />}
+      {!filteredEvents ? <EventContainer org={org} events={events} category={category} /> : <EventContainer events={filteredEvents} category={category} org={org} />}
     </div>
   )
 

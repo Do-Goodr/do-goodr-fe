@@ -8,8 +8,10 @@ import { Event } from '../utilities/Types';
 
 
 
-const EventContainer: React.FC<{events: any[], category: string}> = ({ events, category }) => {
+const EventContainer: React.FC<{ events: any[], category: string, org: number }> = ({ events, category, org }) => {
 
+  console.log(events)
+  console.log(category)
   const eventCards = events && events.map((event: any, index: any) => {
     return (
       <Opp
@@ -25,7 +27,8 @@ const EventContainer: React.FC<{events: any[], category: string}> = ({ events, c
         {events && eventCards}
       </div>
       <div>
-        {!events.length && <p className='error-message'>No events are available for that category!</p>}
+        {!events.length && category && <p className='error-message'>No events are available for that category!</p>}
+        {!events.length && org && <p className='error-message'>No events are available for this organization!</p>}
       </div>
     </div>
   )
