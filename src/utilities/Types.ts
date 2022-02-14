@@ -57,3 +57,7 @@ export interface OrgDetails {
   email: string
   confirmation: string
 }
+
+export interface Error {
+  error: string
+}
