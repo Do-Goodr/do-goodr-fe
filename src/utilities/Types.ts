@@ -49,7 +49,8 @@ export interface CreatedEvent {
   description: string
 }
 
-export interface CreateOrgDetails {
+export interface OrgDetails {
+  id: number
   name: string
   address: string
   phone: string
