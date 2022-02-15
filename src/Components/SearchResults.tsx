@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom'
 import apiCalls from '../utilities/apiCalls';
+import '../Styles/SearchResults.css';
 import { EventContext } from '../Context/EventContext';
 import EventContainer from './EventContainer';
 
@@ -34,15 +35,15 @@ const SearchResults = () => {
   }
 
   return (
-    <div>
-      <h1>Search Results</h1>
-      <h3 data-cy='filter-title'>Filter by Category</h3>
+    <div className='search-results-section'>
+      <h1 className='search-result-title'>Search Results</h1>
       <select
         name="category"
+        className='choose-category-menu'
         data-cy='choose-category'
         placeholder="Choose Category"
         onChange={(e) => filterByCategory(e.target.value)}>
-        <option hidden>Choose Category</option>
+        <option hidden>Filter by Category</option>
         <option>Any</option>
         <option>Animal Care</option>
         <option>Campaigning</option>
