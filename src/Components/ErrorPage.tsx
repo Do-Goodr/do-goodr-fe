@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import { EventContext } from '../Context/EventContext';
 import { BiMessageSquareError } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
-import '../css/ErrorPage.css';
+import '../Styles/ErrorPage.css';
 
 const ErrorPage = () => {
-  const { error } = useContext(GameContext)
+  const { error } = useContext(EventContext)
 
-  const checkError = error ? <h2>{error.message} stocks. Try again later!</h2> :
+  const checkError = error ? <h2>{error.message} events. Try again later!</h2> :
     <React.Fragment>
       <h2>Invalid URL</h2>
       <Link className='error-btn' to='/'>Go Home!</Link>
