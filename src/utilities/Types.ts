@@ -38,10 +38,15 @@ export interface CreatedEvent {
   address: string
 }
 
-export interface CreateOrgDetails {
+export interface OrgDetails {
+  id: number
   name: string
   address: string
   phone: string
   email: string
   confirmation: string
+}
+
+export interface Error {
+  error: string
 }

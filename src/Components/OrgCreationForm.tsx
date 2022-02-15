@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
-import { CreateOrgDetails } from '../utilities/Types';
+import { OrgDetails } from '../utilities/Types';
 import  formatPhoneNumber  from '../utilities/formatPhoneNumber'
 import apiCalls from '../utilities/apiCalls';
 import '../Styles/OrgCreationForm.css'
+import emailExtensionCheck from '../utilities/emailExtensionCheck';
 
-const OrgCreationForm = () => {
+const OrgCreationForm: React.FC<{}> = () => {
+    
+    const [name, setName] = useState<OrgDetails['name']>()
+    const [address, setAddress] = useState<OrgDetails['address']>()
+    const [phone, setPhone] = useState<OrgDetails['phone']>('')
+    const [email, setEmail] = useState<OrgDetails['email'] | null>()
+    const [confirmation, setConfirmation] = useState<OrgDetails['confirmation']>()
 
-    const [name, setName] = useState<CreateOrgDetails['name']>()
-    const [address, setAddress] = useState<CreateOrgDetails['address']>()
-    const [phone, setPhone] = useState<CreateOrgDetails['phone']>('')
-    const [email, setEmail] = useState<CreateOrgDetails['email']>()
-    const [confirmation, setConfirmation] = useState<CreateOrgDetails['confirmation']>()
 
     const handleInput = (phone:string) => {
-        console.log(phone.length - 4)
         const formattedNumber = formatPhoneNumber(phone)
         setPhone(formattedNumber)
     }
