@@ -4,14 +4,14 @@ import { ZipCodeSearch } from '../utilities/Types';
 import { useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
 import mileageCheck from '../utilities/mileageCheck';
+import formatZipCode from '../utilities/formatZipCode'
 
 
 
 const ZipCodeForm = () => {
 
-  const [zipCode, setZipCode] = useState<ZipCodeSearch['zipCode'] | 0 | null>(null)
+  const [zipCode, setZipCode] = useState<ZipCodeSearch['zipCode'] | 0 >()
   const [mileage, setMileage] = useState<ZipCodeSearch['mileage'] | 0 | null>(null)
- 
 
   let navigate = useNavigate()
 
@@ -20,6 +20,10 @@ const ZipCodeForm = () => {
     navigate(`/results/${zipCode}/${mileage}`)
   }
 
+  const handleInput = (zip:string) => {
+    const formattedZipCode = formatZipCode(zip)
+    setZipCode(formattedZipCode)
+  }
   const SubmitButton = () => {
     if (zipCode && mileage && zipCode.toString().length === 5 && mileageCheck(mileage)) {
         return <button data-cy='show-events-btn' className='show-events-btn' onClick={(e) => getOpportunities(e)}>Show Opportunities</button>
@@ -38,7 +42,7 @@ const ZipCodeForm = () => {
           name="zipCode"
           className='zip-input'
           data-cy='zip-input'
-          onChange={(e) => setZipCode(parseInt(e.target.value))}
+          onChange={(e) => handleInput(e.target.value)} value={zipCode}
         />
         <select
           name="mileage"
@@ -58,4 +62,4 @@ const ZipCodeForm = () => {
   );
 }
 
-export default ZipCodeForm;
+export default ZipCodeForm
