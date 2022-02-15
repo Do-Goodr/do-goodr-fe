@@ -30,20 +30,21 @@ const SignIn = () => {
   }
 
   return (
-    <div>
-      <p>View Your Organizations Events</p>
-      <form data-cy='organization-form' className="SignIn">
+    <div className="sign-in">
+      <p className='sign-in-title'>View Your Organizations Events</p>
+      <form data-cy='organization-form' className="organization-form">
         <select
           name="organization"
           placeholder="Choose Organization"
           data-cy='choose-organization'
+          className='choose-org-menu'
           onChange={(e) => handleOrgChange(parseInt(e.target.value))}>
             <option hidden>Choose Organization</option>
             {orgNames}
         </select>
       </form>
       <p>Don't see your organization? Create it below!</p>
-      <button className='add-org-btn' data-cy='add-org-btn' onClick={() => navigate('/neworganization')}>create org</button>
+      <button className='add-org-btn' data-cy='add-org-btn' onClick={() => navigate('/neworganization')}>Create New Organization</button>
       {org && <EventContainer events={events} />}
     </div>
   )
