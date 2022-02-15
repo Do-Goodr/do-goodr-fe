@@ -23,7 +23,7 @@ export interface Event {
 }  
 
 export interface ZipCodeSearch  {
-  zipCode: number
+  zipCode: string
   mileage: number
 }
 
