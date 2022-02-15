@@ -26,11 +26,10 @@ const apiCalls = {
     loadEventsByZipCode: (zip, miles) => {
         return fetch(`https://do-goodr-be.herokuapp.com/api/v1/search?zip=${zip}&distance=${miles}`)
             .then(res => {
-
                 if (res.ok) {
                     return res.json()
                 } else {
-                    return {error: "Sorry, there has been an error: Zip Code not found!"}
+                    return {error: `Sorry, there are no volunteering opportunties at the zipcode ${zip}!`}
                 }
             })
             .catch(err => err)
