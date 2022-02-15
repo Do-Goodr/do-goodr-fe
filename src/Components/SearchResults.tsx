@@ -12,7 +12,6 @@ const SearchResults = () => {
   const [events, setEvents] = useState([])
   const [filteredEvents, setFilteredEvents] = useState<any>(events)
   const [error, setError] = useState<Error['error']>('')
-  console.log('error-test', error)
 
   const zip = useParams().zipcode
   const miles = useParams().mileage
