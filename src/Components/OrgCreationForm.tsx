@@ -13,6 +13,7 @@ const OrgCreationForm: React.FC<{}> = () => {
     const [email, setEmail] = useState<OrgDetails['email'] | null>()
     const [confirmation, setConfirmation] = useState<OrgDetails['confirmation']>()
 
+
     const handleInput = (phone:string) => {
         const formattedNumber = formatPhoneNumber(phone)
         setPhone(formattedNumber)
@@ -37,34 +38,35 @@ const OrgCreationForm: React.FC<{}> = () => {
     }
 
     const SubmitButton = () => {
-        if (name && address && (phone.length - 4 === 10) && emailExtensionCheck(email) && !confirmation) {
-            return <button className='create-org-signup-btn' data-cy='create-org-signup-btn' onClick={(e) => signUp(e)}>Sign Up!</button>
+        if (name && address && (phone.length - 4 === 10) && email?.includes('@') && !confirmation) {
+            return <button className='create-org-signup-btn-enabled' data-cy='create-org-signup-btn' onClick={(e) => signUp(e)}>Sign Up!</button>
         } else {
-            return <button disabled={true} data-cy='create-org-signup-btn' onClick={(e) => signUp(e)}>Sign Up!</button>
+            return <button className='create-org-signup-btn-disabled' disabled={true} data-cy='create-org-signup-btn' onClick={(e) => signUp(e)}>Sign Up!</button>
         }
     }
 
     return (
         <section className="org-form-container">
+            <h2>Create your Organization Account</h2>
             <form className='create-org-form'>
                 <label>Organization name
-                    <input type='text' data-cy='org-name-input' placeholder='Ex: Ocean United' onChange={(e) => setName(e.target.value)}/>
+                    <input type='text' className='org-name-input' data-cy='org-name-input' placeholder='Ex: Ocean United' onChange={(e) => setName(e.target.value)}/>
                 </label>
                 <label>Address
-                    <input type='text' data-cy='org-address-input' placeholder='Format: 567 Nirvana Ave Seattle, WA  98101 ' onChange={(e) => setAddress(e.target.value)}/>
+                    <input type='text' className='org-address-input' data-cy='org-address-input' placeholder='Format: 567 Nirvana Ave Seattle, WA  98101 ' onChange={(e) => setAddress(e.target.value)}/>
                 </label>
                 <label>Phone Number
-                    <input type='text' data-cy='org-phone-input' placeholder='(555) 555-5555' onChange={(e) => handleInput(e.target.value)} value={phone}/>
+                    <input type='text' className='org-phone-input' data-cy='org-phone-input' placeholder='(555) 555-5555' onChange={(e) => handleInput(e.target.value)} value={phone}/>
                 </label>
                 <label>Email
-                    <input type='text' data-cy='org-email-input' placeholder='Format: oceanunited@email.com' onChange={(e) => setEmail(e.target.value)}/>
+                    <input type='text' className='org-email-input' data-cy='org-email-input' placeholder='Format: oceanunited@email.com' onChange={(e) => setEmail(e.target.value)}/>
                 </label>
                 {confirmation && 
                 <div>
                     <p data-cy='successful-signup'>{confirmation}</p>
-                    <button>Create Your First Event!</button>
+                    <button className='create-org-signup-btn-enabled'>Create Your First Event!</button>
                     <p>OR</p>
-                    <button>I'll Do That</button>
+                    <button className='create-org-signup-btn-enabled'>I'll Do That</button>
                 </div>}
                 
             </form>

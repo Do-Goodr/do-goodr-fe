@@ -1,16 +1,15 @@
-import React, { useEffect, useState, useContext } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom'
 import apiCalls from '../utilities/apiCalls';
+import '../Styles/SearchResults.css';
 import { EventContext } from '../Context/EventContext';
 import { Event, Error } from '../utilities/Types';
 import EventContainer from './EventContainer';
-import { serialize } from 'v8';
-
 
 
 const SearchResults = () => {
 
-  const { setCategory, category, org } = useContext(EventContext)
+  const { setCategory } = useContext(EventContext)
   const [events, setEvents] = useState([])
   const [filteredEvents, setFilteredEvents] = useState<any>(events)
   const [error, setError] = useState<Error['error']>('')
@@ -31,7 +30,7 @@ const SearchResults = () => {
       .then(events => setFilteredEvents(events))
   }, [])
 
-  const filterByCategory = (selectedCategory: any) => {
+  const filterByCategory = (selectedCategory: string) => {
     if (selectedCategory === 'Any') {
       setFilteredEvents(events) 
     } else {
@@ -66,7 +65,6 @@ const SearchResults = () => {
           <option value=''>Other</option>
         </select>
         {!filteredEvents ? <EventContainer events={events} /> : <EventContainer events={filteredEvents} />}
-
       </div>}
     </div>
   )
