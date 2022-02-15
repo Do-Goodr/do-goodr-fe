@@ -3,11 +3,63 @@ input {
 }
 
 .org-form-container {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Coming Soon';
+  gap: 20px; 
+  width: 100%;
+  height: 100%;
+  color: #1864AB
+}
+
+.create-org-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.create-org-signup-btn-enabled {
+  background-color: #1864AB;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 8px auto 0;
+  padding: 8px;
+  text-decoration: none;
+  width: 100px;
   display: flex;
   justify-content: center;
-  align-content: center;
-  background-color: lightgray;
-  width: 40%;
-  border-radius: 10px;
-  margin-top: 20px;
+}
+
+.create-org-signup-btn-disabled {
+  background-color: #36393c;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 8px auto 0;
+  padding: 8px;
+  text-decoration: none;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.org-name-input,
+.org-address-input,
+.org-phone-input,
+.org-email-input {
+  width: 340px;
+  border: solid 1px #1864AB;
+  height: 30px;
 }
