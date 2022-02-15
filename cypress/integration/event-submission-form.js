@@ -133,6 +133,8 @@ describe('Event Submission Form DOM',() => {
         .type('10:45')
         .get('[data-cy=set-end-time]')
         .type('13:30')
+        cy.get('[data-cy="set-address"]')
+        .type('123 Sesame Way, Denver CO 80202')
         .get('[data-cy=set-category]')
         .type('Healthcare')
         .get('[data-cy=set-volunteer-num]') 
