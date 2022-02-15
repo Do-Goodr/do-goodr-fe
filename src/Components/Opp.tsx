@@ -18,7 +18,7 @@ const Opp = ({ event }: OppProps ) => {
 
   const DeleteButton = () => {
     if (org && event['organization_id'] === org) {
-      return <button onClick = {() => handleDeletion(event.id)} data-cy='delete-event-button'>🗑</button>
+      return <button className='delete-opp-button' onClick = {() => handleDeletion(event.id)} data-cy='delete-event-button'>Delete Event</button>
     } else {
       return null
     }
@@ -40,8 +40,8 @@ const Opp = ({ event }: OppProps ) => {
           <p data-cy='event-volunteers'>Volunteers Needed: {event.vols_required}</p>
           <p data-cy='event-description'>Description: {event.description}</p>
         </div>
-      <DeleteButton />
       </div>
+      <DeleteButton />
     </div>
   );
 }
