@@ -34,7 +34,7 @@ input {
   margin: 8px auto 0;
   padding: 8px;
   text-decoration: none;
-  width: 100px;
+  width: fit-content;
   display: flex;
   justify-content: center;
 }
@@ -50,7 +50,7 @@ input {
   margin: 8px auto 0;
   padding: 8px;
   text-decoration: none;
-  width: 100px;
+  width: fit-content;
   display: flex;
   justify-content: center;
 }

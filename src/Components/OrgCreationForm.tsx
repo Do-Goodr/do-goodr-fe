@@ -63,9 +63,9 @@ const OrgCreationForm = () => {
                 {confirmation && 
                 <div>
                     <p data-cy='successful-signup'>{confirmation}</p>
-                    <button>Create Your First Event!</button>
+                    <button className='create-org-signup-btn-enabled'>Create Your First Event!</button>
                     <p>OR</p>
-                    <button>I'll Do That</button>
+                    <button className='create-org-signup-btn-enabled'>I'll Do That</button>
                 </div>}
                 
             </form>
