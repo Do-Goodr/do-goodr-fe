@@ -44,7 +44,7 @@ const SignIn = () => {
       </form>
       <p>Don't see your organization? Create it below!</p>
       <button className='add-org-btn' data-cy='add-org-btn' onClick={() => navigate('/neworganization')}>create org</button>
-      {org && <EventContainer events={events} category={category} org={org} />}
+      {org && <EventContainer events={events} />}
     </div>
   )
 }

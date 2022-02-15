@@ -51,7 +51,7 @@ const SearchResults = () => {
         <option>Youth Mentorship</option>
         <option>Other</option>
       </select>
-      {!filteredEvents ? <EventContainer org={org} events={events} category={category} /> : <EventContainer events={filteredEvents} category={category} org={org} />}
+      {!filteredEvents ? <EventContainer events={events} /> : <EventContainer events={filteredEvents} />}
     </div>
   )
 
