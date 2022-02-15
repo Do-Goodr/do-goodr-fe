@@ -2,6 +2,7 @@ import '../Styles/EventContainer.css';
 import Opp from './Opp';
 import { EventContext } from '../Context/EventContext';
 import { Event, EventContainerProps } from '../utilities/Types';
+import { useContext } from 'react'
 
 
 const EventContainer = ({ events }: EventContainerProps) => {
