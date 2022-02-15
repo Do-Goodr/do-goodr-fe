@@ -1,9 +1,16 @@
 describe('Sign In Page', () => {
   beforeEach(() => {
     cy.fixture('./org-event-data.json').then((allOrgsEvents) => {
-      cy.intercept('GET', 'https://do-goodr-be.herokuapp.com/api/v1/organizations/1/events', {
+      cy.intercept('GET', 'https://do-goodr-be.herokuapp.com/api/v1/organizations/2/events', {
         statusCode: 200,
         body: allOrgsEvents
+      })
+      cy.visit('http://localhost:5000/signin');
+    })
+    cy.fixture('./org-data.json').then((allOrgs) => {
+      cy.intercept('GET', 'https://do-goodr-be.herokuapp.com/api/v1/organizations', {
+        statusCode: 200,
+        body: allOrgs
       })
       cy.visit('http://localhost:5000/signin');
     })
@@ -36,16 +43,16 @@ describe('Sign In Page', () => {
     cy.get('[data-cy=events-container]')
   })
 
-  it.only('should show the delete button on events that the org has created', () => {
+  it('should show the delete button on events that the org has created', () => {
     cy.get('[data-cy=choose-organization]')
-      .select(1)
+      .select(2)
       .wait(2000)
       .get('[data-cy=events-container]')
       .get('[data-cy=opportunity]')
       .get('[data-cy=delete-event-button]')
   })
 
-  it.skip('should remove an event from the org listing once the delete button has been clicked', () => {
+  it('should remove an event from the org listing once the delete button has been clicked', () => {
     cy.get('[data-cy=choose-organization]')
       .select(2)
       .wait(2000)
@@ -53,5 +60,4 @@ describe('Sign In Page', () => {
     cy.get('.events-container > ')
       .should('have.length', 2)
   })
-
 })
