@@ -10,7 +10,6 @@ const Header = () => {
     setEvents([])
     setCategory('Any')
     setOrg(null)
-    console.log('hi')
   }
 
   return (
