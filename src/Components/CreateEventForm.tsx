@@ -10,6 +10,7 @@ const [category, setCategory] = useState<CreatedEvent["category"]>()
 const [date, setDate] = useState<CreatedEvent["date"]>()
 const [startTime, setStartTime] = useState<CreatedEvent["start_time"]>()
 const [endTime, setEndTime] = useState<CreatedEvent["end_time"]>()
+const [address, setAddress] = useState<CreatedEvent["address"]>()
 const [volunteers, setVolunteers] = useState<CreatedEvent["vols_required"] | 0 | null>(null)
 const [description, setDescription] = useState<CreatedEvent['description']>()
 
@@ -18,7 +19,7 @@ const submitEvent = (e:React.MouseEvent) => {
   const newEvent = {
     organization_id: 4,
     name: 'American Red Cross',
-    address: '123 Mayfair St Denver CO 80203',
+    address: address,
     phone: '(334)888-8888',
     date: date,
     start_time: startTime,
@@ -45,11 +46,16 @@ const SubmitButton = () => {
         <label>Date:
           <input type='date' data-cy='set-date' onChange={(e) => setDate(e.target.value)}/>
         </label>
+        <div className='time-inputs'>
         <label>Start Time:
           <input type='time' data-cy='set-start-time' onChange={(e) => setStartTime(e.target.value)}/>
         </label>
         <label>End Time:
           <input type='time' data-cy='set-end-time' onChange={(e) => setEndTime(e.target.value)}/>
+        </label>
+        </div>
+        <label>Address:
+          <input type='text' data-cy='set-address' onChange={(e) => setAddress(e.target.value)}/>
         </label>
         <label>Category:
         <input list='category' data-cy='set-category' placeholder='Choose Category' onChange={(e) => setCategory(e.target.value)}/>

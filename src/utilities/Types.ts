@@ -35,6 +35,7 @@ export interface CreatedEvent {
   end_time: string
   vols_required: number
   description: string
+  address: string
 }
 
 export interface CreateOrgDetails {
