@@ -1,18 +1,54 @@
 .event-form-container {
+  margin-top: 10px;
+  margin-bottom: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-content: center;
-  background-color: lightgray;
-  width: 40%;
-  border-radius: 10px;
-  margin-top: 20px;
+  align-items: center;
+  font-family: 'Coming Soon';
+  gap: 20px;
+  width: 80%;
+  height: 100%;
+  color: #1864AB;
 }
 
 .create-event {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 60%;
+  gap: 9px;
+}
+
+.create-event-title {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.time-inputs {
+  display: flex;
+  flex-direction: row;
+  border-radius: 3px;
+}
+
+.date-input,
+.start-time-input,
+.end-time-input,
+.address-input,
+.category-input,
+.vol-num-input {
+  width: 340px;
+  border: solid 1px #1864AB;
+  height: 30px;
+  border-radius: 3px;
+}
+
+.description-input {
+  width: 100%;
+  border: solid 1px #1864AB;
+  height: 30px;
+  border-radius: 3px;
 }
 
 input, label, textarea {
@@ -26,10 +62,34 @@ label {
   margin: 5px;
 }
 
-.submit-btn {
+.event-submit-btn-enabled {
+  background-color: #1864AB;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 8px auto 0;
+  padding: 8px;
+  text-decoration: none;
+  width: fit-content;
   display: flex;
   justify-content: center;
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
+}
+
+.event-submit-btn-disabled {
+  background-color: #36393c;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 8px auto 0;
+  padding: 8px;
+  text-decoration: none;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
 }

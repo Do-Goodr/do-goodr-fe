@@ -1,9 +1,7 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './Header';
 import ZipCodeForm from './ZipCodeForm';
 import '../Styles/App.css';
-import EventContainer from './EventContainer';
 import CreateEventForm from './CreateEventForm';
 import ErrorPage from './ErrorPage';
 import SignIn from './SignIn';

@@ -1,17 +1,5 @@
-
-export interface HeaderProps {
-    
-}
-
-
-export interface SignInProps {
-    
-}
-
-
 export interface EventContainerProps {
     events: Event[]
-    filteredEvents?: Event[]
 }
 
 
@@ -47,12 +35,18 @@ export interface CreatedEvent {
   end_time: string
   vols_required: number
   description: string
+  address: string
 }
 
-export interface CreateOrgDetails {
+export interface OrgDetails {
+  id: number
   name: string
   address: string
   phone: string
   email: string
   confirmation: string
+}
+
+export interface Error {
+  error: string
 }
