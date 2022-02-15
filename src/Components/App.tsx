@@ -3,6 +3,7 @@ import Header from './Header';
 import ZipCodeForm from './ZipCodeForm';
 import '../Styles/App.css';
 import CreateEventForm from './CreateEventForm';
+import ErrorPage from './ErrorPage';
 import SignIn from './SignIn';
 import { EventProvider } from '../Context/EventContext';
 import SearchResults from './SearchResults';
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='/newevent' element={<CreateEventForm />} />
           <Route path='/signin' element={<SignIn />} />
           <Route path='/neworganization' element={<OrgCreationForm />}/>
+          <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </main>
     </EventProvider>

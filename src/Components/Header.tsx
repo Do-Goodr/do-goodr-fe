@@ -4,12 +4,18 @@ import { Link } from 'react-router-dom'
 import { EventContext } from '../Context/EventContext';
 
 const Header = () => {
-  const { setEvents } = useContext(EventContext)
+  const { setEvents, setCategory, setOrg } = useContext(EventContext)
+
+  const resetEventsAndCategory = () => {
+    setEvents([])
+    setCategory('Any')
+    setOrg(null)
+  }
 
   return (
     <header className="header">
       <nav className="nav-bar">
-        <Link to='/' className='nav-link' onClick={() => setEvents([])}>home</Link>
+        <Link to='/' className='nav-link' onClick={() => resetEventsAndCategory()}>home</Link>
         <Link to='/signin' className='nav-link' data-cy='signin-nav-link'>signin</Link>
       </nav>
       <div className='title-slogan'>

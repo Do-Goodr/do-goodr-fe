@@ -6,7 +6,6 @@ import { EventContext } from '../Context/EventContext';
 import { Event, Error } from '../utilities/Types';
 import EventContainer from './EventContainer';
 
-
 const SearchResults = () => {
 
   const { setCategory } = useContext(EventContext)
@@ -38,7 +37,6 @@ const SearchResults = () => {
       setCategory(selectedCategory)
       setFilteredEvents(filteredEventsByCategory)
     }
-
   }
 
   return (
