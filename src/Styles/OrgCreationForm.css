@@ -62,4 +62,5 @@ input {
   width: 340px;
   border: solid 1px #1864AB;
   height: 30px;
+  border-radius: 3px;
 }
