@@ -6,6 +6,7 @@
     align-items: center;
     font-family: 'Coming Soon';
     gap: 15px; 
+    width: 100%;
 }
 
 .search-result-title {
