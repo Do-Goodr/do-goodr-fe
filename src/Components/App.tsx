@@ -23,7 +23,7 @@ const App = () => {
           <Route path='/newevent' element={<CreateEventForm />} />
           <Route path='/signin' element={<SignIn />} />
           <Route path='/neworganization' element={<OrgCreationForm />}/>
-          <Route path="/:invalidURL" element={<ErrorPage />} />
+          <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </main>
     </EventProvider>
