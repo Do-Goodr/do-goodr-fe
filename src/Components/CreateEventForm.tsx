@@ -49,6 +49,7 @@ const SubmitButton = () => {
   } else {
     return <button aria-label='Submit new volunteering opportunity button' className="event-submit-btn-disabled" disabled={true} data-cy='disabled-submit-button' onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
   }
+}
 
   return (
     <div className="event-form-container">
