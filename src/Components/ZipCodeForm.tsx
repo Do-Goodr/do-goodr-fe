@@ -26,9 +26,9 @@ const ZipCodeForm = () => {
   }
   const SubmitButton = () => {
     if (zipCode && mileage && zipCode.toString().length === 5 && mileageCheck(mileage)) {
-        return <button data-cy='show-events-btn' className='show-events-btn' onClick={(e) => getOpportunities(e)}>Show Opportunities</button>
+        return <button aria-label='Show Opportunities button to retrieve volunteering events' data-cy='show-events-btn' className='show-events-btn' onClick={(e) => getOpportunities(e)}>Show Opportunities</button>
     } else {
-        return <button disabled={true} data-cy='show-events-btn' className='show-events-btn' onClick={(e) => getOpportunities(e)}>Show Opportunities</button>
+        return <button aria-label='Show Opportunities button to retrieve volunteering events' disabled={true} data-cy='show-events-btn' className='show-events-btn' onClick={(e) => getOpportunities(e)}>Show Opportunities</button>
     }
 }
 
@@ -41,6 +41,7 @@ const ZipCodeForm = () => {
           name="zipCode"
           className='zip-input'
           data-cy='zip-input'
+          aria-label='Zipcode input for searching opportunties'
           onChange={(e) => handleInput(e.target.value)} value={zipCode}
         />
         <select
@@ -48,6 +49,7 @@ const ZipCodeForm = () => {
           placeholder="Within Miles"
           className='mileage-input'
           data-cy='mileage-input'
+          aria-label='Mileage input for searching opportunties'
           onChange={(e) => setMileage(parseInt(e.target.value))}>
           <option hidden>Within Miles</option>
           <option value='5'>5</option>

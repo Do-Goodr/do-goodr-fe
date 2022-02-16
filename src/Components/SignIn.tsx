@@ -43,6 +43,7 @@ const SignIn = () => {
           placeholder="Choose Organization"
           data-cy='choose-organization'
           className='choose-org-menu'
+          aria-label='Drop down menu to search for your Organization'
           onChange={(e) => handleOrgChange(parseInt(e.target.value))}>
             <option hidden>Choose Organization</option>
             {orgNames}
@@ -51,9 +52,9 @@ const SignIn = () => {
       {!org ? 
         <div>
           <p className='no-org-message'>Don't see your organization? Create it below!</p>
-          <button className='add-org-btn' data-cy='add-org-btn' onClick={() => navigate('/neworganization')}>Create New Organization</button>
+          <button className='add-org-btn' data-cy='add-org-btn' onClick={() => navigate('/neworganization')} aria-label='Button to create a new organization'>Create New Organization</button>
         </div> : 
-        <Link to='/newevent' className='add-opp-btn' data-cy='add-opp-btn'>Add Volunteer Opp</Link>}
+        <Link to='/newevent' className='add-opp-btn' data-cy='add-opp-btn' aria-label='Button to create a new volunteering event'>Add Volunteer Opp</Link>}
       
       {org && <EventContainer events={events} />}
     </div>

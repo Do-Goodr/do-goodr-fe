@@ -37,9 +37,9 @@ const submitEvent = (e:MouseEvent) => {
 
 const SubmitButton = () => {
   if (date && startTime && endTime && category && address && volunteers && description) {
-    return <button className="event-submit-btn-enabled" data-cy='enabled-submit-button' onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
+    return <button aria-label='Submit new volunteering opportunity button' className="event-submit-btn-enabled" data-cy='enabled-submit-button' onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
   } else {
-    return <button className="event-submit-btn-disabled" disabled={true} data-cy='disabled-submit-button' onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
+    return <button aria-label='Submit new volunteering opportunity button' className="event-submit-btn-disabled" disabled={true} data-cy='disabled-submit-button' onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
   }
 }
 
@@ -48,24 +48,24 @@ const SubmitButton = () => {
       <form className='create-event' data-cy='create-event-form'>
         <h2 className='create-event-title'>Create New Volunteering Event</h2>
         <label>Name of Event:
-          <input type='text' className='event-name-input' data-cy='set-event-name' placeholder='Ex: Beach Cleanup' onChange={(e) => setEventName(e.target.value)}/>
+          <input type='text' className='event-name-input' data-cy='set-event-name' placeholder='Ex: Beach Cleanup' aria-label='Input to type name of event' onChange={(e) => setEventName(e.target.value)}/>
         </label>
         <label>Date:
-          <input type='date' className='date-input' data-cy='set-date' onChange={(e) => setDate(e.target.value)}/>
+          <input type='date' className='date-input' data-cy='set-date' aria-label='Input to type date of event' onChange={(e) => setDate(e.target.value)}/>
         </label>
         <div className='time-inputs'>
         <label>Start Time:
-          <input type='time' className='start-time-input' data-cy='set-start-time' onChange={(e) => setStartTime(e.target.value)}/>
+          <input type='time' className='start-time-input' data-cy='set-start-time' aria-label='Input to type starting time of event' onChange={(e) => setStartTime(e.target.value)}/>
         </label>
         <label>End Time:
-          <input type='time' className='end-time-input' data-cy='set-end-time' onChange={(e) => setEndTime(e.target.value)}/>
+          <input type='time' className='end-time-input' data-cy='set-end-time' aria-label='Input to type ending time of event' onChange={(e) => setEndTime(e.target.value)}/>
         </label>
         </div>
         <label>Address:
-          <input type='text' className='address-input' data-cy='set-address' placeholder='Event Address' onChange={(e) => setAddress(e.target.value)}/>
+          <input type='text' className='address-input' data-cy='set-address' placeholder='Event Address' aria-label='Input to type address or location of event' onChange={(e) => setAddress(e.target.value)}/>
         </label>
         <label>Category:
-        <input list='category' className='category-input' data-cy='set-category' placeholder='Choose Category' onChange={(e) => setCategory(e.target.value)}/>
+        <input list='category' className='category-input' data-cy='set-category' placeholder='Choose Category' aria-label='Drop down menu to select the category for the type of event' onChange={(e) => setCategory(e.target.value)}/>
           <datalist id='category'>
             <option value='Animal Care'></option>
             <option value='Campaigning'></option>
@@ -79,10 +79,10 @@ const SubmitButton = () => {
           </datalist>
           </label>
         <label>Volunteers Needed:
-          <input type='number' className='vol-num-input' min={1} max={100} data-cy='set-volunteer-num' onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
+          <input type='number' className='vol-num-input' min={1} max={100} data-cy='set-volunteer-num' aria-label='Input to type number of volunteers needed' onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
         </label>
         <label>Event Description:
-          <textarea placeholder='Give potential volunteers the detail they need for this event...' className='description-input' data-cy='set-description' onChange={(e) => setDescription(e.target.value)}></textarea>
+          <textarea placeholder='Give potential volunteers the detail they need for this event...' className='description-input' data-cy='set-description' aria-label='Input to type a full description of the event' onChange={(e) => setDescription(e.target.value)}></textarea>
         </label>
         <SubmitButton />
       </form>
