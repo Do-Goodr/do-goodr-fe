@@ -13,8 +13,6 @@ const SignIn = () => {
 
   const { events, setCategory, setOrg, category, setEvents, org, allOrgs, setAllOrgs } = useContext(EventContext)
 
-  console.log(allOrgs)
-
   useEffect(() => {
     apiCalls.loadAllOrganizations()
       .then(data => setAllOrgs(data.data))

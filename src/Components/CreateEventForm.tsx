@@ -16,7 +16,6 @@ const CreateEventForm = () => {
   const [description, setDescription] = useState<CreatedEvent['description']>('')
   const [eventName, setEventName] = useState<CreatedEvent['name']>('')
   const { org } = useContext(EventContext)
-  console.log(org.phone)
 
   const submitEvent = (e: MouseEvent) => {
     e.preventDefault()

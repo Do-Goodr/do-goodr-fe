@@ -11,10 +11,10 @@ const EventProvider = props => {
 
   return (
     <EventContext.Provider value={{ events, setEvents, category, setCategory, org, setOrg, allOrgs, setAllOrgs }}>
-      {props.children}  
+      {props.children}
     </EventContext.Provider>
   )
-  
+
 }
 
 export { EventContext, EventProvider }
