@@ -4,7 +4,7 @@ Mod4 2108 Cohort
 Deployed Link: [Click Here to Try Do Goodr](https://do-goodr-fe.herokuapp.com/)
 
 #### Application Preview  
-<!-- ![overview](./src/assets/dogoodr_gif.gif) -->
+<!-- ![overview](./src/Assets/dogoodr_gif.gif) -->
 
 
 ## Table of Contents
