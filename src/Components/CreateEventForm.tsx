@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, MouseEvent } from 'react';
 import '../Styles/CreateEvent.css';
 import apiCalls from '../utilities/apiCalls';
 import { CreatedEvent } from '../utilities/Types';
@@ -17,7 +17,7 @@ const [description, setDescription] = useState<CreatedEvent['description']>('')
 const [eventName, setEventName] = useState<CreatedEvent['name']>('')
 const { org } = useContext(EventContext)
 
-const submitEvent = (e:React.MouseEvent) => {
+const submitEvent = (e:MouseEvent) => {
   e.preventDefault()
   const newEvent = {
     organization_id: org.id,

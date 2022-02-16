@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, MouseEvent } from 'react';
 import '../Styles/ZipCodeForm.css';
 import { ZipCodeSearch } from '../utilities/Types';
 import { useNavigate } from 'react-router'
@@ -15,7 +15,7 @@ const ZipCodeForm = () => {
 
   let navigate = useNavigate()
 
-  const getOpportunities = (e: React.MouseEvent) => {
+  const getOpportunities = (e:MouseEvent) => {
     e.preventDefault()
     navigate(`/results/${zipCode}/${mileage}`)
   }
