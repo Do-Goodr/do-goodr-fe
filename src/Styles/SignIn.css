@@ -1,0 +1,53 @@
+.sign-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Coming Soon';
+    gap: 25px; 
+}
+
+.sign-in-title {
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.choose-org-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+    width: 290px;
+    text-align: center;
+    color: #1864AB;
+    border: 1px solid #1864AB;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 3px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.choose-org-menu::placeholder {
+    font-family: inherit;
+}
+
+.no-org-message {
+    font-size: 22px;
+}
+.add-org-btn {
+    background-color: #1864AB;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 26px auto 0;
+    padding: 12px;
+    text-decoration: none;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}

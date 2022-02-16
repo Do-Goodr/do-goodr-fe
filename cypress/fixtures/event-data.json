@@ -1,0 +1,80 @@
+{
+    "type": "event",
+    "data": [
+        {
+            "id": 1,
+            "distance": 2.678,
+            "phone": "555-555-555",
+            "organization_id": 1,
+            "organization_name": "American Red Cross",
+            "name": "Blood Drive",
+            "category": "Healthcare",
+            "address": "5280 Wadsworth Blvd, Arvada CO 80002",
+            "description": "The need for blood is universal, but access to blood for all those who need it is not. Blood shortages are particularly acute in developing countries. To ensure that everyone who needs safe blood has access to it, all countries need voluntary, unpaid donors who give blood regularly.  Please join us for this blood drive and make an impact!",
+            "vols_required": 10,
+            "date": "10/15/2022",
+            "start_time": "01:00 PM",
+            "end_time": "02:00 PM"
+        },
+        {
+            "id": 2,
+            "distance": 2.678,
+            "phone": "555-555-555",
+            "organization_id": 2,
+            "organization_name": "Denver Animal Shelter",
+            "name": "Adoption Event",
+            "category": "Animal Care",
+            "address": "1241 W Bayaud Ave, Denver CO 80223",
+            "description": "Participating in pet adoption events is a perfect way to connect with a shelter animal — and for them to find their forever home. Typically, these animal adoption events draw attention to pets in need. And, to sweeten the deal, some shelters will offer certain promotions to encourage more adoptions during these events.",
+            "vols_required": 5,
+            "date": "6/15/2022",
+            "start_time": "05:00 PM",
+            "end_time": "07:00 PM"
+        },
+        {
+            "id": 3,
+            "distance": 2.678,
+            "phone": "555-555-555",
+            "organization_id": 3,
+            "organization_name": "United Way",
+            "name": "Food Drive",
+            "category": "Food Service",
+            "address": "711 Park Ave W, Denver CO 80205",
+            "description": "One of the toughest challenges we’re fighting in America is hunger. One in six children doesn’t know when their next meal will be. Kids who don’t get enough to eat begin life with a serious disadvantage. Hungry children are more likely to be hospitalized and face higher risks of health problems like anemia and asthma. As they grow up, youth struggling to get enough food are more likely to have problems in school and other social situations. United Way is fighting this problem, community by community.",
+            "vols_required": 25,
+            "date": "7/30/2022",
+            "start_time": "10:00 AM",
+            "end_time": "12:00 PM"
+        },
+        {
+            "id": 4,
+            "distance": 2.678,
+            "phone": "555-555-555",
+            "organization_id": 4,
+            "organization_name": "Habitat for Humanity",
+            "name": "Build a Home",
+            "category": "Community Development",
+            "address": "3245 Eliot St, Denver CO 80211",
+            "description": "Construction volunteers make a tangible difference with each and every day they help build and repair homes. No construction experience is necessary. Many first-time volunteers have never picked up a hammer!",
+            "vols_required": 50,
+            "date": "9/1/2022",
+            "start_time": "10:00 AM",
+            "end_time": "10:00 PM"
+        },
+        {
+            "id": 5,
+            "distance": 2.678,
+            "phone": "555-555-555",
+            "organization_id": 2,
+            "organization_name": "Denver Animal Shelter",
+            "name": "Play with Puppies",
+            "category": "Animal Care",
+            "address": "1241 W Bayaud Ave, Denver CO 80223",
+            "description": "Join us for a fun day of playing with puppies!",
+            "vols_required": 500,
+            "date": "3/1/2022",
+            "start_time": "12:00 PM",
+            "end_time": "12:00 AM"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+  "type": "organization",
+  "data": [
+    {
+      "id": 1,
+      "name": "American Red Cross",
+      "location": "5280 Wadsworth Blvd, Arvada CO 80002",
+      "phone": "555-555-5555",
+      "email": "denver@arc.org"
+    },
+    {
+      "id": 2,
+      "name": "Denver Animal Shelter",
+      "location": "1241 W Bayaud Ave, Denver CO 80223",
+      "phone": "555-555-5555",
+      "email": "tstaros23@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "United Way",
+      "location": "711 Park Ave W, Denver CO 80205",
+      "phone": "(930) 555-5555",
+      "email": "unitedway@fakeemail.com"
+    },
+    {
+      "id": 4,
+      "name": "Habitat for Humanity",
+      "location": "3245 Eliot St, Denver CO 80211",
+      "phone": "(303) 555-5555",
+      "email": "habitatforhumanity@fakeemail.com"
+    }
+  ]
+}
