@@ -39,6 +39,7 @@ export interface CreatedEvent {
   description: string
   address: string
   phone: string
+  confirmation?: string
 }
 
 export interface OrgDetails {

@@ -64,3 +64,8 @@ input {
   height: 30px;
   border-radius: 3px;
 }
+
+.create-first-event,
+.return-home {
+  cursor: pointer;
+}

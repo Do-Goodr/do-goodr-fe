@@ -4,6 +4,7 @@ import  formatPhoneNumber  from '../utilities/formatPhoneNumber'
 import apiCalls from '../utilities/apiCalls';
 import '../Styles/OrgCreationForm.css'
 import emailExtensionCheck from '../utilities/emailExtensionCheck';
+import { Link } from 'react-router-dom'
 
 const OrgCreationForm: React.FC<{}> = () => {
     
@@ -67,9 +68,9 @@ const OrgCreationForm: React.FC<{}> = () => {
                 {confirmation && 
                 <div>
                     <p data-cy='successful-signup'>{confirmation}</p>
-                    <button className='create-org-signup-btn-enabled' aria-label='Create first event button'>Create Your First Event!</button>
+                    <Link to='/signin' style={{ textDecoration: 'none'}}><button className='create-org-signup-btn-enabled create-first-event' style={{ textDecoration: 'none'}}aria-label='Create first event button'>Create Your First Event!</button></Link>
                     <p>OR</p>
-                    <button className='create-org-signup-btn-enabled' aria-label='Return to homepage button'>I'll Do That Later</button>
+                    <Link to='/' style={{ textDecoration: 'none'}}><button className='create-org-signup-btn-enabled return-home' aria-label='Return to homepage button'>I'll Do That Later</button></Link>
                 </div>}
         </section>
 

@@ -15,6 +15,7 @@ const [address, setAddress] = useState<CreatedEvent["address"]>('')
 const [volunteers, setVolunteers] = useState<CreatedEvent["vols_required"]>(0)
 const [description, setDescription] = useState<CreatedEvent['description']>('')
 const [eventName, setEventName] = useState<CreatedEvent['name']>('')
+const [confirmation, setConfirmation] = useState<CreatedEvent['confirmation']>('')
 const { org } = useContext(EventContext)
 console.log(org.phone)
 
@@ -33,6 +34,13 @@ const submitEvent = (e:MouseEvent) => {
     description: description
   }
   apiCalls.postEvent(newEvent)
+  .then(res => {
+    if (res.ok) {
+        setConfirmation(`EXCELLENT! ${org.name} has successfully created a new Volunteering Event!`)
+    } else {
+        setConfirmation('Please check your event details to make sure all fields are filled in correctly')
+    }
+})
 }
 
 const SubmitButton = () => {

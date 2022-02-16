@@ -50,10 +50,12 @@
 .zip-input {
     width: 266px;
     margin-top: 34px;
+    cursor: pointer;
 }
 
 .mileage-input {
     width: 286px;
+    cursor: pointer;
 }
 
 
@@ -87,4 +89,5 @@
     width: 310px;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
