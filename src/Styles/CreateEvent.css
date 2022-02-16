@@ -88,6 +88,7 @@ label {
   width: fit-content;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 
 .event-submit-btn-disabled {
@@ -104,4 +105,43 @@ label {
   width: fit-content;
   display: flex;
   justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .event-form-container {
+    flex-wrap: wrap;
+    align-content: center;  
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .event-form-container {
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 0 auto;
+  }
+
+  .create-event-title {
+    width: 360px;
+    align-self: auto;
+  }
+
+.event-name-input,
+.date-input,
+.start-time-input,
+.end-time-input,
+.address-input,
+.category-input,
+.vol-num-input {
+  width: 360px;
+  height: 50px;
+}
+
+.time-inputs {
+  flex-direction: column;
+}
+
+input, label, textarea {
+  width: 90%;
+}
 }

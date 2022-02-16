@@ -12,3 +12,9 @@
   font-size: larger;
   font-weight: 500;
 }
+
+@media screen and (max-width: 800px) {
+  .events-container {
+    grid-template-columns: 1fr;
+  }
+}
