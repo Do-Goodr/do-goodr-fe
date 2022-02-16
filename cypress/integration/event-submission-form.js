@@ -1,9 +1,14 @@
-describe('Event Submission Form DOM', () => {
-  beforeEach(() => {
-    cy.fixture('./event-data.json').then((allEvents) => {
-      cy.intercept('GET', 'https://do-goodr-be.herokuapp.com/api/v1/events', {
-        statusCode: 200,
-        body: allEvents
+describe('Event Submission Form DOM',() => {
+    beforeEach(() => {
+      cy.fixture('./event-data.json').then((allEvents) => {
+        cy.intercept('GET', 'https://do-goodr-be.herokuapp.com/api/v1/events', {
+          statusCode: 200,
+          body: allEvents
+        })
+        cy.visit('http://localhost:5000');
+        cy.get('[data-cy=signin-nav-link]').click()
+        cy.get('[data-cy=choose-organization]').select('Ocean United')
+        cy.get('[data-cy=add-opp-btn]').click()
       })
       cy.visit('http://localhost:5000');
       cy.get('[data-cy=signin-nav-link]').click()
@@ -70,6 +75,14 @@ describe('Event Submission Form DOM', () => {
   it('should have an input for selecting the amount of volunteers needed for an event', () => {
     cy.get('[data-cy=set-volunteer-num]')
   })
+
+  describe('Event Submission Form Actions',() => {
+    beforeEach(() => {
+      cy.visit('http://localhost:5000');
+        cy.get('[data-cy=signin-nav-link]').click()
+        cy.get('[data-cy=choose-organization]').select('Ocean United')
+        cy.get('[data-cy=add-opp-btn]').click()
+    })
 
   it('should have an input for creating the description for an event', () => {
     cy.get('[data-cy=set-description]')
