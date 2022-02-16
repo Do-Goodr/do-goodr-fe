@@ -6,21 +6,21 @@ import { CreatedEvent } from '../utilities/Types';
 
 const CreateEventForm = () => {
 
-const [category, setCategory] = useState<CreatedEvent["category"]>()
-const [date, setDate] = useState<CreatedEvent["date"]>()
-const [startTime, setStartTime] = useState<CreatedEvent["start_time"]>()
-const [endTime, setEndTime] = useState<CreatedEvent["end_time"]>()
-const [address, setAddress] = useState<CreatedEvent["address"]>()
-const [volunteers, setVolunteers] = useState<CreatedEvent["vols_required"] | 0 | null>(null)
-const [description, setDescription] = useState<CreatedEvent['description']>()
+const [category, setCategory] = useState<CreatedEvent["category"]>('')
+const [date, setDate] = useState<CreatedEvent["date"]>('')
+const [startTime, setStartTime] = useState<CreatedEvent["start_time"]>('')
+const [endTime, setEndTime] = useState<CreatedEvent["end_time"]>('')
+const [address, setAddress] = useState<CreatedEvent["address"]>('')
+const [volunteers, setVolunteers] = useState<CreatedEvent["vols_required"]>(0)
+const [description, setDescription] = useState<CreatedEvent['description']>('')
+const [eventName, setEventName] = useState<CreatedEvent['event_name']>('')
 
 const submitEvent = (e:React.MouseEvent) => {
   e.preventDefault()
   const newEvent = {
     organization_id: 67,
-    name: 'American Red Cross',
+    event_name: eventName,
     address: address,
-    phone: '(334)888-8888',
     date: date,
     start_time: startTime,
     end_time: endTime,
@@ -43,6 +43,9 @@ const SubmitButton = () => {
     <div className="event-form-container">
       <form className='create-event' data-cy='create-event-form'>
         <h2 className='create-event-title'>Create New Volunteering Event</h2>
+        <label>Name of Event:
+          <input type='text' className='event-name-input' data-cy='set-event-name' onChange={(e) => setEventName(e.target.value)}/>
+        </label>
         <label>Date:
           <input type='date' className='date-input' data-cy='set-date' onChange={(e) => setDate(e.target.value)}/>
         </label>

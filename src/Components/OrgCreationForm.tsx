@@ -7,11 +7,11 @@ import emailExtensionCheck from '../utilities/emailExtensionCheck';
 
 const OrgCreationForm: React.FC<{}> = () => {
     
-    const [name, setName] = useState<OrgDetails['name']>()
-    const [address, setAddress] = useState<OrgDetails['address']>()
+    const [name, setName] = useState<OrgDetails['name']>('')
+    const [address, setAddress] = useState<OrgDetails['address']>('')
     const [phone, setPhone] = useState<OrgDetails['phone']>('')
-    const [email, setEmail] = useState<OrgDetails['email'] | null>()
-    const [confirmation, setConfirmation] = useState<OrgDetails['confirmation']>()
+    const [email, setEmail] = useState<OrgDetails['email']>('')
+    const [confirmation, setConfirmation] = useState<OrgDetails['confirmation']>('')
 
 
     const handleInput = (phone:string) => {
