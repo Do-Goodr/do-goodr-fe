@@ -7,6 +7,13 @@ describe('Sign In Page', () => {
       })
       cy.visit('http://localhost:5000/signin');
     })
+    cy.fixture('./org-data.json').then((allOrgs) => {
+      cy.intercept('GET', 'https://do-goodr-be.herokuapp.com/api/v1/organizations', {
+        statusCode: 200,
+        body: allOrgs
+      })
+      cy.visit('http://localhost:5000/signin');
+    })
   })
 
   it('should contain the sign in form', () => {
@@ -45,10 +52,7 @@ describe('Sign In Page', () => {
       .get('[data-cy=delete-event-button]')
   })
 
-  it.skip('should remove an event from the org listing once the delete button has been clicked', () => {
-    // cy.intercept('DELETE', 'https://do-goodr-be.herokuapp.com/api/v1/events/1', {
-    //     statusCode: 200,
-    //   })
+  it('should remove an event from the org listing once the delete button has been clicked', () => {
     cy.get('[data-cy=choose-organization]')
       .select(2)
       .wait(2000)
@@ -56,5 +60,4 @@ describe('Sign In Page', () => {
     cy.get('.events-container > ')
       .should('have.length', 2)
   })
-
 })
