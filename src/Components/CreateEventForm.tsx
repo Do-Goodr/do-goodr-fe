@@ -22,9 +22,9 @@ const submitEvent = (e:MouseEvent) => {
   e.preventDefault()
   const newEvent = {
     organization_id: org.id,
-    name: org.eventName,
+    name: eventName,
     address: address,
-    phone: '(555)456-4564',
+    phone: '(928)778-7857',
     date: date,
     start_time: startTime,
     end_time: endTime,
