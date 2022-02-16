@@ -20,7 +20,7 @@ const App = () => {
           <Route path="results/:zipcode/:mileage" element={<SearchResults />} />
           <Route path='/newevent' element={<CreateEventForm />} />
           <Route path='/signin' element={<SignIn />} />
-          <Route path='/neworganization' element={<OrgCreationForm />}/>
+          <Route path='/neworganization' element={<OrgCreationForm />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </main>

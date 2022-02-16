@@ -13,8 +13,6 @@ const SignIn = () => {
 
   const { events, setCategory, setOrg, category, setEvents, org, allOrgs, setAllOrgs } = useContext(EventContext)
 
-  console.log(allOrgs)
-
   useEffect(() => {
     apiCalls.loadAllOrganizations()
       .then(data => setAllOrgs(data.data))
@@ -31,7 +29,7 @@ const SignIn = () => {
     setOrg(singleOrg)
     setCategory('Any')
     apiCalls.loadEventsByOrg(id)
-    .then(data => setEvents(data.data))
+      .then(data => setEvents(data.data))
   }
 
   return (
@@ -44,17 +42,17 @@ const SignIn = () => {
           data-cy='choose-organization'
           className='choose-org-menu'
           onChange={(e) => handleOrgChange(parseInt(e.target.value))}>
-            <option hidden>Choose Organization</option>
-            {orgNames}
+          <option hidden>Choose Organization</option>
+          {orgNames}
         </select>
       </form>
-      {!org ? 
+      {!org ?
         <div>
           <p className='no-org-message'>Don't see your organization? Create it below!</p>
           <button className='add-org-btn' data-cy='add-org-btn' onClick={() => navigate('/neworganization')}>Create New Organization</button>
-        </div> : 
+        </div> :
         <Link to='/newevent' className='add-opp-btn' data-cy='add-opp-btn'>Add Volunteer Opp</Link>}
-      
+
       {org && <EventContainer events={events} />}
     </div>
   )
