@@ -53,7 +53,7 @@ const SubmitButton = () => {
 
   return (
     <div className="event-form-container">
-      <form className='create-event' data-cy='create-event-form'>
+      {!confirmation && <form className='create-event' data-cy='create-event-form'>
         <h2 className='create-event-title'>Create New Volunteering Event</h2>
         <label>Name of Event:
           <input type='text' className='event-name-input' data-cy='set-event-name' placeholder='Ex: Beach Cleanup' aria-label='Input to type name of event' onChange={(e) => setEventName(e.target.value)}/>
@@ -93,7 +93,8 @@ const SubmitButton = () => {
           <textarea placeholder='Give potential volunteers the detail they need for this event...' className='description-input' data-cy='set-description' aria-label='Input to type a full description of the event' onChange={(e) => setDescription(e.target.value)}></textarea>
         </label>
         <SubmitButton />
-      </form>
+      </form>}
+      {confirmation && <p>{confirmation}</p>}
     </div>
   );
 }
