@@ -30,7 +30,7 @@ const SearchResults = () => {
 
   const filterByCategory = (selectedCategory: string) => {
     if (selectedCategory === 'Any') {
-      setFilteredEvents(events) 
+      setFilteredEvents(events)
     } else {
       const filteredEventsByCategory = events.filter((event: { category: any; }) => event.category === selectedCategory)
       setCategory(selectedCategory)
@@ -42,27 +42,27 @@ const SearchResults = () => {
     <div>
       {error ? <p>{error}</p> :
         <div className='search-results-section'>
-        <h1 className='search-result-title'>Search Results</h1>
-        <select
-          name="category"
-          className='choose-category-menu'
-          data-cy='choose-category'
-          placeholder="Choose Category"
-          onChange={(e) => filterByCategory(e.target.value)}>
-          <option hidden>Filter by Category</option>
-          <option>Any</option>
-          <option>Animal Care</option>
-          <option>Campaigning</option>
-          <option>Community Development</option>
-          <option>Food Service</option>
-          <option>Grounds Cleanup</option>
-          <option>Healthcare</option>
-          <option>Nursing Home</option>
-          <option>Youth Mentorship</option>
-          <option value=''>Other</option>
-        </select>
-        {!filteredEvents ? <EventContainer events={events} /> : <EventContainer events={filteredEvents} />}
-      </div>}
+          <h1 className='search-result-title'>Search Results</h1>
+          <select
+            name="category"
+            className='choose-category-menu'
+            data-cy='choose-category'
+            placeholder="Choose Category"
+            onChange={(e) => filterByCategory(e.target.value)}>
+            <option hidden>Filter by Category</option>
+            <option>Any</option>
+            <option>Animal Care</option>
+            <option>Campaigning</option>
+            <option>Community Development</option>
+            <option>Food Service</option>
+            <option>Grounds Cleanup</option>
+            <option>Healthcare</option>
+            <option>Nursing Home</option>
+            <option>Youth Mentorship</option>
+            <option value=''>Other</option>
+          </select>
+          {!filteredEvents ? <EventContainer events={events} /> : <EventContainer events={filteredEvents} />}
+        </div>}
     </div>
   )
 
