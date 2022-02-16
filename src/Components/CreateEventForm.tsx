@@ -16,20 +16,21 @@ const [volunteers, setVolunteers] = useState<CreatedEvent["vols_required"]>(0)
 const [description, setDescription] = useState<CreatedEvent['description']>('')
 const [eventName, setEventName] = useState<CreatedEvent['name']>('')
 const { org } = useContext(EventContext)
+console.log(org.phone)
 
 const submitEvent = (e:MouseEvent) => {
   e.preventDefault()
   const newEvent = {
     organization_id: org.id,
-    name: eventName,
-    phone: org.phone,
+    name: org.eventName,
     address: address,
+    phone: '(555)456-4564',
     date: date,
     start_time: startTime,
     end_time: endTime,
     category: category,
     vols_required: volunteers,
-    description: description,
+    description: description
   }
   apiCalls.postEvent(newEvent)
 }

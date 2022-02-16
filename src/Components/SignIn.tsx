@@ -13,6 +13,8 @@ const SignIn = () => {
 
   const { events, setCategory, setOrg, category, setEvents, org, allOrgs, setAllOrgs } = useContext(EventContext)
 
+  console.log(allOrgs)
+
   useEffect(() => {
     apiCalls.loadAllOrganizations()
       .then(data => setAllOrgs(data.data))
@@ -34,6 +36,7 @@ const SignIn = () => {
 
   return (
     <div className="sign-in">
+      <Link to='/newevent' className='add-opp-btn'>Add Volunteer Opp</Link>
       <p className='sign-in-title'>View Your Organizations Events</p>
       <form data-cy='organization-form' className="organization-form">
         <select
