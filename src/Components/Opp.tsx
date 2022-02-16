@@ -17,7 +17,7 @@ const Opp = ({ event }: OppProps ) => {
   }
 
   const DeleteButton = () => {
-    if (org && event['organization_id'] === org) {
+    if (org ) {
       return <button className='delete-opp-button' onClick = {() => handleDeletion(event.id!)} data-cy='delete-event-button'>Delete Event</button>
     } else {
       return null
