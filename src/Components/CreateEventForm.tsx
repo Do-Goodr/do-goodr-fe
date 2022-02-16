@@ -26,7 +26,7 @@ const submitEvent = (e:React.MouseEvent) => {
     end_time: endTime,
     category: category,
     vols_required: volunteers,
-    description: description
+    description: description,
   }
   apiCalls.postEvent(newEvent)
 }

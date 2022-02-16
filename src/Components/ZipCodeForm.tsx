@@ -10,7 +10,7 @@ import formatZipCode from '../utilities/formatZipCode'
 
 const ZipCodeForm = () => {
 
-  const [zipCode, setZipCode] = useState<ZipCodeSearch['zipCode'] >('')
+  const [zipCode, setZipCode] = useState<ZipCodeSearch['zipCode']>('')
   const [mileage, setMileage] = useState<ZipCodeSearch['mileage'] | 0 | null>(null)
 
   let navigate = useNavigate()
