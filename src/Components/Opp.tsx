@@ -30,7 +30,7 @@ const Opp = ({ event }: OppProps) => {
       <div className='opp-info'>
         <div className='opp-left'>
           <h2 className='event-name' data-cy='event-name'>{event.name}</h2>
-          <p data-cy='event-address'><strong>Event Address:</strong>{event.address}</p>
+          <p data-cy='event-address'><strong>Event Address:</strong> {event.address}</p>
           <p data-cy='event-phone'><strong>Phone:</strong> (928) 778-7857</p>
         </div>
         <div className='opp-right'>

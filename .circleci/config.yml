@@ -50,12 +50,12 @@ workflows:
       - build:
           filters:
             branches:
-              only: beta
+              only: main
       - heroku/deploy-via-git:
           requires:
             - build
           filters:
             branches:
-              only: beta
+              only: main
 
 
