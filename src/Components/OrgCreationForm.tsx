@@ -69,12 +69,12 @@ const OrgCreationForm: React.FC<{}> = () => {
                     <p data-cy='successful-signup'>{confirmation}</p>
                     <button className='create-org-signup-btn-enabled'>Create Your First Event!</button>
                     <p>OR</p>
-                    <button className='create-org-signup-btn-enabled'>I'll Do That</button>
+                    <button className='create-org-signup-btn-enabled'>I'll Do That Later</button>
                 </div>}
         </section>
 
     )
 
 }
-
+g
 export default OrgCreationForm
