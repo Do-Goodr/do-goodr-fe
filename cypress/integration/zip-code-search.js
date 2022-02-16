@@ -16,22 +16,22 @@ describe('events page',() => {
 
     it('should be able to take in a user zipcode and a mileage preference', () => {
     
-        cy.get('[data-cy=zip-input]').type('98101')
-        cy.get('[data-cy="mileage-input"]').eq(0).select('10')
+        cy.get('[data-cy=zip-input]').type('80202')
+        cy.get('[data-cy=mileage-input]').eq(0).select('10')
         cy.get('[data-cy=show-events-btn]').click()        
         cy.get('[data-cy=events-container]')
             .should('have.length', 1)
     
         cy.get('.events-container > :nth-child(1)')
-            .contains('Beach Cleanup')
+            .contains('Blood Drive')
         cy.get('.events-container > :nth-child(1)')
             .contains('(928) 778-7857')
         cy.get('.events-container > :nth-child(1)')
-            .contains('Grounds Cleanup')
+            .contains('Healthcare')
         cy.get('.events-container > :nth-child(1)') 
-            .contains('06/16/2023')
+            .contains('10/15/2022')
         cy.get('.events-container > :nth-child(1)')
-            .contains('08:30 AM - 10:30 AM')
+            .contains('01:00 PM - 02:00 PM')
     })
         
     // it('should allow users to filter by category', () => {
