@@ -23,7 +23,7 @@ describe('org sign in page',() => {
         .contains('Do Goodr');
     })
 
-    it.only('should allow a user to choose an organization', () => {
+    it('should allow a user to choose an organization', () => {
         cy.get('[data-cy="choose-organization"]')
             .should('exist')
         cy.get('[data-cy="choose-organization"]')
