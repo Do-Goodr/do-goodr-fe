@@ -37,10 +37,10 @@ Deployed Link: [Click Here to Try Do Goodr](https://do-goodr-fe.herokuapp.com/)
 ![overview](./src/Assets/home_img.png)
 
 #### Create Event Form
-![overview](./src/assets/create_event_form_img.png)
+![overview](./src/Assets/create_event_form_img.png)
 
 #### Create Organization Form
-![overview](./src/assets/create_org_form_img.png)
+![overview](./src/Assets/create_org_form_img.png)
 
 #### Organization Sign-In
 ![overview](./src/assets/org_signin_img.png)
