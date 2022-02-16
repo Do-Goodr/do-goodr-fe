@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, MouseEvent } from 'react';
 import { OrgDetails } from '../utilities/Types';
 import  formatPhoneNumber  from '../utilities/formatPhoneNumber'
 import apiCalls from '../utilities/apiCalls';
@@ -20,7 +20,7 @@ const OrgCreationForm: React.FC<{}> = () => {
         setPhone(formattedNumber)
     }
 
-    const signUp = (e:React.MouseEvent) => {
+    const signUp = (e:MouseEvent) => {
         e.preventDefault()
         const newOrg = {
             name: name,
