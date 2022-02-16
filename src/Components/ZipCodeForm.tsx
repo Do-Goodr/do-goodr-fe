@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../Styles/ZipCodeForm.css';
 import { ZipCodeSearch } from '../utilities/Types';
 import { useNavigate } from 'react-router'
-import { Link } from 'react-router-dom'
+
 import mileageCheck from '../utilities/mileageCheck';
 import formatZipCode from '../utilities/formatZipCode'
 
@@ -34,7 +34,6 @@ const ZipCodeForm = () => {
 
   return (
     <form className="zip-code-form">
-      <Link to='/newevent' className='add-opp-btn'>Add Volunteer Opp</Link>
       <h3 className='search-opp-title'>Search Volunteering Opportunities</h3>
       <div className='zip-miles'>
         <input

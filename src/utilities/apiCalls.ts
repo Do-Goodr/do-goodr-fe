@@ -40,7 +40,6 @@ const apiCalls = {
     loadEventsByOrg: (orgID:number) => {
         return fetch(`https://do-goodr-be.herokuapp.com/api/v1/organizations/${orgID}/events`)
         .then(res => {
-
             if (res.ok) {
                 return res.json()
             } else {
@@ -51,7 +50,8 @@ const apiCalls = {
     },
 
     postEvent: (event: Event) => {
-        return fetch(`https://do-goodr-be.herokuapp.com/api/v1/events?category=${event.category}&organization_id=${event.organization_id}&name=${event.event_name}&address=${event.address}&start_time=${event.date}%20${event.start_time}&end_time=${event.date}%20${event.end_time}&vols_required=${event.vols_required}&description=${event.description}`, {
+        console.log(event)
+        return fetch(`https://do-goodr-be.herokuapp.com/api/v1/events?category=${event.category}&organization_id=${event.organization_id}&name=${event.name}&address=${event.address}&start_time=${event.date}%20${event.start_time}&end_time=${event.date}%20${event.end_time}&vols_required=${event.vols_required}&description=${event.description}`, {
             method: 'POST',
             body: JSON.stringify(event),
             headers: {

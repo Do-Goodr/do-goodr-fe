@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import '../Styles/CreateEvent.css';
 import apiCalls from '../utilities/apiCalls';
 import { CreatedEvent } from '../utilities/Types';
+import { EventContext } from '../Context/EventContext';
 
 
 const CreateEventForm = () => {
@@ -13,13 +14,15 @@ const [endTime, setEndTime] = useState<CreatedEvent["end_time"]>('')
 const [address, setAddress] = useState<CreatedEvent["address"]>('')
 const [volunteers, setVolunteers] = useState<CreatedEvent["vols_required"]>(0)
 const [description, setDescription] = useState<CreatedEvent['description']>('')
-const [eventName, setEventName] = useState<CreatedEvent['event_name']>('')
+const [eventName, setEventName] = useState<CreatedEvent['name']>('')
+const { org } = useContext(EventContext)
 
 const submitEvent = (e:React.MouseEvent) => {
   e.preventDefault()
   const newEvent = {
-    organization_id: 67,
-    event_name: eventName,
+    organization_id: org.id,
+    name: eventName,
+    phone: org.phone,
     address: address,
     date: date,
     start_time: startTime,
