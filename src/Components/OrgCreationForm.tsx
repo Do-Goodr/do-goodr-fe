@@ -48,7 +48,7 @@ const OrgCreationForm: React.FC<{}> = () => {
     return (
         <section className="org-form-container">
             <h2>Create your Organization Account</h2>
-            <form className='create-org-form'>
+            {!confirmation && <form className='create-org-form'>
                 <label>Organization name
                     <input type='text' className='org-name-input' data-cy='org-name-input' placeholder='Ex: Ocean United' onChange={(e) => setName(e.target.value)}/>
                 </label>
@@ -61,6 +61,9 @@ const OrgCreationForm: React.FC<{}> = () => {
                 <label>Email
                     <input type='text' className='org-email-input' data-cy='org-email-input' placeholder='Format: oceanunited@email.com' onChange={(e) => setEmail(e.target.value)}/>
                 </label>
+                
+            <SubmitButton />
+            </form>}
                 {confirmation && 
                 <div>
                     <p data-cy='successful-signup'>{confirmation}</p>
@@ -68,9 +71,6 @@ const OrgCreationForm: React.FC<{}> = () => {
                     <p>OR</p>
                     <button className='create-org-signup-btn-enabled'>I'll Do That</button>
                 </div>}
-                
-            </form>
-            <SubmitButton />
         </section>
 
     )
