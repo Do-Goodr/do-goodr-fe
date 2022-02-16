@@ -34,7 +34,6 @@ const ZipCodeForm = () => {
 
   return (
     <form className="zip-code-form">
-      {/* <Link to='/newevent' className='add-opp-btn'>Add Volunteer Opp</Link> */}
       <h3 className='search-opp-title'>Search Volunteering Opportunities</h3>
       <div className='zip-miles'>
         <input

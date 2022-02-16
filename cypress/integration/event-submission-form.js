@@ -5,7 +5,10 @@ describe('Event Submission Form DOM',() => {
           statusCode: 200,
           body: allEvents
         })
-        cy.visit('http://localhost:5000/newevent');
+        cy.visit('http://localhost:5000');
+        cy.get('[data-cy=signin-nav-link]').click()
+        cy.get('[data-cy=choose-organization]').select('ARC')
+        cy.get('[data-cy=add-opp-btn]').click()
       })
     })
   
@@ -70,7 +73,7 @@ describe('Event Submission Form DOM',() => {
 
     it('should have an input for creating the description for an event', () => {
         cy.get('[data-cy=set-description]')
-        .should('have.attr', 'placeholder', 'Description...')
+        .should('have.attr', 'placeholder', 'Give potential volunteers the detail they need for this event...')
     })
 
     it('should have a button for submitting an event', () => {
@@ -81,7 +84,10 @@ describe('Event Submission Form DOM',() => {
 
   describe('Event Submission Form Actions',() => {
     beforeEach(() => {
-      cy.visit('http://localhost:5000/newevent');
+      cy.visit('http://localhost:5000');
+        cy.get('[data-cy=signin-nav-link]').click()
+        cy.get('[data-cy=choose-organization]').select('ARC')
+        cy.get('[data-cy=add-opp-btn]').click()
     })
 
     it('should not allow the user to click the submit button if the input fields are not completed', () => {

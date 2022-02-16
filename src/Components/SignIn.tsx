@@ -36,7 +36,6 @@ const SignIn = () => {
 
   return (
     <div className="sign-in">
-      <Link to='/newevent' className='add-opp-btn'>Add Volunteer Opp</Link>
       <p className='sign-in-title'>View Your Organizations Events</p>
       <form data-cy='organization-form' className="organization-form">
         <select
@@ -54,7 +53,7 @@ const SignIn = () => {
           <p className='no-org-message'>Don't see your organization? Create it below!</p>
           <button className='add-org-btn' data-cy='add-org-btn' onClick={() => navigate('/neworganization')}>Create New Organization</button>
         </div> : 
-        <Link to='/newevent' className='add-opp-btn'>Add Volunteer Opp</Link>}
+        <Link to='/newevent' className='add-opp-btn' data-cy='add-opp-btn'>Add Volunteer Opp</Link>}
       
       {org && <EventContainer events={events} />}
     </div>
