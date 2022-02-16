@@ -43,13 +43,13 @@ Deployed Link: [Click Here to Try Do Goodr](https://do-goodr-fe.herokuapp.com/)
 ![overview](./src/Assets/create_org_form_img.png)
 
 #### Organization Sign-In
-![overview](./src/assets/org_signin_img.png)
+![overview](./src/Assets/org_signin_img.png)
 
 #### Zip Code/Mileage Search Results
-![overview](./src/assets/search_results_img.png)
+![overview](./src/Assets/search_results_img.png)
 
 #### Successful Organization Creation
-![overview](./src/assets/successful_org_creation_img.png)
+![overview](./src/Assets/successful_org_creation_img.png)
 
 
 ## Architecture
