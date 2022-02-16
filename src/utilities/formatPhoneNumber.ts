@@ -1,6 +1,6 @@
 import React from 'react'
 
-const formatPhoneNumber = (value) => {
+const formatPhoneNumber = (value:string) => {
 
     if (!value) return value
     const phoneNumber = value.replace(/[^\d]/g, "")

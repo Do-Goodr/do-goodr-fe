@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, MouseEvent } from 'react';
 import '../Styles/ZipCodeForm.css';
 import { ZipCodeSearch } from '../utilities/Types';
 import { useNavigate } from 'react-router'
-import { Link } from 'react-router-dom'
+
 import mileageCheck from '../utilities/mileageCheck';
 import formatZipCode from '../utilities/formatZipCode'
 
@@ -10,12 +10,12 @@ import formatZipCode from '../utilities/formatZipCode'
 
 const ZipCodeForm = () => {
 
-  const [zipCode, setZipCode] = useState<ZipCodeSearch['zipCode'] >('')
+  const [zipCode, setZipCode] = useState<ZipCodeSearch['zipCode']>('')
   const [mileage, setMileage] = useState<ZipCodeSearch['mileage'] | 0 | null>(null)
 
   let navigate = useNavigate()
 
-  const getOpportunities = (e: React.MouseEvent) => {
+  const getOpportunities = (e:MouseEvent) => {
     e.preventDefault()
     navigate(`/results/${zipCode}/${mileage}`)
   }
@@ -34,7 +34,6 @@ const ZipCodeForm = () => {
 
   return (
     <form className="zip-code-form">
-      <Link to='/newevent' className='add-opp-btn'>Add Volunteer Opp</Link>
       <h3 className='search-opp-title'>Search Volunteering Opportunities</h3>
       <div className='zip-miles'>
         <input

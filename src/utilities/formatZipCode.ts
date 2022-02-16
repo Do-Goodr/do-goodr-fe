@@ -1,6 +1,6 @@
 import React from 'react'
 
-const formatZipCode = (zip) => {
+const formatZipCode = (zip:string) => {
     if (!zip) return zip
     const zipCode = zip.replace(/[^\d]/g, "")
     console.log(zipCode)

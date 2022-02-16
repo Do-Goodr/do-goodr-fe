@@ -5,6 +5,7 @@ import { EventContext } from '../Context/EventContext';
 import EventContainer from './EventContainer';
 import { useNavigate } from 'react-router'
 import { OrgDetails } from '../utilities/Types';
+import { Link } from 'react-router-dom'
 
 const SignIn = () => {
 
@@ -23,8 +24,9 @@ const SignIn = () => {
     )
   })
 
-  const handleOrgChange = (id: any) => {
-    setOrg(id)
+  const handleOrgChange = (id: number) => {
+    const singleOrg = allOrgs.find((el: OrgDetails) => el.id === id)
+    setOrg(singleOrg)
     setCategory('Any')
     apiCalls.loadEventsByOrg(id)
     .then(data => setEvents(data.data))
@@ -44,8 +46,13 @@ const SignIn = () => {
             {orgNames}
         </select>
       </form>
-      <p>Don't see your organization? Create it below!</p>
-      <button className='add-org-btn' data-cy='add-org-btn' onClick={() => navigate('/neworganization')}>Create New Organization</button>
+      {!org ? 
+        <div>
+          <p className='no-org-message'>Don't see your organization? Create it below!</p>
+          <button className='add-org-btn' data-cy='add-org-btn' onClick={() => navigate('/neworganization')}>Create New Organization</button>
+        </div> : 
+        <Link to='/newevent' className='add-opp-btn'>Add Volunteer Opp</Link>}
+      
       {org && <EventContainer events={events} />}
     </div>
   )

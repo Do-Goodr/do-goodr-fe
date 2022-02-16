@@ -7,11 +7,11 @@ import emailExtensionCheck from '../utilities/emailExtensionCheck';
 
 const OrgCreationForm: React.FC<{}> = () => {
     
-    const [name, setName] = useState<OrgDetails['name']>()
-    const [address, setAddress] = useState<OrgDetails['address']>()
+    const [name, setName] = useState<OrgDetails['name']>('')
+    const [address, setAddress] = useState<OrgDetails['address']>('')
     const [phone, setPhone] = useState<OrgDetails['phone']>('')
-    const [email, setEmail] = useState<OrgDetails['email'] | null>()
-    const [confirmation, setConfirmation] = useState<OrgDetails['confirmation']>()
+    const [email, setEmail] = useState<OrgDetails['email']>('')
+    const [confirmation, setConfirmation] = useState<OrgDetails['confirmation']>('')
 
 
     const handleInput = (phone:string) => {
@@ -38,7 +38,7 @@ const OrgCreationForm: React.FC<{}> = () => {
     }
 
     const SubmitButton = () => {
-        if (name && address && (phone.length - 4 === 10) && email?.includes('@') && !confirmation) {
+        if (name && address && (phone.length - 4 === 10) && emailExtensionCheck(email) && !confirmation) {
             return <button className='create-org-signup-btn-enabled' data-cy='create-org-signup-btn' onClick={(e) => signUp(e)}>Sign Up!</button>
         } else {
             return <button className='create-org-signup-btn-disabled' disabled={true} data-cy='create-org-signup-btn' onClick={(e) => signUp(e)}>Sign Up!</button>
@@ -48,7 +48,7 @@ const OrgCreationForm: React.FC<{}> = () => {
     return (
         <section className="org-form-container">
             <h2>Create your Organization Account</h2>
-            <form className='create-org-form'>
+            {!confirmation && <form className='create-org-form'>
                 <label>Organization name
                     <input type='text' className='org-name-input' data-cy='org-name-input' placeholder='Ex: Ocean United' onChange={(e) => setName(e.target.value)}/>
                 </label>
@@ -61,20 +61,20 @@ const OrgCreationForm: React.FC<{}> = () => {
                 <label>Email
                     <input type='text' className='org-email-input' data-cy='org-email-input' placeholder='Format: oceanunited@email.com' onChange={(e) => setEmail(e.target.value)}/>
                 </label>
+                
+            <SubmitButton />
+            </form>}
                 {confirmation && 
                 <div>
                     <p data-cy='successful-signup'>{confirmation}</p>
                     <button className='create-org-signup-btn-enabled'>Create Your First Event!</button>
                     <p>OR</p>
-                    <button className='create-org-signup-btn-enabled'>I'll Do That</button>
+                    <button className='create-org-signup-btn-enabled'>I'll Do That Later</button>
                 </div>}
-                
-            </form>
-            <SubmitButton />
         </section>
 
     )
 
 }
-
+g
 export default OrgCreationForm

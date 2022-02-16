@@ -1,32 +1,35 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useContext, MouseEvent } from 'react';
 import '../Styles/CreateEvent.css';
 import apiCalls from '../utilities/apiCalls';
 import { CreatedEvent } from '../utilities/Types';
+import { EventContext } from '../Context/EventContext';
 
 
 const CreateEventForm = () => {
 
-const [category, setCategory] = useState<CreatedEvent["category"]>()
-const [date, setDate] = useState<CreatedEvent["date"]>()
-const [startTime, setStartTime] = useState<CreatedEvent["start_time"]>()
-const [endTime, setEndTime] = useState<CreatedEvent["end_time"]>()
-const [address, setAddress] = useState<CreatedEvent["address"]>()
-const [volunteers, setVolunteers] = useState<CreatedEvent["vols_required"] | 0 | null>(null)
-const [description, setDescription] = useState<CreatedEvent['description']>()
+const [category, setCategory] = useState<CreatedEvent["category"]>('')
+const [date, setDate] = useState<CreatedEvent["date"]>('')
+const [startTime, setStartTime] = useState<CreatedEvent["start_time"]>('')
+const [endTime, setEndTime] = useState<CreatedEvent["end_time"]>('')
+const [address, setAddress] = useState<CreatedEvent["address"]>('')
+const [volunteers, setVolunteers] = useState<CreatedEvent["vols_required"]>(0)
+const [description, setDescription] = useState<CreatedEvent['description']>('')
+const [eventName, setEventName] = useState<CreatedEvent['name']>('')
+const { org } = useContext(EventContext)
 
-const submitEvent = (e:React.MouseEvent) => {
+const submitEvent = (e:MouseEvent) => {
   e.preventDefault()
   const newEvent = {
-    organization_id: 67,
-    name: 'American Red Cross',
+    organization_id: org.id,
+    name: eventName,
+    phone: org.phone,
     address: address,
-    phone: '(334)888-8888',
     date: date,
     start_time: startTime,
     end_time: endTime,
     category: category,
     vols_required: volunteers,
-    description: description
+    description: description,
   }
   apiCalls.postEvent(newEvent)
 }
@@ -43,6 +46,9 @@ const SubmitButton = () => {
     <div className="event-form-container">
       <form className='create-event' data-cy='create-event-form'>
         <h2 className='create-event-title'>Create New Volunteering Event</h2>
+        <label>Name of Event:
+          <input type='text' className='event-name-input' data-cy='set-event-name' placeholder='Ex: Beach Cleanup' onChange={(e) => setEventName(e.target.value)}/>
+        </label>
         <label>Date:
           <input type='date' className='date-input' data-cy='set-date' onChange={(e) => setDate(e.target.value)}/>
         </label>
@@ -55,7 +61,7 @@ const SubmitButton = () => {
         </label>
         </div>
         <label>Address:
-          <input type='text' className='address-input' data-cy='set-address' onChange={(e) => setAddress(e.target.value)}/>
+          <input type='text' className='address-input' data-cy='set-address' placeholder='Event Address' onChange={(e) => setAddress(e.target.value)}/>
         </label>
         <label>Category:
         <input list='category' className='category-input' data-cy='set-category' placeholder='Choose Category' onChange={(e) => setCategory(e.target.value)}/>
@@ -75,7 +81,7 @@ const SubmitButton = () => {
           <input type='number' className='vol-num-input' min={1} max={100} data-cy='set-volunteer-num' onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
         </label>
         <label>Event Description:
-          <textarea placeholder='Description...' className='description-input' data-cy='set-description' onChange={(e) => setDescription(e.target.value)}></textarea>
+          <textarea placeholder='Give potential volunteers the detail they need for this event...' className='description-input' data-cy='set-description' onChange={(e) => setDescription(e.target.value)}></textarea>
         </label>
         <SubmitButton />
       </form>

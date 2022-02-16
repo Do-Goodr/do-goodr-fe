@@ -1,5 +1,4 @@
 .sign-in {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,7 +8,8 @@
 }
 
 .sign-in-title {
-    font-size: 23px;
+    font-size: 30px;
+    margin-bottom: 0;
 }
 
 .choose-org-menu {
@@ -17,28 +17,35 @@
     justify-content: center;
     align-items: center;
     font-family: inherit;
-    width: 320px;
+    width: 290px;
     text-align: center;
     color: #1864AB;
     border: 1px solid #1864AB;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 3px;
+    margin-bottom: 0;
 }
 
 .choose-org-menu::placeholder {
     font-family: inherit;
 }
 
+.no-org-message {
+    font-size: 22px;
+}
 .add-org-btn {
     background-color: #1864AB;
     border: none;
     border-radius: 4px;
     color: white;
     font-family: inherit;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
-    margin: 8px auto 0;
-    padding: 8px;
+    margin: 26px auto 0;
+    padding: 12px;
     text-decoration: none;
-    width: 320px;
+    width: 300px;
     display: flex;
     justify-content: center;
 }

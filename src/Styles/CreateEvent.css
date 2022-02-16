@@ -32,22 +32,34 @@
   border-radius: 3px;
 }
 
+.event-name-input,
 .date-input,
 .start-time-input,
 .end-time-input,
 .address-input,
 .category-input,
 .vol-num-input {
-  width: 340px;
+  width: 260px;
   border: solid 1px #1864AB;
   height: 30px;
   border-radius: 3px;
 }
+.address-input,
+.category-input {
+  width: 200px;
+}
+
+.date-input,
+.start-time-input,
+.end-time-input,
+.vol-num-input {
+  width: 160px;
+}
 
 .description-input {
-  width: 100%;
+  width: 500px;
   border: solid 1px #1864AB;
-  height: 30px;
+  height: 80px;
   border-radius: 3px;
 }
 
@@ -71,7 +83,7 @@ label {
   font-size: 20px;
   font-weight: bold;
   margin: 8px auto 0;
-  padding: 8px;
+  padding: 12px;
   text-decoration: none;
   width: fit-content;
   display: flex;

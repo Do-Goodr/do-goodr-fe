@@ -29,12 +29,12 @@ input {
   border-radius: 4px;
   color: white;
   font-family: inherit;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
   margin: 8px auto 0;
-  padding: 8px;
+  padding: 12px;
   text-decoration: none;
-  width: fit-content;
+  width: 310;
   display: flex;
   justify-content: center;
 }

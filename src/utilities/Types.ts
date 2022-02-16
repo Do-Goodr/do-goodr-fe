@@ -19,7 +19,8 @@ export interface Event {
   start_time: string
   end_time: string
   vols_required: number
-  id: number
+  id?: number 
+  phone: string
 }  
 
 export interface ZipCodeSearch  {
@@ -28,7 +29,8 @@ export interface ZipCodeSearch  {
 }
 
 export interface CreatedEvent {
-  id: number
+  id?: number
+  name: string
   date: string
   category: string
   start_time: string
@@ -36,15 +38,16 @@ export interface CreatedEvent {
   vols_required: number
   description: string
   address: string
+  phone: string
 }
 
 export interface OrgDetails {
-  id: number
+  id?: number
   name: string
   address: string
   phone: string
   email: string
-  confirmation: string
+  confirmation?: string
 }
 
 export interface Error {
