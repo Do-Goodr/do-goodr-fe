@@ -17,31 +17,31 @@ const [description, setDescription] = useState<CreatedEvent['description']>('')
 const [eventName, setEventName] = useState<CreatedEvent['name']>('')
 const [confirmation, setConfirmation] = useState<CreatedEvent['confirmation']>('')
 const { org } = useContext(EventContext)
-console.log(org.phone)
 
-const submitEvent = (e:MouseEvent) => {
-  e.preventDefault()
-  const newEvent = {
-    organization_id: org.id,
-    name: eventName,
-    address: address,
-    phone: '(928)778-7857',
-    date: date,
-    start_time: startTime,
-    end_time: endTime,
-    category: category,
-    vols_required: volunteers,
-    description: description
-  }
-  apiCalls.postEvent(newEvent)
-  .then(res => {
+  const submitEvent = (e: MouseEvent) => {
+    e.preventDefault()
+    const newEvent = {
+      organization_id: org.id,
+      name: eventName,
+      address: address,
+      phone: '(928)778-7857',
+      date: date,
+      start_time: startTime,
+      end_time: endTime,
+      category: category,
+      vols_required: volunteers,
+      description: description
+    }
+    apiCalls.postEvent(newEvent)
+      .then(res => {
     if (res.ok) {
         setConfirmation(`EXCELLENT! ${org.name} has successfully created a new Volunteering Event!`)
     } else {
         setConfirmation('Please check your event details to make sure all fields are filled in correctly')
     }
-})
-}
+  })
+ }
+
 
 const SubmitButton = () => {
   if (date && startTime && endTime && category && address && volunteers && description) {
@@ -49,13 +49,13 @@ const SubmitButton = () => {
   } else {
     return <button aria-label='Submit new volunteering opportunity button' className="event-submit-btn-disabled" disabled={true} data-cy='disabled-submit-button' onClick={(e) => submitEvent(e)}>Submit Opportunity</button>
   }
-}
 
   return (
     <div className="event-form-container">
       {!confirmation && <form className='create-event' data-cy='create-event-form'>
         <h2 className='create-event-title'>Create New Volunteering Event</h2>
         <label>Name of Event:
+
           <input type='text' className='event-name-input' data-cy='set-event-name' placeholder='Ex: Beach Cleanup' aria-label='Input to type name of event' onChange={(e) => setEventName(e.target.value)}/>
         </label>
         <label>Date:
@@ -85,9 +85,11 @@ const SubmitButton = () => {
             <option value='Youth Mentorship'></option>
             <option value='Other'></option>
           </datalist>
-          </label>
+        </label>
         <label>Volunteers Needed:
+
           <input type='number' className='vol-num-input' min={1} max={100} data-cy='set-volunteer-num' aria-label='Input to type number of volunteers needed' onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
+
         </label>
         <label>Event Description:
           <textarea placeholder='Give potential volunteers the detail they need for this event...' className='description-input' data-cy='set-description' aria-label='Input to type a full description of the event' onChange={(e) => setDescription(e.target.value)}></textarea>

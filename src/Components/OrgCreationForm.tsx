@@ -1,13 +1,13 @@
 import React, { useState, MouseEvent } from 'react';
 import { OrgDetails } from '../utilities/Types';
-import  formatPhoneNumber  from '../utilities/formatPhoneNumber'
+import formatPhoneNumber from '../utilities/formatPhoneNumber'
 import apiCalls from '../utilities/apiCalls';
 import '../Styles/OrgCreationForm.css'
 import emailExtensionCheck from '../utilities/emailExtensionCheck';
 import { Link } from 'react-router-dom'
 
 const OrgCreationForm: React.FC<{}> = () => {
-    
+
     const [name, setName] = useState<OrgDetails['name']>('')
     const [address, setAddress] = useState<OrgDetails['address']>('')
     const [phone, setPhone] = useState<OrgDetails['phone']>('')
@@ -15,7 +15,7 @@ const OrgCreationForm: React.FC<{}> = () => {
     const [confirmation, setConfirmation] = useState<OrgDetails['confirmation']>('')
 
 
-    const handleInput = (phone:string) => {
+    const handleInput = (phone: string) => {
         const formattedNumber = formatPhoneNumber(phone)
         setPhone(formattedNumber)
     }
@@ -51,6 +51,7 @@ const OrgCreationForm: React.FC<{}> = () => {
             <h2>Create your Organization Account</h2>
             {!confirmation && <form className='create-org-form'>
                 <label>Organization name
+
                     <input type='text' className='org-name-input' data-cy='org-name-input' placeholder='Ex: Ocean United' aria-label='Input to type organization name' onChange={(e) => setName(e.target.value)}/>
                 </label>
                 <label>Address
@@ -61,11 +62,12 @@ const OrgCreationForm: React.FC<{}> = () => {
                 </label>
                 <label>Email
                     <input type='text' className='org-email-input' data-cy='org-email-input' placeholder='Format: oceanunited@email.com' aria-label='Input to type organization email' onChange={(e) => setEmail(e.target.value)}/>
+
                 </label>
-                
-            <SubmitButton />
+
+                <SubmitButton />
             </form>}
-                {confirmation && 
+            {confirmation &&
                 <div>
                     <p data-cy='successful-signup'>{confirmation}</p>
                     <Link to='/signin' style={{ textDecoration: 'none'}}><button className='create-org-signup-btn-enabled create-first-event' style={{ textDecoration: 'none'}}aria-label='Create first event button'>Create Your First Event!</button></Link>

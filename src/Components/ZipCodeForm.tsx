@@ -15,12 +15,12 @@ const ZipCodeForm = () => {
 
   let navigate = useNavigate()
 
-  const getOpportunities = (e:MouseEvent) => {
+  const getOpportunities = (e: MouseEvent) => {
     e.preventDefault()
     navigate(`/results/${zipCode}/${mileage}`)
   }
 
-  const handleInput = (zip:string) => {
+  const handleInput = (zip: string) => {
     const formattedZipCode = formatZipCode(zip)
     setZipCode(formattedZipCode)
   }
@@ -30,7 +30,7 @@ const ZipCodeForm = () => {
     } else {
         return <button aria-label='Show Opportunities button to retrieve volunteering events' disabled={true} data-cy='show-events-btn' className='show-events-btn' onClick={(e) => getOpportunities(e)}>Show Opportunities</button>
     }
-}
+  }
 
   return (
     <form className="zip-code-form">

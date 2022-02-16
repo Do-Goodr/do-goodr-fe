@@ -5,7 +5,7 @@ import apiCalls from '../utilities/apiCalls';
 import { EventContext } from '../Context/EventContext';
 
 
-const Opp = ({ event }: OppProps ) => {
+const Opp = ({ event }: OppProps) => {
 
   const { events, setEvents, org } = useContext(EventContext)
 
@@ -18,13 +18,13 @@ const Opp = ({ event }: OppProps ) => {
 
   const DeleteButton = () => {
     if (org) {
-      return <button className='delete-opp-button' onClick = {() => handleDeletion(event.id!)} data-cy='delete-event-button'>Delete Event</button>
+      return <button className='delete-opp-button' onClick={() => handleDeletion(event.id!)} data-cy='delete-event-button'>Delete Event</button>
     } else {
       return null
     }
   }
 
-  
+
   return (
     <div className="opportunity" data-cy='opportunity'>
       <div className='opp-info'>
@@ -40,7 +40,7 @@ const Opp = ({ event }: OppProps ) => {
           <p data-cy='event-volunteers'><strong>Volunteers Needed:</strong> {event.vols_required}</p>
         </div>
       </div>
-          <p data-cy='event-description'><strong>Description:</strong> {event.description}</p>
+      <p data-cy='event-description'><strong>Description:</strong> {event.description}</p>
       <DeleteButton />
     </div>
   );
