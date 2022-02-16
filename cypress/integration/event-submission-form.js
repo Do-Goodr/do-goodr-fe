@@ -7,7 +7,7 @@ describe('Event Submission Form DOM',() => {
         })
         cy.visit('http://localhost:5000');
         cy.get('[data-cy=signin-nav-link]').click()
-        cy.get('[data-cy=choose-organization]').select('ARC')
+        cy.get('[data-cy=choose-organization]').select('Ocean United')
         cy.get('[data-cy=add-opp-btn]').click()
       })
     })
@@ -86,7 +86,7 @@ describe('Event Submission Form DOM',() => {
     beforeEach(() => {
       cy.visit('http://localhost:5000');
         cy.get('[data-cy=signin-nav-link]').click()
-        cy.get('[data-cy=choose-organization]').select('ARC')
+        cy.get('[data-cy=choose-organization]').select('Ocean United')
         cy.get('[data-cy=add-opp-btn]').click()
     })
 
