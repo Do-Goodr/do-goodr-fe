@@ -29,7 +29,7 @@ export interface ZipCodeSearch  {
 }
 
 export interface CreatedEvent {
-  id: number
+  id?: number
   name: string
   date: string
   category: string

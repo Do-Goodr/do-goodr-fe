@@ -38,7 +38,7 @@ const OrgCreationForm: React.FC<{}> = () => {
     }
 
     const SubmitButton = () => {
-        if (name && address && (phone.length - 4 === 10) && email?.includes('@') && !confirmation) {
+        if (name && address && (phone.length - 4 === 10) && emailExtensionCheck(email) && !confirmation) {
             return <button className='create-org-signup-btn-enabled' data-cy='create-org-signup-btn' onClick={(e) => signUp(e)}>Sign Up!</button>
         } else {
             return <button className='create-org-signup-btn-disabled' disabled={true} data-cy='create-org-signup-btn' onClick={(e) => signUp(e)}>Sign Up!</button>

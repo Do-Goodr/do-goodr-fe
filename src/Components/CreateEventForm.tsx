@@ -47,7 +47,7 @@ const SubmitButton = () => {
       <form className='create-event' data-cy='create-event-form'>
         <h2 className='create-event-title'>Create New Volunteering Event</h2>
         <label>Name of Event:
-          <input type='text' className='event-name-input' data-cy='set-event-name' onChange={(e) => setEventName(e.target.value)}/>
+          <input type='text' className='event-name-input' data-cy='set-event-name' placeholder='Ex: Beach Cleanup' onChange={(e) => setEventName(e.target.value)}/>
         </label>
         <label>Date:
           <input type='date' className='date-input' data-cy='set-date' onChange={(e) => setDate(e.target.value)}/>
@@ -61,7 +61,7 @@ const SubmitButton = () => {
         </label>
         </div>
         <label>Address:
-          <input type='text' className='address-input' data-cy='set-address' onChange={(e) => setAddress(e.target.value)}/>
+          <input type='text' className='address-input' data-cy='set-address' placeholder='Event Address' onChange={(e) => setAddress(e.target.value)}/>
         </label>
         <label>Category:
         <input list='category' className='category-input' data-cy='set-category' placeholder='Choose Category' onChange={(e) => setCategory(e.target.value)}/>
@@ -81,7 +81,7 @@ const SubmitButton = () => {
           <input type='number' className='vol-num-input' min={1} max={100} data-cy='set-volunteer-num' onChange={(e) => setVolunteers((parseInt(e.target.value)))}/>
         </label>
         <label>Event Description:
-          <textarea placeholder='Description...' className='description-input' data-cy='set-description' onChange={(e) => setDescription(e.target.value)}></textarea>
+          <textarea placeholder='Give potential volunteers the detail they need for this event...' className='description-input' data-cy='set-description' onChange={(e) => setDescription(e.target.value)}></textarea>
         </label>
         <SubmitButton />
       </form>
