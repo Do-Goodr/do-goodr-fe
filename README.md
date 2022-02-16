@@ -4,7 +4,7 @@ Mod4 2108 Cohort
 Deployed Link: [Click Here to Try Do Goodr](https://do-goodr-fe.herokuapp.com/)
 
 #### Application Preview  
-<!-- ![overview](./src/Assets/dogoodr_gif.gif) -->
+![overview](./src/Assets/dogoodr_gif.gif)
 
 
 ## Table of Contents
@@ -34,7 +34,7 @@ Deployed Link: [Click Here to Try Do Goodr](https://do-goodr-fe.herokuapp.com/)
   Do Goodr is an application designed to help people find volunteer opportunities in their local areas. The truth is that many of us are looking for ways to give back to our communities, and searching online for local volunteer opportunities can be cumbersome, and disorganized. Thus, Do Goodr was born out of a desire to solve this problem. General users will have the ability to search for volunteer events or opportunities in their area by performing a search based on their zip code and the distance in miles from their desired zip code. Meanwhile, an organization has the ability to register their organization to the app to post new events or opportunities that will appear when users are searching for opportunities in their local area. 
 
 #### Main Dashboard
-![overview](./src/assets/home_img.png)
+![overview](./src/Assets/home_img.png)
 
 #### Create Event Form
 ![overview](./src/assets/create_event_form_img.png)
