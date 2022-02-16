@@ -13,7 +13,7 @@ export interface Event {
   address: string
   category: string
   description: string
-  name: string
+  event_name: string
   organization_id: number
   date: string
   start_time: string
@@ -29,6 +29,7 @@ export interface ZipCodeSearch  {
 
 export interface CreatedEvent {
   id: number
+  event_name: string
   date: string
   category: string
   start_time: string
@@ -39,12 +40,13 @@ export interface CreatedEvent {
 }
 
 export interface OrgDetails {
-  id: number
+  
+  id?: number
   name: string
   address: string
   phone: string
   email: string
-  confirmation: string
+  confirmation?: string
 }
 
 export interface Error {
